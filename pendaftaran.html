@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pendaftaran - Hibatullah IIBS</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="pendaftaran.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body class="reg-page">
+
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-contacts">
+        <a href="https://wa.me/6285190445518" class="topbar-link"><i class="fab fa-whatsapp"></i> 0851 9044 5518</a>
+        <a href="mailto:pesantrenhibatullah@gmail.com" class="topbar-link"><i class="far fa-envelope"></i> pesantrenhibatullah@gmail.com</a>
+      </div>
+      <div class="topbar-socials">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="logo">
+        <div class="logo-icon">
+          <img src="Logo only.png" alt="Hibatullah IIBS Logo" style="width:60px;height:60px;object-fit:contain;" />
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">HIBATULLAH IIBS</span>
+          <span class="logo-sub">International Islamic Boarding School</span>
+          <span class="logo-loc">BOJONEGORO · JAWA TIMUR</span>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-item">Beranda</a>
+        <div class="nav-item has-dropdown">
+          SD Islam Hibatullah <i class="fas fa-chevron-down"></i>
+          <div class="dropdown">
+            <a href="visi-misi-sdih.html">Visi Misi SDIH</a>
+            <a href="kurikulum-sdih.html">Kurikulum SDIH</a>
+            <a href="program-unggulan-sdih.html">Program Unggulan SDIH</a>
+            <a href="karakter-siswa-sdih.html">Karakter Siswa SDIH</a>
+            <a href="standar-kompetensi-lulusan.html">Standar Kompetensi Lulusan</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown">
+          Hibatullah IIBS <i class="fas fa-chevron-down"></i>
+          <div class="dropdown">
+            <a href="sejarah.html">Sejarah Sekolah</a>
+            <a href="penasehat.html">Dewan Penasehat</a>
+            <a href="stakeholders.html">Stakeholders</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown">
+          Santri Hebat <i class="fas fa-chevron-down"></i>
+          <div class="dropdown">
+            <a href="kurikulum.html">Kurikulum</a>
+            <a href="entrepreneurship.html">Entrepreneurship</a>
+          </div>
+        </div>
+        <a href="ppdb.html" class="nav-item">PPDB</a>
+        <a href="galeri.html" class="nav-item">Galeri</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="pendaftaran.html" class="btn-daftar active-daftar">DAFTAR SEKARANG</a>
+        <button class="btn-search" aria-label="Search"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SATU HALAMAN UTUH -->
+  <section class="reg-shell">
+    <div class="reg-shell-bg" aria-hidden="true">
+      <span class="reg-orb reg-orb--1"></span>
+      <span class="reg-orb reg-orb--2"></span>
+      <span class="reg-orb reg-orb--3"></span>
+    </div>
+
+    <div class="reg-shell-inner" id="formulir">
+      <!-- HEADER -->
+      <header class="reg-top">
+        <nav class="reg-bc">
+          <a href="index.html"><i class="fas fa-home"></i> Beranda</a>
+          <i class="fas fa-chevron-right"></i>
+          <a href="ppdb.html">PPDB</a>
+          <i class="fas fa-chevron-right"></i>
+          <span>Pendaftaran</span>
+        </nav>
+        <div class="reg-top-row">
+          <div class="reg-top-text">
+            <span class="reg-pill"><i class="fas fa-graduation-cap"></i> PPDB 2025/2026</span>
+            <h1>Formulir <em>Pendaftaran</em> Sekolah</h1>
+            <p>Masuk Pondok Pesantren Hibatullah IIBS — isi formulir & konfirmasi via WhatsApp.</p>
+          </div>
+        </div>
+      </header>
+
+      <!-- BODY: FORM + SIDEBAR -->
+      <div class="reg-body">
+        <div class="reg-form-zone">
+          <div class="reg-form-intro">
+            <h2><i class="fas fa-file-signature"></i> Formulir Pendaftaran Sekolah</h2>
+            <p>Kolom bertanda <em>*</em> wajib diisi. Data dikirim ke admin via WhatsApp.</p>
+          </div>
+
+          <form id="formDaftarPondok" novalidate>
+            <div class="reg-block">
+              <h3 class="reg-block-title"><span class="reg-block-icon"><i class="fas fa-user-graduate"></i></span> Data Calon Santri</h3>
+              <div class="reg-grid">
+                <div class="reg-field">
+                  <label for="nama">Nama Lengkap <em>*</em></label>
+                  <div class="reg-input-wrap"><i class="fas fa-user"></i><input type="text" id="nama" placeholder="Contoh: Ahmad Fauzi" required /></div>
+                </div>
+                <div class="reg-field">
+                  <label for="umur">Umur <em>*</em></label>
+                  <div class="reg-input-wrap"><i class="fas fa-birthday-cake"></i><input type="number" id="umur" min="5" max="25" placeholder="12" required /></div>
+                </div>
+                <div class="reg-field">
+                  <label for="jenis_kelamin">Jenis Kelamin <em>*</em></label>
+                  <div class="reg-input-wrap"><i class="fas fa-venus-mars"></i>
+                    <select id="jenis_kelamin" required>
+                      <option value="">Pilih</option>
+                      <option value="Laki-laki">Laki-laki</option>
+                      <option value="Perempuan">Perempuan</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="reg-field">
+                  <label for="jenjang">Jenjang <em>*</em></label>
+                  <div class="reg-input-wrap"><i class="fas fa-school"></i>
+                    <select id="jenjang" required>
+                      <option value="">Pilih jenjang</option>
+                      <option value="SD Islam Hibatullah">SD Islam Hibatullah</option>
+                      <option value="SMP Hibatullah IIBS">SMP Hibatullah IIBS</option>
+                      <option value="SMA Hibatullah IIBS">SMA Hibatullah IIBS</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="reg-field">
+                  <label for="asal_sekolah">Asal Sekolah <em>*</em></label>
+                  <div class="reg-input-wrap"><i class="fas fa-building"></i><input type="text" id="asal_sekolah" placeholder="Nama sekolah asal" required /></div>
+                </div>
+                <div class="reg-field">
+                  <label for="tempat_tinggal">Tempat Tinggal <em>*</em></label>
+                  <div class="reg-input-wrap"><i class="fas fa-map-pin"></i><input type="text" id="tempat_tinggal" placeholder="Kota / Kabupaten" required /></div>
+                </div>
+                <div class="reg-field reg-field--full">
+                  <label for="alamat">Alamat Lengkap <em>*</em></label>
+                  <textarea id="alamat" rows="2" placeholder="Jl., RT/RW, Desa/Kelurahan, Kecamatan" required></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="reg-block">
+              <h3 class="reg-block-title"><span class="reg-block-icon"><i class="fas fa-users"></i></span> Data Orang Tua / Wali</h3>
+              <div class="reg-grid">
+                <div class="reg-field">
+                  <label for="nama_ortu">Nama Orang Tua / Wali <em>*</em></label>
+                  <div class="reg-input-wrap"><i class="fas fa-user-friends"></i><input type="text" id="nama_ortu" placeholder="Nama ayah/ibu/wali" required /></div>
+                </div>
+                <div class="reg-field">
+                  <label for="wa_ortu">No. WhatsApp <em>*</em></label>
+                  <div class="reg-input-wrap"><i class="fab fa-whatsapp"></i><input type="tel" id="wa_ortu" placeholder="08xxxxxxxxxx" required /></div>
+                </div>
+                <div class="reg-field reg-field--full">
+                  <label for="catatan">Motivasi / Catatan</label>
+                  <textarea id="catatan" rows="3" placeholder="Opsional — alasan masuk pondok, pertanyaan, dll."></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="reg-submit-box">
+              <p class="reg-status" id="regStatus" role="status" aria-live="polite"></p>
+              <button type="submit" class="reg-submit" id="btnSubmit">
+                <span class="reg-submit-glow"></span>
+                <i class="fab fa-whatsapp"></i>
+                <span>Daftar via WhatsApp</span>
+              </button>
+              <p>Admin: <a href="https://wa.me/6285190445518"><strong>0851 9044 5518</strong></a> · Buka 24 jam</p>
+            </div>
+          </form>
+        </div>
+
+        <aside class="reg-aside">
+          <div class="reg-aside-card reg-aside-card--map">
+            <h3><i class="fas fa-map-marker-alt"></i> Lokasi Kami</h3>
+            <div class="reg-map">
+              <iframe src="https://maps.google.com/maps?q=-7.1340806,111.6243778&z=16&hl=id&output=embed" loading="lazy" title="Peta Hibatullah IIBS"></iframe>
+            </div>
+            <ul class="reg-aside-list">
+              <li><i class="fas fa-map-marker-alt"></i><div><strong>Alamat</strong>Jl. Wonocati, Sambeng, Kec. Kalitidu, Kab. Bojonegoro, Jatim 62158</div></li>
+              <li><i class="fas fa-crosshairs"></i><div><strong>Koordinat</strong>7°08'02.69"S 111°37'27.76"E</div></li>
+              <li><i class="fas fa-clock"></i><div><strong>Jam Operasional</strong>24 Jam · Setiap Hari</div></li>
+            </ul>
+            <a href="https://www.google.com/maps?q=-7.1340806,111.6243778" target="_blank" rel="noopener" class="reg-maps-link"><i class="fas fa-external-link-alt"></i> Buka Google Maps</a>
+          </div>
+
+          <div class="reg-aside-card reg-aside-card--wa">
+            <div class="reg-wa-icon"><i class="fab fa-whatsapp"></i></div>
+            <h3>Butuh Bantuan?</h3>
+            <p>Tim admin siap membantu proses pendaftaran Anda kapan saja.</p>
+            <a href="https://wa.me/6285190445518" class="reg-wa-link"><i class="fab fa-whatsapp"></i> Chat Admin Sekarang</a>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <footer class="reg-foot">
+    <a href="ppdb.html"><i class="fas fa-arrow-left"></i> Kembali ke PPDB</a>
+    <span>© 2025 Hibatullah IIBS</span>
+  </footer>
+
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="firebase-db.js"></script>
+  <script src="pendaftaran.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
