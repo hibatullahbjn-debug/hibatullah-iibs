@@ -66,8 +66,10 @@
         <div class="nav-item has-dropdown">
           Santri Hebat <i class="fas fa-chevron-down"></i>
           <div class="dropdown">
+            <a href="program.html">Program</a>
+            <a href="asrama.html">Asrama</a>
             <a href="kurikulum.html">Kurikulum</a>
-            <a href="entrepreneurship.html">Entrepreneurship</a>
+            <a href="#">Regulasi Harian</a>
           </div>
         </div>
         <a href="ppdb.html" class="nav-item active">PPDB</a>
@@ -171,13 +173,29 @@
           </div>
         </div>
         <div class="ppdb-smp-video">
-          <div class="vid-card">
-            <img src="https://images.unsplash.com/photo-1564769662533-4f00a87b4056?w=700&q=80" alt="Video SMP" />
-            <a href="https://youtube.com" target="_blank" class="vid-play-btn"><i class="fas fa-play"></i></a>
-            <div class="vid-yt-tag"><i class="fab fa-youtube"></i> Tonton di YouTube</div>
-            <div class="vid-dewan-tag">Dewan Ilmiah</div>
+          <div class="vid-card" id="smpVideoWrap">
+            <div class="vid-thumb-overlay" onclick="openVideoModal()">
+              <img src="https://img.youtube.com/vi/VC0kioUGlyE/maxresdefault.jpg" alt="Video SMP Hibatullah IIBS" />
+              <div class="vid-play-btn"><i class="fas fa-play"></i></div>
+              <div class="vid-yt-tag"><i class="fab fa-youtube"></i> Tonton di YouTube</div>
+              <div class="vid-dewan-tag">Dewan Ilmiah</div>
+            </div>
           </div>
         </div>
+
+  <!-- VIDEO MODAL -->
+  <div id="videoModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:99999;align-items:center;justify-content:center;">
+    <div style="position:relative;width:90%;max-width:900px;">
+      <button onclick="closeVideoModal()" style="position:absolute;top:-44px;right:0;background:none;border:none;color:#fff;font-size:28px;cursor:pointer;line-height:1;">✕</button>
+      <div style="position:relative;padding-bottom:56.25%;height:0;border-radius:12px;overflow:hidden;">
+        <iframe id="videoModalFrame" src="" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          style="position:absolute;top:0;left:0;width:100%;height:100%;">
+        </iframe>
+      </div>
+    </div>
+  </div>
       </div>
     </div>
   </section>
@@ -216,30 +234,7 @@
     </div>
   </section>
 
-  <!-- SAMBUTAN TOKOH -->
-  <section class="ppdb-sambutan">
-    <div class="ppdb-sec-inner">
-      <div class="ppdb-sec-label white"><span></span>DUKUNGAN TOKOH<span></span></div>
-      <h2 class="ppdb-sec-title white">Sambutan Para Tokoh Nasional & International<br>Tentang <span class="gold-text">Pesantren Hibatullah IIBS</span></h2>
-      <div class="sambutan-layout">
-        <div class="sambutan-main">
-          <div class="vid-card dark">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&q=80" alt="Sambutan" />
-            <div class="vid-top-tag">▶ Sambutan Gubernur Jawa Tengah</div>
-            <a href="https://youtube.com" target="_blank" class="vid-play-btn large"><i class="fas fa-play"></i></a>
-            <div class="vid-bottom-bar"><span>▶ 0:00 / 2:28</span><div class="vbb-right"><i class="fas fa-volume-up"></i><i class="fas fa-expand"></i><i class="fab fa-youtube"></i></div></div>
-          </div>
-        </div>
-        <div class="sambutan-playlist">
-          <div class="sp-item active"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt=""/><span>Sambutan Gubernur Jawa Tengah</span><em>2:28</em></div>
-          <div class="sp-item"><img src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=100&q=80" alt=""/><span>Sambutan Ust. Yusuf Mansur</span><em>1:56</em></div>
-          <div class="sp-item"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80" alt=""/><span>Sambutan Dr. (H.C.) Ary Ginanjar Agustian</span><em>2:12</em></div>
-          <div class="sp-item"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt=""/><span>Sambutan Prof. Dr. Muhammad Zuhdi</span><em>1:48</em></div>
-          <div class="sp-item"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&q=80" alt=""/><span>Sambutan Ust. Hanan Attaki, Lc.</span><em>2:30</em></div>
-        </div>
-      </div>
-    </div>
-  </section>
+  
 
   <!-- LOKASI -->
   <section class="ppdb-lokasi">
@@ -287,7 +282,7 @@
         <ul class="pf-list">
           <li><a href="index.html">Beranda</a></li>
           <li><a href="#">Tentang Kami</a></li>
-          <li><a href="#">Program</a></li>
+          <li><a href="program.html">Program</a></li>
           <li><a href="#">Kegiatan</a></li>
           <li><a href="ppdb.html">Pendaftaran</a></li>
           <li><a href="#">Kontak</a></li>
@@ -323,9 +318,41 @@
   </footer>
 
   <script src="ppdb.js"></script>
-  <script src="animations.js"></script><script src="script.js"></script>
+  <script src="animations.js"></script>
+  <script src="script.js"></script>
+  <script>
+    var modal = document.getElementById('videoModal');
+    var frame = document.getElementById('videoModalFrame');
+
+    function openVideoModal() {
+      modal.style.display = 'flex';
+      frame.src = 'https://www.youtube.com/embed/VC0kioUGlyE?autoplay=1&rel=0';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeVideoModal() {
+      modal.style.display = 'none';
+      frame.src = '';
+      document.body.style.overflow = '';
+    }
+
+    // Klik backdrop = tutup
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) closeVideoModal();
+    });
+
+    // Escape = tutup
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeVideoModal();
+    });
+  </script>
 </body>
 </html>
+
+
+
+
+
 
 
 

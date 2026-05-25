@@ -119,6 +119,8 @@
     }
   }
 
+  window.applyPengaturan = applyPengaturan;
+
   async function applyPengaturan() {
     if (!HibatullahDB.isReady()) return;
     HibatullahDB.init();

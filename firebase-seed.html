@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
@@ -26,6 +26,7 @@
       <li><strong>pengaturan/kontak</strong> — WA, email, alamat</li>
       <li><strong>berita</strong> — 4 artikel</li>
       <li><strong>galeri</strong> — 12 foto</li>
+      <li><strong>halaman/asrama</strong> — konten halaman asrama</li>
     </ul>
     <button type="button" class="seed-btn seed-btn--green" id="btnSeed">Import Semua Data Awal</button>
     <a href="index.html" class="seed-btn" style="text-align:center;text-decoration:none">Kembali ke Beranda</a>
@@ -75,7 +76,10 @@
           log('SKIP: galeri sudah ada (' + nGaleri + ')');
         }
 
-        log('\nSelesai! Buka index.html / galeri / berita.');
+        await HibatullahDB.set(c.halaman, 'asrama', seed.halaman_asrama);
+        log('OK: halaman/asrama');
+
+        log('\nSelesai! Buka index.html / galeri / berita / asrama.html.');
       } catch (e) {
         log('ERROR: ' + e.message);
         console.error(e);
@@ -84,3 +88,5 @@
   </script>
 </body>
 </html>
+
+
