@@ -1,6 +1,4 @@
-﻿@import url('footer.css');
-
-/* ===========================
+﻿/* ===========================
    RESET & BASE
 =========================== */
 *, *::before, *::after {
@@ -14,6 +12,7 @@ html {
 }
 
 body {
+  overflow-x: hidden;
   font-family: 'Poppins', sans-serif;
   color: #1a1a2e;
   background: #fff;
@@ -254,6 +253,183 @@ img {
   color: #1a3a6b;
 }
 
+/* Hamburger — tersembunyi di desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #1a3a6b;
+  border-radius: 2px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Menu mobile — disembunyikan sampai dibuka */
+.mobile-nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 20, 40, 0.55);
+  z-index: 9998;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.mobile-nav-overlay.open {
+  display: block;
+  opacity: 1;
+}
+
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(320px, 90vw);
+  max-width: 100%;
+  height: 100%;
+  height: 100dvh;
+  background: #fff;
+  z-index: 9999;
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.3s ease, visibility 0.3s;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -12px 0 40px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+.mobile-nav-drawer.open {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.mobile-nav-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+  background: linear-gradient(135deg, #0f2548, #1a3a6b);
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.mobile-nav-header img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.mobile-nav-brand strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.mobile-nav-brand span {
+  font-size: 9px;
+  opacity: 0.75;
+}
+
+.mobile-nav-close {
+  margin-left: auto;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.mobile-nav-links {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 0;
+}
+
+.mobile-nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  font-size: 14px;
+  color: #333;
+  border-left: 3px solid transparent;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.mobile-nav-links a i {
+  width: 18px;
+  color: #1a3a6b;
+  text-align: center;
+}
+
+.mobile-nav-links a:hover {
+  background: #f0f4fb;
+  border-left-color: #3a5bd9;
+  color: #1a3a6b;
+}
+
+.mobile-nav-group-title {
+  padding: 14px 20px 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.mobile-nav-footer {
+  padding: 16px 18px;
+  border-top: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.mobile-nav-cta,
+.mobile-nav-wa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.mobile-nav-cta {
+  background: #1a3a6b;
+}
+
+.mobile-nav-wa {
+  background: #25d366;
+}
+
 /* ===========================
    HERO SECTION
 =========================== */
@@ -261,19 +437,19 @@ img {
   position: relative;
   overflow: hidden;
   background: #0d2244;
-  min-height: 480px;
+  min-height: 580px;
 }
 
 .hero-slides {
   position: relative;
   width: 100%;
-  min-height: 480px;
+  min-height: 580px;
 }
 
 .hero-slide {
   display: none;
   position: relative;
-  min-height: 480px;
+  min-height: 580px;
   align-items: center;
   justify-content: flex-start;
 }
@@ -282,18 +458,20 @@ img {
   display: flex;
 }
 
-/* Background */
 .hero-bg-wrap {
   position: absolute;
   inset: 0;
-  overflow: hidden;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero-bg-color {
   position: absolute;
   inset: 0;
-  background: linear-gradient(105deg, #0d2244 0%, #0d2244 45%, #1a4a8a 55%, #1a5fa0 70%, transparent 100%);
+  background: linear-gradient(to top, rgba(13,34,68,0.7) 0%, rgba(13,34,68,0.15) 40%, transparent 100%);
   z-index: 1;
+  pointer-events: none;
 }
 
 .hero-students {
@@ -301,7 +479,7 @@ img {
   right: 0;
   top: 0;
   bottom: 0;
-  width: 60%;
+  width: 100%;
   z-index: 0;
 }
 
@@ -310,13 +488,56 @@ img {
   height: 100%;
   object-fit: cover;
   object-position: center top;
+  display: block;
+}
+
+/* Background */
+.hero-bg-wrap {
+  position: absolute;
+  inset: 0;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-bg-color {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(13,34,68,0.7) 0%, rgba(13,34,68,0.15) 40%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-students {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+.hero-img-main {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.hero-img-main {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
 }
 
 /* Hero Content */
 .hero-content {
   position: relative;
   z-index: 10;
-  width: 50%;
+  width: 100%;
   padding: 60px 40px 60px 60px;
   margin-left: 0;
 }
@@ -340,11 +561,19 @@ img {
 }
 
 .hero-title {
-  font-size: 38px;
-  font-weight: 800;
+  font-size: 58px;
+  font-weight: 900;
   color: #fff;
-  line-height: 1.2;
+  line-height: 1.15;
   margin-bottom: 18px;
+}
+
+.hero-desc {
+  font-size: 16px;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 600px;
 }
 
 .hero-highlight {
@@ -801,8 +1030,12 @@ img {
   }
 
   .hero-content {
-    padding-left: 40px;
-  }
+  position: relative;
+  z-index: 10;
+  width: 50%;
+  padding: 60px 40px 60px 60px;
+  margin-left: 0;
+}
 
   .hero-title {
     font-size: 30px;
@@ -830,14 +1063,21 @@ img {
   }
 
   .hero-content {
-    padding: 40px 24px;
-    width: 100%;
-  }
+  position: relative;
+  z-index: 10;
+  width: 50%;
+  padding: 60px 40px 60px 60px;
+  margin-left: 0;
+}
 
   .hero-students {
-    opacity: 0.3;
-    width: 100%;
-  }
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 0;
+}
 
   .hero-title {
     font-size: 26px;
@@ -1047,6 +1287,7 @@ img {
 .badge-orange { background: #e8a020; }
 
 .kegiatan-body {
+  overflow-x: hidden;
   padding: 16px 16px 14px;
   display: flex;
   flex-direction: column;
@@ -1331,3 +1572,410 @@ img {
   color: #888;
   grid-column: 1 / -1;
 }
+
+
+
+
+
+
+/* ===========================
+   MOBILE HERO FIX
+=========================== */
+@media (max-width: 480px) {
+  .hero-bg-wrap {
+    background-size: cover !important;
+    background-position: center top !important;
+    position: relative !important;
+    min-height: 520px !important;
+  }
+
+  
+}
+
+/* Fix hero desc mobile - tidak terlalu besar */
+@media (max-width: 480px) {
+  .hero-desc {
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 14px !important;
+    max-width: 100% !important;
+  }
+  .hero-title {
+    font-size: 24px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 8px !important;
+  }
+}
+
+/* Limit hero desc to 2 lines on mobile */
+@media (max-width: 480px) {
+  .hero-desc {
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 14px !important;
+  }
+}
+
+/* Hero full width mobile - no margin/padding */
+@media (max-width: 480px) {
+  .hero {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100vw !important;
+    left: 0 !important;
+    position: relative !important;
+  }
+  .hero-slides {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+  .hero-slide {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+  .hero-bg-wrap {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+}
+
+/* Force full width hero on mobile */
+@media (max-width: 480px) {
+  body {
+  overflow-x: hidden;
+    overflow-x: hidden !important;
+  }
+  .hero,
+  .hero-slides,
+  .hero-slide,
+  .hero-bg-wrap {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    box-sizing: border-box !important;
+  }
+}
+
+
+html, body { overflow-x: hidden !important; }
+
+@media (max-width: 900px) {
+  * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Fix slider arrows going out of screen */
+  .slider-next {
+    right: 8px !important;
+  }
+  .slider-prev {
+    left: 8px !important;
+  }
+
+  /* Fix any element wider than screen */
+  .hero-slides,
+  .hero-slide,
+  .hero-bg-wrap,
+  .stats-bar,
+  .stats-inner,
+  .section-inner,
+  .akses-grid,
+  .kegiatan-inner,
+  .banner-inner {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+}
+
+
+/* Mobile navbar - hamburger di kiri sebelah logo */
+@media (max-width: 900px) {
+  .navbar-inner {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0 16px !important;
+  }
+
+  .logo {
+    flex: 1;
+  }
+
+  .nav-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+
+  .btn-search {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: flex !important;
+    order: -1 !important;
+    margin-right: 8px !important;
+  }
+
+  /* Logo di tengah antara hamburger dan tombol daftar */
+  .navbar-inner {
+    flex-direction: row !important;
+  }
+}
+
+/* Fix hamburger position - pojok kanan */
+@media (max-width: 900px) {
+  .hamburger {
+    order: 3 !important;
+    margin-right: 0 !important;
+    margin-left: 8px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .logo {
+    flex: 1 !important;
+    order: 1 !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .logo-name {
+    font-size: 13px !important;
+    white-space: nowrap !important;
+  }
+
+  .logo-sub, .logo-loc {
+    font-size: 9px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .nav-actions {
+    order: 2 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .btn-daftar {
+    font-size: 11px !important;
+    padding: 8px 12px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Drawer di atas semua */
+  .mobile-nav-drawer {
+    z-index: 99999 !important;
+  }
+
+  .mobile-nav-overlay {
+    z-index: 99998 !important;
+  }
+
+  /* Navbar di atas drawer */
+  .navbar {
+    z-index: 1000 !important;
+    position: sticky !important;
+  }
+}
+
+
+
+
+
+/* Mobile - pakai foto portrait per slide */
+@media (max-width: 480px) {
+  #slide-1 .hero-bg-wrap {
+    background-image: url('assets/images/mobile-slide-1.jpg') !important;
+  }
+  #slide-2 .hero-bg-wrap {
+    background-image: url('assets/images/mobile-slide-2.jpg') !important;
+  }
+  #slide-3 .hero-bg-wrap {
+    background-image: url('assets/images/mobile-slide-3.jpg') !important;
+  }
+  #slide-4 .hero-bg-wrap {
+    background-image: url('assets/images/mobile-slide-4.jpg') !important;
+  }
+}
+
+/* Mobile hero - foto kiri, teks kanan */
+@media (max-width: 480px) {
+  .hero-slide.active {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    min-height: 520px !important;
+    position: relative !important;
+  }
+
+  .hero-bg-wrap {
+    position: relative !important;
+    width: 40% !important;
+    flex-shrink: 0 !important;
+    min-height: 520px !important;
+    background-size: cover !important;
+    background-position: center top !important;
+  }
+
+  .hero-bg-color {
+    display: none !important;
+  }
+
+  .hero-content {
+    position: relative !important;
+    width: 60% !important;
+    padding: 20px 14px !important;
+    top: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    background: linear-gradient(135deg, #0a1f5c, #1a3a6b) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+
+  .hero-title {
+    font-size: 18px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 8px !important;
+  }
+
+  .hero-desc {
+    font-size: 11px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 12px !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+
+  .hero-badge {
+    font-size: 9px !important;
+    padding: 4px 8px !important;
+    margin-bottom: 8px !important;
+    width: fit-content !important;
+  }
+
+  .hero-btns {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+
+  .btn-primary, .btn-outline {
+    font-size: 11px !important;
+    padding: 9px 12px !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  .slider-prev {
+    left: calc(40% - 40px) !important;
+    z-index: 20 !important;
+  }
+
+  .slider-next {
+    right: 8px !important;
+    z-index: 20 !important;
+  }
+
+  .slider-dots {
+    bottom: 12px !important;
+  }
+}
+
+
+/* Mobile hero - foto full background, teks overlay bawah */
+@media (max-width: 480px) {
+  .hero-slide.active {
+    display: block !important;
+    position: relative !important;
+    min-height: 520px !important;
+  }
+
+  .hero-bg-wrap {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-size: cover !important;
+    background-position: center top !important;
+  }
+
+  .hero-bg-color {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background: linear-gradient(to top,
+      rgba(13,34,68,0.95) 0%,
+      rgba(13,34,68,0.6) 45%,
+      rgba(13,34,68,0.1) 100%) !important;
+    z-index: 1 !important;
+  }
+
+  .hero-content {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: auto !important;
+    transform: none !important;
+    z-index: 10 !important;
+    padding: 16px !important;
+    width: 100% !important;
+    background: none !important;
+  }
+
+  .hero-title {
+    font-size: 24px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 8px !important;
+  }
+
+  .hero-desc {
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 14px !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+
+  .hero-badge {
+    font-size: 10px !important;
+    padding: 4px 10px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .hero-btns {
+    flex-direction: row !important;
+    gap: 8px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .btn-primary, .btn-outline {
+    font-size: 11px !important;
+    padding: 9px 14px !important;
+  }
+
+  .hero-slides {
+    min-height: 520px !important;
+  }
+}
+

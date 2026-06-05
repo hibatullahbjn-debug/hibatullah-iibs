@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hibatullah IIBS - International Islamic Boarding School</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="footer.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
@@ -48,12 +49,12 @@
       <nav class="nav-links">
         <a href="index.html" class="nav-item active">Beranda</a>
         <div class="nav-item has-dropdown">
-          SD Islam Hibatullah <i class="fas fa-chevron-down"></i>
+          SMP Hibatullah <i class="fas fa-chevron-down"></i>
           <div class="dropdown">
-            <a href="visi-misi-sdih.html">Visi Misi SDIH</a>
-            <a href="kurikulum-sdih.html">Kurikulum SDIH</a>
-            <a href="program-unggulan-sdih.html">Program Unggulan SDIH</a>
-            <a href="karakter-siswa-sdih.html">Karakter Siswa SDIH</a>
+            <a href="visi-misi-sdih.html">Visi Misi SMPH</a>
+            <a href="kurikulum-sdih.html">Kurikulum SMPH</a>
+            <a href="program-unggulan-sdih.html">Program Unggulan SMPH</a>
+            <a href="karakter-siswa-sdih.html">Karakter Siswa SMPH</a>
             <a href="standar-kompetensi-lulusan.html">Standar Kompetensi Lulusan</a>
           </div>
         </div>
@@ -71,7 +72,7 @@
             <a href="program.html">Program</a>
             <a href="asrama.html">Asrama</a>
             <a href="kurikulum.html">Kurikulum</a>
-            <a href="#">Regulasi Harian</a>
+            <a href="regulasi-harian.html">Regulasi Harian</a>
           </div>
         </div>
         <a href="ppdb.html" class="nav-item">PPDB</a>
@@ -80,8 +81,11 @@
 
       <!-- CTA + Search -->
       <div class="nav-actions">
-        <a href="pendaftaran.html" class="btn-daftar">DAFTAR SEKARANG</a>
+        <a href="https://ppdb.hibatullah.sch.id/formulir" target="_blank" class="btn-daftar">DAFTAR SEKARANG</a>
         <button class="btn-search" aria-label="Search"><i class="fas fa-search"></i></button>
+        <button class="hamburger" id="mobileMenuBtn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </header>
@@ -90,38 +94,32 @@
   <section class="hero">
     <div class="hero-slides">
       <div class="hero-slide active" id="slide-1">
-        <div class="hero-bg-wrap">
+        <div class="hero-bg-wrap" style="background-image:url('assets/images/001.jpg.jpeg');background-size:100% 100%;background-position:center;background-repeat:no-repeat;">
           <div class="hero-bg-color"></div>
-          <div class="hero-students">
-            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=900&q=80" alt="Santri Hibatullah IIBS" class="hero-img-main" />
-          </div>
+          <div class="hero-students"></div>
         </div>
         <div class="hero-content">
           <div class="hero-badge">
             <span>ISLAMIC</span><span class="badge-dot">•</span><span>QUR'ANI</span><span class="badge-dot">•</span><span>UNGGUL</span>
           </div>
           <h1 class="hero-title">
-            Membentuk Generasi<br>
-            Qur'ani <span class="hero-highlight">dan Berprestasi</span>
+            Penerimaan Santri Baru<br>
+            <span class="hero-highlight">SMP Hibatullah IIBS</span>
           </h1>
           <p class="hero-desc">
-            Hibatullah IIBS berkomitmen membina santri menjadi pribadi<br>
-            berakhlak mulia, cerdas, mandiri dan siap menghadapi tantangan<br>
-            global berlandaskan nilai-nilai Islam.
+            Menyiapkan generasi yang berakhlak mulia, mengamalkan Al-Qur'an dan As-Sunnah serta menghadirkan karya nyata yang bermanfaat bagi diri, keluarga dan agama.
           </p>
           <div class="hero-btns">
-            <a href="pendaftaran.html" class="btn-primary">DAFTAR SEKARANG <i class="fas fa-arrow-right"></i></a>
+            <a href="https://ppdb.hibatullah.sch.id/formulir" target="_blank" class="btn-primary">DAFTAR SEKARANG <i class="fas fa-arrow-right"></i></a>
             <a href="#" class="btn-outline"><i class="fas fa-circle-play"></i> PROFIL SEKOLAH</a>
           </div>
         </div>
       </div>
 
       <div class="hero-slide" id="slide-2">
-        <div class="hero-bg-wrap">
+        <div class="hero-bg-wrap" style="background-image:url('assets/images/3.jpg.jpeg');background-size:100% 100%;background-position:center;background-repeat:no-repeat;">
           <div class="hero-bg-color"></div>
-          <div class="hero-students">
-            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=900&q=80" alt="Kegiatan Santri" class="hero-img-main" />
-          </div>
+          <div class="hero-students"></div>
         </div>
         <div class="hero-content">
           <div class="hero-badge">
@@ -132,22 +130,40 @@
             Berkualitas <span class="hero-highlight">Internasional</span>
           </h1>
           <p class="hero-desc">
-            Program unggulan tahfidz, bilingual, dan pembinaan karakter<br>
-            untuk mencetak generasi muslim yang berdaya saing global.
+            Program unggulan tahfidz, bilingual, dan pembinaan karakter untuk mencetak generasi muslim yang berdaya saing global. Hibatullah IIBS hadir dengan kurikulum terbaik dan tenaga pendidik profesional.
           </p>
           <div class="hero-btns">
-            <a href="pendaftaran.html" class="btn-primary">DAFTAR SEKARANG <i class="fas fa-arrow-right"></i></a>
+            <a href="https://ppdb.hibatullah.sch.id/formulir" target="_blank" class="btn-primary">DAFTAR SEKARANG <i class="fas fa-arrow-right"></i></a>
             <a href="#" class="btn-outline"><i class="fas fa-circle-play"></i> PROFIL SEKOLAH</a>
           </div>
         </div>
       </div>
 
       <div class="hero-slide" id="slide-3">
-        <div class="hero-bg-wrap">
+        <div class="hero-bg-wrap" style="background-image:url('assets/images/002.jpg.jpeg');background-size:100% 100%;background-position:center;background-repeat:no-repeat;">
           <div class="hero-bg-color"></div>
-          <div class="hero-students">
-            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=900&q=80" alt="Prestasi Santri" class="hero-img-main" />
+        </div>
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span>ISLAMIC</span><span class="badge-dot">•</span><span>QUR'ANI</span><span class="badge-dot">•</span><span>UNGGUL</span>
           </div>
+          <h1 class="hero-title">
+            Membentuk Generasi<br>
+            Qur'ani <span class="hero-highlight">dan Berprestasi</span>
+          </h1>
+          <p class="hero-desc">
+            Hibatullah IIBS berkomitmen membina santri menjadi pribadi berakhlak mulia, cerdas, mandiri dan siap menghadapi tantangan global berlandaskan nilai-nilai Islam.
+          </p>
+          <div class="hero-btns">
+            <a href="https://ppdb.hibatullah.sch.id/formulir" target="_blank" class="btn-primary">DAFTAR SEKARANG <i class="fas fa-arrow-right"></i></a>
+            <a href="#" class="btn-outline"><i class="fas fa-circle-play"></i> PROFIL SEKOLAH</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-slide" id="slide-4">
+        <div class="hero-bg-wrap" style="background-image:url('assets/images/04.jpg (1).jpeg');background-size:100% 100%;background-position:center;background-repeat:no-repeat;">
+          <div class="hero-bg-color"></div>
+          <div class="hero-students"></div>
         </div>
         <div class="hero-content">
           <div class="hero-badge">
@@ -158,15 +174,15 @@
             Terbaik <span class="hero-highlight">Bersama Kami</span>
           </h1>
           <p class="hero-desc">
-            Lebih dari 200 prestasi santri di tingkat nasional dan internasional<br>
-            menjadi bukti nyata kualitas pendidikan Hibatullah IIBS.
+            Lebih dari 200 prestasi santri di tingkat nasional dan internasional menjadi bukti nyata kualitas pendidikan Hibatullah IIBS yang unggul. Jadikan putra/putri Anda bagian dari generasi terbaik bersama kami.
           </p>
           <div class="hero-btns">
-            <a href="pendaftaran.html" class="btn-primary">DAFTAR SEKARANG <i class="fas fa-arrow-right"></i></a>
+            <a href="https://ppdb.hibatullah.sch.id/formulir" target="_blank" class="btn-primary">DAFTAR SEKARANG <i class="fas fa-arrow-right"></i></a>
             <a href="#" class="btn-outline"><i class="fas fa-circle-play"></i> PROFIL SEKOLAH</a>
           </div>
         </div>
       </div>
+
     </div>
 
     <!-- Slider Controls -->
@@ -178,6 +194,7 @@
       <span class="dot-item active" data-slide="0"></span>
       <span class="dot-item" data-slide="1"></span>
       <span class="dot-item" data-slide="2"></span>
+      <span class="dot-item" data-slide="3"></span>
     </div>
   </section>
 
@@ -185,25 +202,25 @@
   <section class="stats-bar">
     <div class="stats-inner">
       <div class="stat-item">
-        <div class="stat-icon"><i class="fas fa-users"></i></div>
+        <div class="stat-icon"><i class="fas fa-futbol"></i></div>
         <div class="stat-info">
-          <span class="stat-num">850+</span>
-          <span class="stat-label">Santri Aktif</span>
+          <span class="stat-num">6</span>
+          <span class="stat-label">Ekstrakurikuler</span>
         </div>
       </div>
       <div class="stat-divider"></div>
       <div class="stat-item">
-        <div class="stat-icon"><i class="fas fa-graduation-cap"></i></div>
+        <div class="stat-icon"><i class="fas fa-building"></i></div>
         <div class="stat-info">
-          <span class="stat-num">120+</span>
-          <span class="stat-label">Guru & Asatidz</span>
+          <span class="stat-num">70%</span>
+          <span class="stat-label">Fasilitas Lengkap</span>
         </div>
       </div>
       <div class="stat-divider"></div>
       <div class="stat-item">
-        <div class="stat-icon"><i class="fas fa-book-open"></i></div>
+        <div class="stat-icon"><i class="fas fa-star"></i></div>
         <div class="stat-info">
-          <span class="stat-num">15+</span>
+          <span class="stat-num">6</span>
           <span class="stat-label">Program Unggulan</span>
         </div>
       </div>
@@ -211,16 +228,8 @@
       <div class="stat-item">
         <div class="stat-icon"><i class="fas fa-trophy"></i></div>
         <div class="stat-info">
-          <span class="stat-num">200+</span>
+          <span class="stat-num">5</span>
           <span class="stat-label">Prestasi Santri</span>
-        </div>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item">
-        <div class="stat-icon"><i class="fas fa-building-columns"></i></div>
-        <div class="stat-info">
-          <span class="stat-num">3</span>
-          <span class="stat-label">Kampus</span>
         </div>
       </div>
     </div>
@@ -285,78 +294,58 @@
           <div class="kegiatan-underline"></div>
           <p class="kegiatan-desc">Kabar terbaru seputar kegiatan, prestasi, dan aktivitas<br>di Pesantren Hibatullah IIBS.</p>
         </div>
-        <a href="berita-pesantren.html" class="kegiatan-more-top">More <i class="fas fa-arrow-right"></i></a>
+        <a href="berita.html" class="kegiatan-more-top">More <i class="fas fa-arrow-right"></i></a>
       </div>
 
-      <!-- Cards dari Firebase -->
-      <div class="kegiatan-grid" id="beritaGridHome" data-berita-limit="3" data-berita-order="urutan" data-berita-dir="asc" data-berita-link="berita-pesantren.html">
-        <p class="firebase-loading">Memuat berita...</p>
+      <!-- Cards Berita -->
+      <div class="kegiatan-grid" id="beritaGridHome"></div>
+
+      <!-- More button -->
+      <div class="kegiatan-more-wrap">
+        <a href="berita.html" class="kegiatan-more-btn">
+          More <i class="fas fa-arrow-right"></i>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- CTA BANNER -->
-  <section class="cta-banner">
-    <div class="cta-banner-inner">
-      <div class="cta-icon"><i class="fas fa-users"></i></div>
-      <div class="cta-text">
-        <strong>Siap Menjadi Generasi Qur'ani & Berprestasi?</strong>
-        <span>Bergabung bersama Pesantren Hibatullah IIBS sekarang juga.</span>
-      </div>
-      <div class="cta-btns">
-        <a href="pendaftaran.html" class="cta-btn-daftar"><i class="fas fa-arrow-right"></i> Daftar Sekarang</a>
-        <a href="https://wa.me/6285190445518" class="cta-btn-wa"><i class="fab fa-whatsapp"></i> Konsultasi Admin</a>
-      </div>
-    </div>
-  </section>
-  <section class="bottom-banner">
-    <div class="banner-inner">
-      <div class="banner-quote">
-        <span class="quote-mark">"</span>
-        <p>"Ilmu dengan iman<br>Prestasi dengan adab"</p>
-      </div>
-      <div class="banner-features">
-        <div class="banner-feat">
-          <div class="feat-icon"><i class="fas fa-book-quran"></i></div>
-          <div class="feat-text">
-            <strong>Hafalan Al-Qur'an</strong>
-            <span>Program Tahfidz</span>
-          </div>
-        </div>
-        <div class="banner-feat">
-          <div class="feat-icon"><i class="fas fa-globe"></i></div>
-          <div class="feat-text">
-            <strong>Bahasa Arab & Inggris</strong>
-            <span>Program Bilingual</span>
-          </div>
-        </div>
-        <div class="banner-feat">
-          <div class="feat-icon"><i class="fas fa-star-and-crescent"></i></div>
-          <div class="feat-text">
-            <strong>Pembinaan Karakter</strong>
-            <span>Akhlak & Leadership</span>
-          </div>
-        </div>
-        <div class="banner-feat">
-          <div class="feat-icon"><i class="fas fa-mosque"></i></div>
-          <div class="feat-text">
-            <strong>Lingkungan Islami</strong>
-            <span>Aman & Nyaman</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <footer id="site-footer" class="site-footer" aria-label="Footer situs"></footer>
 
-  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
-  <script src="firebase-config.js"></script>
-  <script src="firebase-db.js"></script>
-  <script src="firebase-content.js"></script>
-  <script src="animations.js"></script>
+  <script src="berita.js"></script><script src="animations.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

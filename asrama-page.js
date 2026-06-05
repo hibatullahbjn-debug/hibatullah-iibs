@@ -1,3 +1,4 @@
+﻿
 /**
  * Halaman Asrama — muat dari Firebase (halaman/asrama)
  */
@@ -169,7 +170,7 @@
         '<h2 id="asCtaTitle"></h2>' +
         '<p id="asCtaText"></p>' +
         '<div class="as-cta-btns">' +
-          '<a href="pendaftaran.html" class="as-btn-white"><i class="fas fa-rocket"></i> Daftar Sekarang</a>' +
+          '<a href="https://ppdb.hibatullah.sch.id/formulir" target="_blank" class="as-btn-white"><i class="fas fa-rocket"></i> Daftar Sekarang</a>' +
           '<a href="https://wa.me/6285190445518" class="as-btn-wa" data-firebase-wa><i class="fab fa-whatsapp"></i> Konsultasi WhatsApp</a>' +
         '</div>' +
       '</section>';
@@ -267,3 +268,4 @@
     }
   });
 })();
+

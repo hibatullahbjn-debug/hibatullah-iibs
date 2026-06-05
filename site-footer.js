@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Footer situs — UI modern + data dari Firebase pengaturan/kontak
  */
 (function () {
@@ -83,7 +83,7 @@
         '<div class="sf-cta-box">' +
           '<div><strong>Daftar Santri Baru — PPDB 2025/2026</strong><span>Bergabung dengan Pesantren Hibatullah IIBS</span></div>' +
           '<div class="sf-cta-btns">' +
-            '<a href="pendaftaran.html" class="sf-cta-btn"><i class="fas fa-pen-to-square"></i> Daftar Sekarang</a>' +
+            '<a href="https://ppdb.hibatullah.sch.id/formulir" target="_blank" class="sf-cta-btn"><i class="fas fa-pen-to-square"></i> Daftar Sekarang</a>' +
             '<a href="' + waLink + '" class="sf-cta-btn sf-cta-btn--outline"><i class="fab fa-whatsapp"></i> Konsultasi</a>' +
           '</div>' +
         '</div>' +
@@ -153,3 +153,4 @@
     init();
   }
 })();
+

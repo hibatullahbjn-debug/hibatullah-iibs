@@ -379,12 +379,6 @@
 
 .sf-bottom-links span { opacity: 0.3; }
 
-/* Hide old footers when upgraded */
-footer.ppdb-footer:not(.site-footer),
-footer.footer:not(.site-footer) {
-  display: none;
-}
-
 @media (max-width: 1024px) {
   .sf-main { grid-template-columns: 1fr 1fr; gap: 32px; }
 }

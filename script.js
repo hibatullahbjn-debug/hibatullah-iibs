@@ -125,10 +125,14 @@
   });
 })();
 
-// Footer situs (semua halaman)
+// Menu mobile + footer situs
 (function () {
-  var s = document.createElement('script');
-  s.src = 'site-footer.js';
-  s.async = false;
-  document.body.appendChild(s);
+  function load(src) {
+    var s = document.createElement('script');
+    s.src = src;
+    s.async = false;
+    document.body.appendChild(s);
+  }
+  load('mobile-nav.js');
+  load('site-footer.js');
 })();
