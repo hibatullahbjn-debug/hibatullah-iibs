@@ -1,15 +1,13 @@
 ﻿/**
  * HIBATULLAH IIBS - Berita Pesantren
- * Data diambil dari hibatullah.sch.id
+ * Data diambil langsung dari WordPress REST API hibatullah.sch.id
+ * Artikel baru otomatis muncul tanpa perlu update manual
  */
 (function () {
 
-  var RSS_URL = 'https://hibatullah.sch.id/feed/';
-  var API_URL = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(RSS_URL) + '&count=100';
+  var WP_API = 'https://hibatullah.sch.id/wp-json/wp/v2/posts?per_page=100&_embed=1&orderby=date&order=desc';
 
-  // =============================================
-  // DATA BERITA ASLI dari hibatullah.sch.id
-  // =============================================
+  // Fallback jika API tidak bisa diakses
   var BERITA_DATA = [
     {
       title: 'Menanamkan Kesantunan dari Meja Makan',
@@ -64,24 +62,61 @@
   ];
 
   // =============================================
-  // RENDER LOGIC
+  // FETCH dari WordPress REST API
   // =============================================
-  var badgeColors = ['bc-blue','bc-green','bc-orange','bc-purple','bc-red'];
+  function fetchFromWP(callback) {
+    fetch(WP_API)
+      .then(function(r) { return r.json(); })
+      .then(function(posts) {
+        if (!posts || !posts.length) { callback(BERITA_DATA); return; }
+        var items = posts.map(function(post) {
+          // Ambil thumbnail dari _embedded featured media
+          var thumb = '';
+          try {
+            thumb = post._embedded['wp:featuredmedia'][0].source_url;
+          } catch(e) {}
+          if (!thumb) {
+            var mg = (post.content.rendered || '').match(/<img[^>]+src=["']([^"']+)["']/i);
+            if (mg) thumb = mg[1];
+          }
+          // Ambil kategori
+          var cats = [];
+          try {
+            cats = post._embedded['wp:term'][0].map(function(t){ return t.name; });
+          } catch(e) { cats = ['Blog']; }
+          // Ambil author
+          var author = '';
+          try {
+            author = post._embedded.author[0].name;
+          } catch(e) { author = 'Admin'; }
+
+          return {
+            title: post.title.rendered.replace(/&#(\d+);/g, function(m,c){ return String.fromCharCode(c); }),
+            pubDate: post.date,
+            author: author,
+            categories: cats.length ? cats : ['Blog'],
+            description: stripHtml(post.excerpt.rendered),
+            content: post.content.rendered,
+            link: post.link,
+            thumbnail: thumb,
+            slug: post.slug,
+            wp_id: post.id
+          };
+        });
+        callback(items);
+      })
+      .catch(function() { callback(BERITA_DATA); });
+  }
+
+  // Expose ke global agar bisa dipakai di artikel.html
+  window.fetchFromWP = fetchFromWP;
 
   function initBerita(gridId, limit) {
     var grid = document.getElementById(gridId);
     if (!grid) return;
-
-    // Try RSS first, fallback to local data
-    fetch(API_URL)
-      .then(function(r){ return r.json(); })
-      .then(function(data){
-        var items = (data.items && data.items.length) ? data.items : BERITA_DATA;
-        renderGrid(grid, items, limit || 4);
-      })
-      .catch(function(){
-        renderGrid(grid, BERITA_DATA, limit || 4);
-      });
+    fetchFromWP(function(items) {
+      renderGrid(grid, items, limit || 4);
+    });
   }
 
   function renderGrid(grid, items, limit) {
@@ -92,15 +127,21 @@
     }
     grid.innerHTML = html;
 
-    // Attach click for modal (berita.html only)
-    if (document.getElementById('btModal')) {
-      grid.querySelectorAll('.kegiatan-card').forEach(function(card, idx) {
+    // Attach click — pakai wp_id jika ada, fallback modal
+    grid.querySelectorAll('.kegiatan-card').forEach(function(card, idx) {
+      (function(capturedItem) {
         card.addEventListener('click', function(e) {
           e.preventDefault();
-          openModal(items[idx]);
+          if (capturedItem && capturedItem.wp_id) {
+            window.location.href = 'artikel.html?id=' + capturedItem.wp_id;
+          } else if (document.getElementById('btModal')) {
+            openModal(capturedItem);
+          } else {
+            window.location.href = 'artikel.html?id=' + idx;
+          }
         });
-      });
-    }
+      })(items[idx]);
+    });
   }
 
   function makeCard(item, idx) {
@@ -111,7 +152,7 @@
     var tgl = formatDate(item.pubDate);
     var badgeClass = ['badge-purple','badge-blue','badge-green','badge-orange'][idx % 4];
 
-    return '<a href="artikel.html?id=' + idx + '" class="kegiatan-card" data-idx="' + idx + '">' +
+    return '<a href="artikel.html?id=' + (item.wp_id || idx) + '" class="kegiatan-card" data-idx="' + idx + '">' +
       '<div class="kegiatan-img-wrap">' +
         '<img src="' + esc(img) + '" alt="' + esc(item.title) + '" onerror="this.src=\'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80\'" />' +
         '<span class="kegiatan-badge ' + badgeClass + '">' + esc(cat.toUpperCase()) + '</span>' +
@@ -184,24 +225,29 @@
       var PER_PAGE = 9;
       var allItems = BERITA_DATA;
 
-      // Try RSS
-      fetch(API_URL)
-        .then(function(r){ return r.json(); })
-        .then(function(data){ if (data.items && data.items.length) allItems = data.items; })
-        .catch(function(){})
-        .finally(function(){ renderBatch(true); });
+      // Fetch dari WordPress REST API
+      fetchFromWP(function(items) {
+        allItems = items;
+        renderBatch(true);
+      });
 
       function renderBatch(reset) {
         if (reset) { shown = 0; btGrid.innerHTML = ''; }
         var batch = allItems.slice(shown, shown + PER_PAGE);
-        batch.forEach(function(item, i) {
+        batch.forEach(function(item) {
           var card = document.createElement('div');
-          card.innerHTML = makeCard(item, shown + i);
+          card.innerHTML = makeCard(item, shown);
           var el = card.firstChild;
-          el.addEventListener('click', function(e) {
-            e.preventDefault();
-            openModal(allItems[shown - batch.length + i]);
-          });
+          (function(capturedItem) {
+            el.addEventListener('click', function(e) {
+              e.preventDefault();
+              if (capturedItem && capturedItem.wp_id) {
+                window.location.href = 'artikel.html?id=' + capturedItem.wp_id;
+              } else {
+                openModal(capturedItem);
+              }
+            });
+          })(item);
           btGrid.appendChild(el);
         });
         shown += batch.length;
@@ -216,13 +262,14 @@
       var searchInput = document.getElementById('btSearch');
       if (searchInput) {
         var timer;
+        var cachedItems = allItems;
         searchInput.addEventListener('input', function() {
           clearTimeout(timer);
           timer = setTimeout(function() {
             var q = searchInput.value.toLowerCase().trim();
-            allItems = q ? BERITA_DATA.filter(function(item) {
+            allItems = q ? cachedItems.filter(function(item) {
               return (item.title||'').toLowerCase().includes(q) || (item.description||'').toLowerCase().includes(q);
-            }) : BERITA_DATA;
+            }) : cachedItems;
             renderBatch(true);
           }, 300);
         });

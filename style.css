@@ -1755,15 +1755,26 @@ html, body { overflow-x: hidden !important; }
   }
 
   .logo-name {
-    font-size: 13px !important;
-    white-space: nowrap !important;
-  }
-
-  .logo-sub, .logo-loc {
-    font-size: 9px !important;
+    font-size: 11px !important;
     white-space: nowrap !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
+  }
+
+  .logo-sub, .logo-loc {
+    font-size: 8px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .logo-icon img {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  .logo {
+    gap: 4px !important;
   }
 
   .nav-actions {
@@ -1772,9 +1783,7 @@ html, body { overflow-x: hidden !important; }
   }
 
   .btn-daftar {
-    font-size: 11px !important;
-    padding: 8px 12px !important;
-    white-space: nowrap !important;
+    display: none !important;
   }
 
   /* Drawer di atas semua */
@@ -1970,8 +1979,8 @@ html, body { overflow-x: hidden !important; }
   }
 
   .btn-primary, .btn-outline {
-    font-size: 11px !important;
-    padding: 9px 14px !important;
+    font-size: 9px !important;
+    padding: 7px 10px !important;
   }
 
   .hero-slides {

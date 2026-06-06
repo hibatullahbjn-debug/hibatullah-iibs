@@ -152,14 +152,15 @@
   document.addEventListener('DOMContentLoaded', function () {
     if (!HibatullahDB.isReady()) return;
 
-    var beritaHome = document.getElementById('beritaGridHome');
-    if (beritaHome) {
-      var limit = parseInt(beritaHome.getAttribute('data-berita-limit'), 10) || 3;
-      loadBerita(beritaHome, limit);
-    }
+    // beritaGridHome & beritaGridAll dihandle oleh berita.js (WordPress API)
+    // var beritaHome = document.getElementById('beritaGridHome');
+    // if (beritaHome) {
+    //   var limit = parseInt(beritaHome.getAttribute('data-berita-limit'), 10) || 3;
+    //   loadBerita(beritaHome, limit);
+    // }
 
-    var beritaAll = document.getElementById('beritaGridAll');
-    if (beritaAll) loadBerita(beritaAll);
+    // var beritaAll = document.getElementById('beritaGridAll');
+    // if (beritaAll) loadBerita(beritaAll);
 
     var galeriGrid = document.getElementById('galeriGrid');
     if (galeriGrid && galeriGrid.hasAttribute('data-firebase-galeri')) {
