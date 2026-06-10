@@ -1,13 +1,13 @@
-﻿/**
+/**
  * Footer situs — UI modern + data dari Firebase pengaturan/kontak
  */
 (function () {
   var DEFAULT = {
-    wa: '6285190445518',
-    wa_tampil: '0851 9044 5518',
-    telepon: '(0353) 1234 567',
-    email: 'info@hibatullah.ac.id',
-    alamat: 'Jl. Wonocati, Sambeng, Kec. Kalitidu, Kab. Bojonegoro, Jawa Timur 62158',
+    wa: '6282262263434',
+    wa_tampil: '0822 6226 3434',
+    telepon: '0822 6226 3434',
+    email: 'info@hibatullah.sch.id',
+    alamat: 'Jl. Wonosari, Ds. Sambeng, Kec. Kasiman, Kab. Bojonegoro, Jawa Timur',
     jam_operasional: '24 Jam · Setiap Hari',
     maps_url: 'https://www.google.com/maps?q=-7.1340806,111.6243778',
   };
@@ -42,9 +42,9 @@
           '<p class="sf-desc">Mendidik generasi Qur\'ani yang berakhlak mulia, siap menjadi pemimpin masa depan yang gemilang.</p>' +
           '<div class="sf-socials">' +
             '<a href="#" class="sf-fb" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>' +
-            '<a href="#" class="sf-ig" aria-label="Instagram"><i class="fab fa-instagram"></i></a>' +
+            '<a href="https://www.instagram.com/hibatullah.iibs/" target="_blank" rel="noopener" class="sf-ig" aria-label="Instagram"><i class="fab fa-instagram"></i></a>' +
             '<a href="#" class="sf-yt" aria-label="YouTube"><i class="fab fa-youtube"></i></a>' +
-            '<a href="#" class="sf-tt" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>' +
+            '<a href="https://www.tiktok.com/@hibatullahiibs" target="_blank" rel="noopener" class="sf-tt" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>' +
           '</div>' +
         '</div>' +
         '<div class="sf-col">' +

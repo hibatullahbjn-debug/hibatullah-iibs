@@ -1,5 +1,5 @@
-﻿/**
- * Menu mobile — satu komponen untuk semua halaman (via script.js)
+/**
+ * Menu mobile � satu komponen untuk semua halaman (via script.js)
  */
 (function () {
   if (document.getElementById('mobileDrawer')) return;
@@ -40,7 +40,7 @@
       '</nav>' +
       '<div class="mobile-nav-footer">' +
         '<a href="pendaftaran.html" class="mobile-nav-cta"><i class="fas fa-pen-to-square"></i> Daftar Sekarang</a>' +
-        '<a href="https://wa.me/6285190445518" class="mobile-nav-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Konsultasi WhatsApp</a>' +
+        '<a href="https://wa.me/6282262263434" class="mobile-nav-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Konsultasi WhatsApp</a>' +
       '</div>' +
     '</div>';
 

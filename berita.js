@@ -1,11 +1,11 @@
-﻿/**
+/**
  * HIBATULLAH IIBS - Berita Pesantren
  * Data diambil langsung dari WordPress REST API hibatullah.sch.id
  * Artikel baru otomatis muncul tanpa perlu update manual
  */
 (function () {
 
-  var WP_API = 'https://hibatullah.sch.id/wp-json/wp/v2/posts?per_page=100&_embed=1&orderby=date&order=desc';
+  var WP_API = 'https://linen-eagle-143399.hostingersite.com/wp-json/wp/v2/posts?per_page=100&_embed=1&orderby=date&order=desc';
 
   // Fallback jika API tidak bisa diakses
   var BERITA_DATA = [

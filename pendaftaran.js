@@ -2,7 +2,7 @@
   const form = document.getElementById('formDaftarPondok');
   if (!form) return;
 
-  const WA_NUMBER = '6285190445518';
+  const WA_NUMBER = '6282262263434';
   const btn = document.getElementById('btnSubmit');
   const statusEl = document.getElementById('regStatus');
 
