@@ -136,3 +136,85 @@
   load('mobile-nav.js');
   load('site-footer.js');
 })();
+// ===========================
+// SEARCH MODAL FUNCTIONALITY
+// ===========================
+(function () {
+  // Inject modal HTML
+  const modalHTML = `
+    <div class="search-modal" id="searchModal">
+      <button class="sm-close" aria-label="Close Search">&times;</button>
+      <div class="sm-content">
+        <div class="sm-input-wrap"><i class="fas fa-search"></i>
+          <input type="text" class="sm-input" placeholder="Cari..." />
+        </div>
+        <div class="sm-results"></div>
+      </div>
+    </div>`;
+  document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+  const modal = document.getElementById('searchModal');
+  const openBtn = document.querySelector('.btn-search');
+  const closeBtn = modal.querySelector('.sm-close');
+  const input = modal.querySelector('.sm-input');
+  const resultsDiv = modal.querySelector('.sm-results');
+
+  // Simple page index for search – add more entries as needed
+  const pages = [
+    { title: 'Beranda', url: 'index.html', desc: 'Halaman utama Hibatullah IIBS' },
+    { title: 'Program', url: 'program.html', desc: 'Program unggulan dan kegiatan santri' },
+    { title: 'Asrama', url: 'asrama.html', desc: 'Fasilitas asrama dan kehidupan santri' },
+    { title: 'Kurikulum', url: 'kurikulum.html', desc: 'Kurikulum berbasis Islam dan internasional' },
+    { title: 'Regulasi Harian', url: 'regulasi-harian.html', desc: 'Jadwal harian dan tata tertib' },
+    { title: 'PPDB', url: 'ppdb.html', desc: 'Pendaftaran Peserta Didik Baru' },
+    { title: 'Galeri', url: 'galeri.html', desc: 'Koleksi foto kegiatan dan prestasi' },
+    { title: 'Berita', url: 'berita.html', desc: 'Berita terbaru pesantren' }
+  ];
+
+  function renderResults(list) {
+    resultsDiv.innerHTML = '';
+    if (list.length === 0) {
+      resultsDiv.innerHTML = `<div class="sm-no-result">Tidak ada hasil</div>`;
+      return;
+    }
+    list.forEach(p => {
+      const a = document.createElement('a');
+      a.href = p.url;
+      a.className = 'sm-result-item';
+      a.innerHTML = `<div class="sm-result-title">${p.title}</div><div class="sm-result-desc">${p.desc}</div>`;
+      resultsDiv.appendChild(a);
+    });
+  }
+
+  // Open modal
+  openBtn && openBtn.addEventListener('click', () => {
+    modal.classList.add('active');
+    input.value = '';
+    resultsDiv.innerHTML = '';
+    input.focus();
+  });
+
+  // Close modal
+  closeBtn && closeBtn.addEventListener('click', () => {
+    modal.classList.remove('active');
+    input.value = '';
+    resultsDiv.innerHTML = '';
+  });
+
+  // Search input handling
+  input && input.addEventListener('input', () => {
+    const q = input.value.trim().toLowerCase();
+    if (!q) { resultsDiv.innerHTML = ''; return; }
+    const filtered = pages.filter(p =>
+      p.title.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q)
+    );
+    renderResults(filtered);
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeBtn.click();
+    }
+  });
+})();

@@ -1,4 +1,4 @@
-﻿/* ===========================
+/* ===========================
    RESET & BASE
 =========================== */
 *, *::before, *::after {
@@ -1988,3 +1988,55 @@ html, body { overflow-x: hidden !important; }
   }
 }
 
+/* ===========================
+   SEARCH MODAL
+=========================== */
+.search-modal {
+  position: fixed; inset: 0;
+  background: rgba(13,34,68,0.95);
+  backdrop-filter: blur(8px);
+  z-index: 100000;
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+  padding-top: 100px;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s;
+}
+.search-modal.active { opacity: 1; pointer-events: auto; }
+.sm-close {
+  position: absolute; top: 24px; right: 24px;
+  background: none; border: none; color: #fff;
+  font-size: 32px; cursor: pointer; transition: transform 0.2s;
+}
+.sm-close:hover { transform: scale(1.1); }
+.sm-content {
+  width: 90%; max-width: 600px;
+}
+.sm-input-wrap {
+  position: relative; width: 100%; margin-bottom: 24px;
+}
+.sm-input-wrap i {
+  position: absolute; left: 20px; top: 50%; transform: translateY(-50%);
+  color: #888; font-size: 20px;
+}
+.sm-input {
+  width: 100%; padding: 20px 20px 20px 56px;
+  border-radius: 12px; border: none; outline: none;
+  font-size: 18px; font-family: 'Poppins', sans-serif;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.sm-results {
+  background: #fff; border-radius: 12px;
+  overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  display: flex; flex-direction: column;
+  max-height: 400px; overflow-y: auto;
+}
+.sm-result-item {
+  padding: 16px 20px; border-bottom: 1px solid #eee;
+  display: flex; flex-direction: column; gap: 4px;
+  text-decoration: none; transition: background 0.2s;
+}
+.sm-result-item:last-child { border-bottom: none; }
+.sm-result-item:hover { background: #f8f9fc; }
+.sm-result-title { font-size: 15px; font-weight: 700; color: #1a3a6b; }
+.sm-result-desc { font-size: 12px; color: #666; }
+.sm-no-result { padding: 24px; text-align: center; color: #888; font-size: 14px; }

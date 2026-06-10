@@ -1,4 +1,4 @@
-﻿
+
 /**
  * Halaman Asrama — muat dari Firebase (halaman/asrama)
  */
@@ -34,9 +34,9 @@
       { icon: 'fa-star', bg: '#f3e8ff', color: '#8e44ad', nilai: '850+', label: 'Santri Aktif' },
     ],
     galeri: [
-      'https://images.unsplash.com/photo-1585036156171-384164a8c675?w=600&q=80',
-      'https://images.unsplash.com/photo-1519817650390-64a93db51149?w=600&q=80',
-      'https://images.unsplash.com/photo-1591123120675-6f7f1aae0e5b?w=600&q=80',
+      'assets/images/kamar 1.JPG',
+      'assets/images/kamar 2.JPG',
+      'assets/images/kamar 3.JPG',
     ],
     nilai: [
       {
@@ -100,7 +100,10 @@
     var title = 'ASRAMA <span>' + hi + '</span>';
 
     wrap.innerHTML =
-      '<section class="as-hero">' +
+      '<section class="as-hero" style="position:relative;">' +
+        '<div style="position:absolute;inset:0;z-index:0;">' +
+          '<img src="assets/images/WhatsApp Image 2026-03-16 at 08.56.26.jpeg" alt="" style="width:100%;height:100%;object-fit:cover;opacity:0.15;" />' +
+        '</div>' +
         '<div class="as-hero-mesh"></div>' +
         '<div class="as-hero-wrap">' +
           '<div class="as-hero-text">' +

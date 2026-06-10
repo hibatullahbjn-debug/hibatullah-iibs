@@ -14,9 +14,9 @@
 .ksdih-bc-inner a{color:rgba(255,255,255,0.85);font-weight:500}
 .ksdih-bc-inner i.fa-chevron-right{font-size:9px;color:rgba(255,255,255,0.35)}
 .ksdih-bc-inner span{color:rgba(255,255,255,0.55)}
-.ksdih-hero{position:relative;background:linear-gradient(135deg,rgba(10,31,92,0.7) 0%,rgba(26,58,107,0.6) 40%,rgba(30,77,140,0.5) 70%,rgba(37,99,176,0.4) 100%);overflow:hidden;min-height:440px}
+.ksdih-hero{position:relative;background:linear-gradient(135deg,rgba(10,31,92,0.7) 0%,rgba(26,58,107,0.6) 40%,rgba(30,77,140,0.5) 70%,rgba(37,99,176,0.4) 100%);overflow:hidden;min-height:500px}
 .ksdih-hero-bg{position:absolute;inset:0;overflow:hidden}
-.ksdih-hero-bg::before{content:'';position:absolute;inset:0;background-image:url('assets/images/002.jpg.jpeg');background-size:100% 100%;background-position:center;background-repeat:no-repeat;opacity:0.55;z-index:0}
+.ksdih-hero-bg::before{content:'';position:absolute;inset:0;background-image:url('assets/images/002.jpg.jpeg');background-size:cover;background-position:center top;background-repeat:no-repeat;opacity:0.55;z-index:0}
 .ksdih-hero-bg .hc{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,0.08)}
 .ksdih-hero-bg .hc1{width:500px;height:500px;top:-200px;right:-100px}
 .ksdih-hero-bg .hc2{width:300px;height:300px;bottom:-100px;left:-80px;background:rgba(255,255,255,0.02)}
@@ -94,7 +94,17 @@
 @media(max-width:1024px){.ksdih-pilar-grid{grid-template-columns:1fr 1fr}.ksdih-mapel-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:768px){.ksdih-hero-inner{grid-template-columns:1fr}.ksdih-hero-visual{display:none}.ksdih-hero-title{font-size:28px}.ksdih-intro-layout{grid-template-columns:1fr}.ksdih-pilar-grid{grid-template-columns:1fr}}
 @media(max-width:480px){.ksdih-mapel-grid{grid-template-columns:1fr}}
-  </style>
+  
+@media(max-width:768px){
+  .ksdih-hero::after{content:'';position:absolute;inset:0;background:rgba(10,25,60,0.55);z-index:1}
+  .ksdih-hero-bg::before{background-size:cover;background-position:center top}
+  .ksdih-hero-inner{position:relative;z-index:10;text-align:center !important;padding:60px 20px 60px !important;grid-template-columns:1fr !important}
+  .ksdih-hero-title{font-size:26px !important;text-align:center !important}
+  .ksdih-hero-desc{font-size:13px !important;text-align:center !important}
+  .ksdih-hero-pills{justify-content:center !important}
+  .ksdih-hero-badge{margin:0 auto 16px !important}
+  .ksdih-hero-visual{display:none !important}
+}</style>
 </head>
 <body>
 
@@ -147,6 +157,7 @@
         <div class="nav-item has-dropdown">
           Santri Hebat <i class="fas fa-chevron-down"></i>
           <div class="dropdown">
+            <a href="sekolah.html">Sekolah</a>
             <a href="program.html">Program</a>
             <a href="asrama.html">Asrama</a>
             <a href="kurikulum.html">Kurikulum</a>

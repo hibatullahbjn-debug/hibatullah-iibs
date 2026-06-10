@@ -14,9 +14,9 @@
 .skl-bc-inner a{color:rgba(255,255,255,0.85);font-weight:500}
 .skl-bc-inner i.fa-chevron-right{font-size:9px;color:rgba(255,255,255,0.35)}
 .skl-bc-inner span{color:rgba(255,255,255,0.55)}
-.skl-hero{position:relative;background:linear-gradient(135deg,rgba(10,31,92,0.7) 0%,rgba(26,58,107,0.6) 40%,rgba(30,77,140,0.5) 70%,rgba(37,99,176,0.4) 100%);overflow:hidden;min-height:420px}
+.skl-hero{position:relative;background:linear-gradient(135deg,rgba(10,31,92,0.7) 0%,rgba(26,58,107,0.6) 40%,rgba(30,77,140,0.5) 70%,rgba(37,99,176,0.4) 100%);overflow:hidden;min-height:500px}
 .skl-hero-bg{position:absolute;inset:0;overflow:hidden}
-.skl-hero-bg::before{content:'';position:absolute;inset:0;background-image:url('assets/images/hero-slide-new.jpg');background-size:100% 100%;background-position:center;background-repeat:no-repeat;opacity:0.55;z-index:0}
+.skl-hero-bg::before{content:'';position:absolute;inset:0;background-image:url('assets/images/hero-slide-new.jpg');background-size:cover;background-position:center top;background-repeat:no-repeat;opacity:0.55;z-index:0}
 .skl-hero-bg .hc{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,0.08)}
 .skl-hero-bg .hc1{width:500px;height:500px;top:-200px;right:-100px}
 .skl-hero-bg .hc2{width:300px;height:300px;bottom:-100px;left:-80px;background:rgba(255,255,255,0.02)}
@@ -99,7 +99,16 @@
 @media(max-width:1024px){.skl-dimensi-grid{grid-template-columns:1fr}.skl-komp-grid{grid-template-columns:1fr}}
 @media(max-width:768px){.skl-hero-title{font-size:28px}.skl-target-layout{grid-template-columns:1fr}.skl-target-cards{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.skl-target-cards{grid-template-columns:1fr}}
-  </style>
+  
+@media(max-width:768px){
+  .skl-hero::after{content:'';position:absolute;inset:0;background:rgba(10,25,60,0.55);z-index:1}
+  .skl-hero-bg::before{background-size:cover;background-position:center top}
+  .skl-hero-inner{position:relative;z-index:10;text-align:center !important;padding:60px 20px 60px !important}
+  .skl-hero-title{font-size:26px !important;text-align:center !important}
+  .skl-hero-desc{font-size:13px !important;text-align:center !important}
+  .skl-hero-pills{justify-content:center !important}
+  .skl-hero-badge{margin:0 auto 16px !important}
+}</style>
 </head>
 <body>
 
@@ -152,6 +161,7 @@
         <div class="nav-item has-dropdown">
           Santri Hebat <i class="fas fa-chevron-down"></i>
           <div class="dropdown">
+            <a href="sekolah.html">Sekolah</a>
             <a href="program.html">Program</a>
             <a href="asrama.html">Asrama</a>
             <a href="kurikulum.html">Kurikulum</a>

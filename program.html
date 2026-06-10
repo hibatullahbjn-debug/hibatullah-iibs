@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
@@ -176,52 +176,6 @@
       color: #fff;
     }
 
-    /* STATS STRIP */
-    .prog-stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin-top: 48px;
-    }
-
-    .prog-stat-card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 24px 18px;
-      text-align: center;
-      border: 1px solid #e8eef8;
-      box-shadow: 0 2px 12px rgba(26,58,107,0.06);
-      transition: transform .2s, box-shadow .2s;
-    }
-
-    .prog-stat-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 28px rgba(26,58,107,0.12);
-    }
-
-    .prog-stat-icon {
-      width: 52px; height: 52px;
-      border-radius: 14px;
-      background: #e8f0fe;
-      color: #1a3a6b;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 22px;
-      margin: 0 auto 12px;
-    }
-
-    .prog-stat-card strong {
-      display: block;
-      font-size: 26px;
-      font-weight: 900;
-      color: #1a3a6b;
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-
-    .prog-stat-card span {
-      font-size: 12px;
-      color: #888;
-    }
 
     /* CTA */
     .prog-cta {
@@ -289,11 +243,9 @@
     @media (max-width: 900px) {
       .prog-card-layout { grid-template-columns: 1fr; }
       .prog-img-card { min-height: 280px; }
-      .prog-stats { grid-template-columns: repeat(2, 1fr); }
       .ppdb-footer-inner { grid-template-columns: 1fr 1fr; gap: 28px; }
     }
     @media (max-width: 480px) {
-      .prog-stats { grid-template-columns: 1fr 1fr; }
       .ppdb-footer-inner { grid-template-columns: 1fr; }
       .prog-content-card { padding: 24px 20px; }
     }
@@ -379,7 +331,10 @@
   </div>
 
   <!-- HERO -->
-  <section class="prog-hero">
+  <section class="prog-hero" style="position:relative;">
+    <div style="position:absolute;inset:0;z-index:0;">
+      <img src="assets/images/WhatsApp Image 2026-03-16 at 08.56.26.jpeg" alt="" style="width:100%;height:100%;object-fit:cover;opacity:0.15;" />
+    </div>
     <div class="prog-hero-badge"><i class="fas fa-star"></i> Santri Hebat</div>
     <p class="prog-hero-sub">PROGRAM</p>
     <h1>PESANTREN <span>HIBATULLAH</span></h1>
@@ -450,29 +405,7 @@
         </div>
       </div>
 
-      <!-- Stats -->
-      <div class="prog-stats">
-        <div class="prog-stat-card">
-          <div class="prog-stat-icon"><i class="fas fa-book-open"></i></div>
-          <strong>2</strong>
-          <span>Program Reguler</span>
-        </div>
-        <div class="prog-stat-card">
-          <div class="prog-stat-icon" style="background:#e8f8ee;color:#27ae60"><i class="fas fa-star"></i></div>
-          <strong>10</strong>
-          <span>Program Non Reguler</span>
-        </div>
-        <div class="prog-stat-card">
-          <div class="prog-stat-icon" style="background:#fff3e0;color:#e8a020"><i class="fas fa-users"></i></div>
-          <strong>850+</strong>
-          <span>Santri Aktif</span>
-        </div>
-        <div class="prog-stat-card">
-          <div class="prog-stat-icon" style="background:#f3e8ff;color:#8e44ad"><i class="fas fa-trophy"></i></div>
-          <strong>200+</strong>
-          <span>Prestasi Santri</span>
-        </div>
-      </div>
+
 
     </div>
   </section>
