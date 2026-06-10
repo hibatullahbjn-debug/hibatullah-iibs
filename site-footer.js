@@ -75,7 +75,6 @@
             '<li><span class="sf-contact-icon"><i class="fas fa-phone"></i></span><span data-sf-telp>' + esc(k.telepon || DEFAULT.telepon) + '</span></li>' +
             '<li><span class="sf-contact-icon"><i class="fab fa-whatsapp"></i></span><a href="' + waLink + '" target="_blank" rel="noopener" data-sf-wa>' + esc(k.wa_tampil) + '</a></li>' +
             '<li><span class="sf-contact-icon"><i class="fas fa-envelope"></i></span><a href="mailto:' + esc(k.email) + '" data-sf-email>' + esc(k.email) + '</a></li>' +
-            '<li><span class="sf-contact-icon"><i class="fas fa-clock"></i></span><span data-sf-jam>' + esc(k.jam_operasional || DEFAULT.jam_operasional) + '</span></li>' +
           '</ul>' +
         '</div>' +
       '</div>' +
