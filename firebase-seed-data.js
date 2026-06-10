@@ -4,7 +4,7 @@ window.HibatullahSeed = {
     wa: '6282262263434',
     wa_tampil: '0822 6226 3434',
     telepon: '0822 6226 3434',
-    email: 'info@hibatullah.sch.id',
+    email: 'hibatullah.sch.id@gmail.com',
     alamat: 'Jl. Wonosari, Ds. Sambeng, Kec. Kasiman, Kab. Bojonegoro, Jawa Timur',
     koordinat: '7°08\'02.69"S 111°37\'27.76"E',
     jam_operasional: '24 Jam (Setiap Hari)',
