@@ -35,13 +35,50 @@ body{background:#f0f4fb}
 .art-content a{color:#3a5bd9;text-decoration:underline}
 .art-content strong{color:#1a1a2e}
 .art-source{margin-top:28px;padding-top:20px;border-top:1px solid #f0f4f8}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artikel - Hibatullah IIBS</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="footer.css?v=2" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+body{background:#f0f4fb}
+.art-bc-bar{background:#1a3a6b;padding:10px 0}
+.art-bc{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:8px;font-size:12.5px;color:rgba(255,255,255,0.7)}
+.art-bc a{color:rgba(255,255,255,0.85);font-weight:500}.art-bc a:hover{color:#fff}
+.art-bc i.fa-chevron-right{font-size:9px;color:rgba(255,255,255,0.35)}
+.art-bc span{color:rgba(255,255,255,0.55)}
+.art-main{max-width:1100px;margin:0 auto;padding:40px 24px 72px;display:grid;grid-template-columns:1fr 340px;gap:32px;align-items:start}
+/* ARTICLE */
+.art-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(26,58,107,0.1);border:1px solid #e8eef8}
+.art-hero-img{width:100%;height:380px;object-fit:cover;display:block}
+.art-body{padding:32px 36px 36px}
+.art-cat{font-size:11px;font-weight:700;color:#3a5bd9;letter-spacing:2px;margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.art-cat i{font-size:10px}
+.art-title{font-size:26px;font-weight:800;color:#1a1a2e;line-height:1.35;margin-bottom:16px}
+.art-meta{display:flex;align-items:center;gap:20px;padding:14px 0;border-top:1px solid #f0f4f8;border-bottom:1px solid #f0f4f8;margin-bottom:28px;flex-wrap:wrap}
+.art-meta-item{display:flex;align-items:center;gap:7px;font-size:12.5px;color:#888}
+.art-meta-item i{color:#3a5bd9;font-size:12px}
+.art-meta-item strong{color:#333;font-weight:600}
+.art-content{font-size:14.5px;color:#333;line-height:1.95}
+.art-content p{margin-bottom:18px}
+.art-content p:last-child{margin-bottom:0}
+.art-content blockquote{border-left:4px solid #3a5bd9;padding:14px 20px;background:#f0f4ff;border-radius:0 8px 8px 0;margin:20px 0;color:#444;font-style:italic}
+.art-content img{width:100%;border-radius:10px;margin:16px 0}
+.art-content a{color:#3a5bd9;text-decoration:underline}
+.art-content strong{color:#1a1a2e}
+.art-source{margin-top:28px;padding-top:20px;border-top:1px solid #f0f4f8}
 .art-source-btn{display:flex;align-items:center;justify-content:center;gap:10px;background:#1a3a6b;color:#fff;font-size:15px;font-weight:700;padding:16px 28px;border-radius:10px;transition:background .2s,transform .15s;text-decoration:none;width:100%;box-sizing:border-box}
 .art-source-btn:hover{background:#0f2548;transform:translateY(-2px)}
 .art-share{margin-top:24px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .art-share span{font-size:13px;font-weight:600;color:#555}
 .art-share a{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff;transition:opacity .2s}
 .art-share a:hover{opacity:.8}
-.art-share-fb{background:#1877f2}.art-share-wa{background:#25d366}.art-share-tw{background:#1da1f2}
+.art-share-fb{background:#1877f2}.art-share-wa{background:#25d366}.art-share-ig{background:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)}
 /* SIDEBAR */
 .art-sidebar{display:flex;flex-direction:column;gap:20px}
 .art-sidebar-card{background:#fff;border-radius:14px;padding:22px 20px;border:1px solid #e8eef8;box-shadow:0 2px 12px rgba(26,58,107,0.06)}
@@ -122,194 +159,6 @@ body{background:#f0f4fb}
         <a href="https://www.tiktok.com/@hibatullah.iibs" aria-label="TikTok" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
         <a href="https://www.instagram.com/hibatullah.iibs/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         <a href="https://www.youtube.com/@hibatullahiibs" aria-label="YouTube" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
-      </div>
-    </div>
-  </div>
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="navbar-inner">
-      <div class="logo">
-        <div class="logo-icon"><img src="Logo only.png" alt="Logo" style="width:60px;height:60px;object-fit:contain;" /></div>
-        <div class="logo-text">
-          <span class="logo-name">HIBATULLAH IIBS</span>
-          <span class="logo-sub">International Islamic Boarding School</span>
-          <span class="logo-loc">BOJONEGORO Ã‚Â· JAWA TIMUR</span>
-        </div>
-      </div>
-      <nav class="nav-links">
-        <a href="index.html" class="nav-item">Beranda</a>
-        <div class="nav-item has-dropdown">SMP Hibatullah <i class="fas fa-chevron-down"></i>
-          <div class="dropdown">
-            <a href="visi-misi-sdih.html">Visi Misi</a>
-            <a href="kurikulum-sdih.html">Kurikulum</a>
-            <a href="program-unggulan-sdih.html">Program Unggulan</a>
-            <a href="karakter-siswa-sdih.html">Karakter Siswa</a>
-            <a href="standar-kompetensi-lulusan.html">Standar Kompetensi Lulusan</a>
-          </div>
-        </div>
-        <div class="nav-item has-dropdown">Hibatullah IIBS <i class="fas fa-chevron-down"></i>
-          <div class="dropdown">
-            <a href="sejarah.html">Sejarah Sekolah</a>
-            <a href="penasehat.html">Dewan Penasehat</a>
-            <a href="stakeholders.html">Stakeholders</a>
-          </div>
-        </div>
-        <div class="nav-item has-dropdown">Santri Hebat <i class="fas fa-chevron-down"></i>
-          <div class="dropdown">
-            <a href="sekolah.html">Sekolah</a>
-            <a href="program.html">Program</a>
-            <a href="asrama.html">Asrama</a>
-            <a href="kurikulum.html">Kurikulum</a>
-            <a href="regulasi-harian.html">Regulasi Harian</a>
-          </div>
-        </div>
-        <a href="ppdb.html" class="nav-item">PPDB</a>
-        <a href="galeri.html" class="nav-item">Galeri</a>
-      </nav>
-      <div class="nav-actions">
-        <a href="https://ppdb.hibatullah.sch.id/formulir" target="_blank" class="btn-daftar">DAFTAR SEKARANG</a>
-        <button class="btn-search"><i class="fas fa-search"></i></button>
-      </div>
-    </div>
-  </header>
-  <!-- BREADCRUMB -->
-  <div class="art-bc-bar">
-    <div class="art-bc">
-      <i class="fas fa-home"></i>
-      <a href="index.html">Beranda</a>
-      <i class="fas fa-chevron-right"></i>
-      <a href="berita.html">Berita</a>
-      <i class="fas fa-chevron-right"></i>
-      <span id="artBcTitle">Artikel</span>
-    </div>
-  </div>
-  <!-- LOADING -->
-  <div class="art-loading" id="artLoading">
-    <i class="fas fa-spinner fa-spin"></i>
-    Memuat artikel...
-  </div>
-  <!-- MAIN -->
-  <div class="art-main" id="artMain" style="display:none">
-    <!-- Article -->
-    <div>
-      <div class="art-card">
-        <img src="" alt="" id="artImg" class="art-hero-img" />
-        <div class="art-body">
-          <div class="art-cat"><i class="fas fa-tag"></i><span id="artCat"></span></div>
-          <h1 class="art-title" id="artTitle"></h1>
-          <div class="art-meta">
-            <div class="art-meta-item"><i class="fas fa-user"></i><strong id="artAuthor"></strong></div>
-            <div class="art-meta-item"><i class="far fa-calendar-alt"></i><span id="artDate"></span></div>
-            <div class="art-meta-item"><i class="fas fa-tag"></i><span id="artCat2"></span></div>
-          </div>
-          <div class="art-content" id="artContent"></div>
-
-          <!-- ENGAGE: Views, Like -->
-          <div class="art-engage">
-            <button class="art-engage-btn" id="artLikeBtn" onclick="toggleLike()">
-              <i class="far fa-heart"></i> <span id="artLikeCount">0</span> Suka
-            </button>
-            <div class="art-engage-stats">
-              <div class="art-engage-views">
-                <i class="far fa-eye"></i> <span id="artViewCount">0</span> dilihat
-              </div>
-              <div class="art-engage-views" style="margin-left: 16px;">
-                <i class="fas fa-share-alt"></i> <span id="artShareCount">0</span> dibagikan
-              </div>
-            </div>
-          </div>
-
-          <!-- SHARE -->
-          <div class="art-share">
-            <span>Bagikan:</span>
-            <a href="#" id="shareWa" class="art-share-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="#" id="shareFb" class="art-share-fb" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" id="shareTw" class="art-share-tw" target="_blank"><i class="fab fa-twitter"></i></a>
-          </div>
-
-          <!-- KOMENTAR -->
-          <div class="art-comments">
-            <div class="art-comments-title"><i class="fas fa-comments"></i> Komentar (<span id="artCommentCount">0</span>)</div>
-            <div class="art-comment-form">
-              <input type="text" id="commentName" placeholder="Nama kamu..." maxlength="50" />
-              <textarea id="commentText" placeholder="Tulis komentar..."></textarea>
-              <button class="art-comment-submit" onclick="submitComment()">Kirim Komentar</button>
-            </div>
-            <div class="art-comment-list" id="artCommentList">
-              <div class="art-no-comment">Belum ada komentar. Jadilah yang pertama!</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Sidebar -->
-    <div class="art-sidebar">
-      <div class="art-sidebar-card">
-        <div class="art-sidebar-title"><i class="fas fa-newspaper"></i> Berita Lainnya</div>
-        <div id="artRelated"></div>
-      </div>
-    </div>
-  </div>
-  <!-- FOOTER -->
-  <footer id="site-footer" class="site-footer" aria-label="Footer situs"></footer>
-  <script src="berita.js?v=4"></script>
-  <script src="animations.js"></script>
-  <script src="script.js?v=4"></script>
-  <script>
-  (function(){
-    // Get article index from URL ?id=0
-    var params = new URLSearchParams(window.location.search);
-    var idx = parseInt(params.get('id') || '0', 10);
-
-    function months(){ return ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember']; }
-    function fmtDate(d){ try{ var dt=new Date(d); return dt.getDate()+' '+months()[dt.getMonth()]+' '+dt.getFullYear(); }catch(e){return d;} }
-
-    function loadArticle(items, allItems, articleIdx) {
-      if (!allItems) allItems = items;
-      var idx2 = (articleIdx !== undefined) ? articleIdx : idx;
-      if (idx2 < 0 || idx2 >= items.length) idx2 = 0;
-      var item = items[idx2];
-      var img = item.thumbnail || 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=80';
-      var cat = item.categories && item.categories[0] ? item.categories[0] : 'Blog';
-
-      document.title = item.title + ' - Hibatullah IIBS';
-      document.getElementById('artBcTitle').textContent = item.title.length > 50 ? item.title.substring(0,50)+'...' : item.title;
-      document.getElementById('artImg').src = img;
-      document.getElementById('artImg').onerror = function(){ this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=80'; };
-      document.getElementById('artCat').textContent = cat.toUpperCase();
-      document.getElementById('artCat2').textContent = cat;
-      document.getElementById('artTitle').textContent = item.title;
-      document.getElementById('artAuthor').textContent = item.author || 'Admin';
-      document.getElementById('artDate').textContent = fmtDate(item.pubDate);
-      document.getElementById('artContent').innerHTML = item.content || '<p>'+item.description+'</p>';
-
-      // Share buttons
-      var excerpt = (item.description || item.content.replace(/<[^>]+>/g, '').substring(0, 150).trim() + '...');
-      // Buang spasi berlebih
-      excerpt = excerpt.replace(/\s+/g, ' ').replace(/&#8211;/g, '-');
-      var url = window.location.href;
-      var waText = encodeURIComponent(item.title + '\n\n' + excerpt + '\n\n' + url);
-      var encodedUrl = encodeURIComponent(url);
-      
-      var waBtn = document.getElementById('shareWa');
-      var fbBtn = document.getElementById('shareFb');
-      var twBtn = document.getElementById('shareTw');
-
-      waBtn.href = 'https://wa.me/?text=' + waText;
-      fbBtn.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodedUrl;
-      twBtn.href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(item.title) + '&url=' + encodedUrl;
-
-      [waBtn, fbBtn, twBtn].forEach(function(btn) {
-        btn.onclick = function() {
-          trackShare(postKey);
-        };
-      });
-
-      // View & Like & Comment
-      var postKey = 'art_' + (item.wp_id || item.title.substring(0,20));
-      initEngage(postKey);
-
-      // Related articles
       var relHtml = '';
       allItems.forEach(function(rel, i) {
         if (rel.wp_id && item.wp_id && rel.wp_id === item.wp_id) return;
