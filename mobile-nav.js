@@ -30,7 +30,6 @@
         '<p class="mobile-nav-group-title">Santri Hebat</p>' +
         '<a href="sekolah.html"><i class="fas fa-school"></i> Sekolah</a>' +
         '<a href="program.html"><i class="fas fa-list"></i> Program</a>' +
-        '<a href="asrama.html"><i class="fas fa-home"></i> Asrama</a>' +
         '<a href="kurikulum.html"><i class="fas fa-book-open"></i> Kurikulum</a>' +
         '<a href="regulasi-harian.html"><i class="fas fa-clock"></i> Regulasi Harian</a>' +
         '<p class="mobile-nav-group-title">Lainnya</p>' +

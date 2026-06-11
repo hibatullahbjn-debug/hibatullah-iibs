@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Berita Pesantren - Hibatullah IIBS</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="footer.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+body{background:#f0f4fb}
+.bt-bc-bar{background:#1a3a6b;padding:10px 0}
+.bt-bc{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:8px;font-size:12.5px;color:rgba(255,255,255,0.7)}
+.bt-bc a{color:rgba(255,255,255,0.85);font-weight:500}.bt-bc a:hover{color:#fff}
+.bt-bc i.fa-chevron-right{font-size:9px;color:rgba(255,255,255,0.35)}
+.bt-bc span{color:rgba(255,255,255,0.55)}
+.bt-hero{position:relative;background:linear-gradient(135deg,#0a1f5c 0%,#1a3a6b 45%,#2563b0 100%);overflow:hidden;padding:64px 0 80px;text-align:center}
+.bt-hero::before{content:'';position:absolute;top:-120px;right:-120px;width:450px;height:450px;border-radius:50%;border:1px solid rgba(255,255,255,0.07)}
+.bt-hero-inner{position:relative;z-index:1;max-width:700px;margin:0 auto;padding:0 24px}
+.bt-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:12px;font-weight:600;padding:6px 18px;border-radius:20px;margin-bottom:18px}
+.bt-hero h1{font-size:38px;font-weight:900;color:#fff;margin-bottom:12px}
+.bt-hero h1 span{color:#7eb8f7}
+.bt-hero p{font-size:14px;color:rgba(255,255,255,0.72)}
+.bt-main{padding:48px 0 72px}
+.bt-inner{max-width:1100px;margin:0 auto;padding:0 24px}
+.bt-search-bar{display:flex;align-items:center;gap:12px;background:#fff;border:1.5px solid #d0dcf0;border-radius:10px;padding:12px 18px;margin-bottom:36px;box-shadow:0 2px 12px rgba(26,58,107,0.07)}
+.bt-search-bar i{color:#3a5bd9;font-size:16px}
+.bt-search-bar input{border:none;outline:none;font-size:14px;font-family:'Poppins',sans-serif;color:#333;flex:1;background:transparent}
+.bt-search-bar input::placeholder{color:#aaa}
+
+.bt-card{background:#fff;border-radius:14px;overflow:hidden;border:1px solid #e8eef8;box-shadow:0 2px 12px rgba(26,58,107,0.06);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;cursor:pointer;text-decoration:none;color:inherit}
+.bt-card:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(26,58,107,0.12)}
+.bt-card-img{position:relative;height:200px;overflow:hidden;flex-shrink:0}
+.bt-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
+.bt-card:hover .bt-card-img img{transform:scale(1.06)}
+.bt-card-badge{position:absolute;top:10px;left:10px;font-size:10px;font-weight:700;padding:4px 10px;border-radius:4px;color:#fff}
+.bc-blue{background:#1a3a6b}.bc-green{background:#27ae60}.bc-orange{background:#e8a020}.bc-purple{background:#6c3fc5}.bc-red{background:#c0392b}
+.bt-card-body{padding:18px 18px 16px;display:flex;flex-direction:column;flex:1}
+.bt-card-date{font-size:11px;color:#aaa;margin-bottom:8px;display:flex;align-items:center;gap:5px}
+.bt-card-title{font-size:14.5px;font-weight:700;color:#1a1a2e;line-height:1.45;margin-bottom:8px}
+.bt-card-desc{font-size:12.5px;color:#777;line-height:1.65;flex:1;margin-bottom:14px}
+.bt-card-footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #f0f0f0;padding-top:12px}
+.bt-card-author{display:flex;align-items:center;gap:8px}
+.bt-card-author img{width:28px;height:28px;border-radius:50%;object-fit:cover}
+.bt-card-author-icon{width:28px;height:28px;border-radius:50%;background:#e8f0fe;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.bt-card-author-icon i{font-size:12px;color:#1a3a6b}
+.bt-author-name{font-size:11px;font-weight:600;color:#333}
+.bt-author-role{font-size:10px;color:#aaa}
+.bt-read-more{font-size:11px;font-weight:600;color:#3a5bd9}
+.bt-load-more{display:flex;justify-content:center;margin-top:8px}
+.bt-load-btn{display:inline-flex;align-items:center;gap:10px;background:#1a3a6b;color:#fff;font-size:14px;font-weight:600;font-family:'Poppins',sans-serif;padding:13px 36px;border-radius:8px;border:none;cursor:pointer;transition:background .2s,transform .15s}
+.bt-load-btn:hover{background:#0f2548;transform:translateY(-2px)}
+.bt-load-btn:disabled{background:#aaa;cursor:not-allowed;transform:none}
+.bt-loading{grid-column:1/-1;text-align:center;padding:48px;color:#888}
+.bt-loading i{font-size:28px;margin-bottom:12px;display:block;color:#3a5bd9}
+.bt-empty{grid-column:1/-1;text-align:center;padding:48px;color:#aaa;font-size:14px}
+/* MODAL */
+.bt-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:99999;align-items:flex-start;justify-content:center;padding:40px 20px;overflow-y:auto}
+.bt-modal.open{display:flex}
+.bt-modal-box{background:#fff;border-radius:16px;max-width:780px;width:100%;position:relative;overflow:hidden;margin:auto}
+.bt-modal-close{position:absolute;top:16px;right:16px;background:#f0f4fb;border:none;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;color:#555;transition:background .2s;z-index:1}
+.bt-modal-close:hover{background:#e0e8f4}
+.bt-modal-img{width:100%;height:320px;object-fit:cover;display:block}
+.bt-modal-body{padding:28px 32px 32px}
+.bt-modal-cat{font-size:11px;font-weight:700;color:#3a5bd9;letter-spacing:1px;margin-bottom:10px}
+.bt-modal-title{font-size:22px;font-weight:800;color:#1a1a2e;line-height:1.35;margin-bottom:12px}
+.bt-modal-meta{display:flex;align-items:center;gap:16px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid #eee;font-size:12px;color:#888}
+.bt-modal-meta i{color:#3a5bd9}
+.bt-modal-content{font-size:14px;color:#444;line-height:1.9}
+.bt-modal-content p{margin-bottom:14px}
+.bt-modal-link{display:inline-flex;align-items:center;gap:8px;background:#1a3a6b;color:#fff;font-size:13px;font-weight:600;padding:11px 22px;border-radius:8px;margin-top:20px;transition:background .2s}
+.bt-modal-link:hover{background:#0f2548}
+/* FOOTER */
+.ppdb-footer{background:#0d1a2e;color:#fff}
+.ppdb-footer-inner{max-width:1100px;margin:0 auto;padding:48px 24px 36px;display:grid;grid-template-columns:1.6fr 1fr 1.2fr 1.3fr;gap:40px}
+.pf-logo{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}
+.pf-logo div{display:flex;flex-direction:column;gap:3px}
+.pf-logo strong{font-size:14px;font-weight:800;color:#fff}
+.pf-logo span{font-size:10px;color:rgba(255,255,255,0.5)}
+.pf-tagline{font-size:13px;font-weight:700;color:#7eb8f7;margin-bottom:8px}
+.pf-desc{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.7;margin-bottom:16px}
+.pf-socials{display:flex;gap:8px}
+.pf-socials a{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff;transition:opacity .2s}
+.pf-socials a:hover{opacity:.8}
+.pfs-fb{background:#1877f2}.pfs-ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)}.pfs-yt{background:#ff0000}.pfs-tt{background:#010101}
+.pf-heading{font-size:12px;font-weight:700;color:#fff;letter-spacing:1px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.1)}
+.pf-list{list-style:none;display:flex;flex-direction:column;gap:9px}
+.pf-list li a{font-size:12.5px;color:rgba(255,255,255,0.6);display:flex;align-items:center;gap:8px;transition:color .2s}
+.pf-list li a:hover{color:#7eb8f7}
+.pf-list li a i{font-size:11px;color:#7eb8f7;width:14px}
+.pf-contact{list-style:none;display:flex;flex-direction:column;gap:12px}
+.pf-contact li{font-size:12px;color:rgba(255,255,255,0.6);display:flex;align-items:flex-start;gap:10px;line-height:1.6}
+.pf-contact li i{color:#27ae60;font-size:13px;margin-top:2px;flex-shrink:0}
+.ppdb-footer-bottom{border-top:1px solid rgba(255,255,255,0.08)}
+.ppdb-footer-bottom-inner{max-width:1100px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;font-size:11.5px;color:rgba(255,255,255,0.35)}
+@media(max-width:1024px){.ppdb-footer-inner{grid-template-columns:1fr 1fr;gap:28px}}
+@media(max-width:600px){.bt-hero h1{font-size:26px}.ppdb-footer-inner{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-contacts">
+        <a href="https://wa.me/6282262263434" class="topbar-link"><i class="fab fa-whatsapp"></i> 0822 6226 3434</a>
+        <a href="mailto:hibatullah.sch.id@gmail.com" class="topbar-link"><i class="far fa-envelope"></i> hibatullah.sch.id@gmail.com</a>
+      </div>
+      <div class="topbar-socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/hibatullah.iibs/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="logo">
+        <div class="logo-icon"><img src="Logo only.png" alt="Logo" style="width:60px;height:60px;object-fit:contain;" /></div>
+        <div class="logo-text">
+          <span class="logo-name">HIBATULLAH IIBS</span>
+          <span class="logo-sub">International Islamic Boarding School</span>
+          <span class="logo-loc">BOJONEGORO · JAWA TIMUR</span>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-item">Beranda</a>
+        <div class="nav-item has-dropdown">
+          SMP Hibatullah <i class="fas fa-chevron-down"></i>
+          <div class="dropdown">
+            <a href="visi-misi-sdih.html">Visi Misi</a>
+            <a href="kurikulum-sdih.html">Kurikulum</a>
+            <a href="program-unggulan-sdih.html">Program Unggulan</a>
+            <a href="karakter-siswa-sdih.html">Karakter Siswa</a>
+            <a href="standar-kompetensi-lulusan.html">Standar Kompetensi Lulusan</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown">
+          Hibatullah IIBS <i class="fas fa-chevron-down"></i>
+          <div class="dropdown">
+            <a href="sejarah.html">Sejarah Sekolah</a>
+            <a href="penasehat.html">Dewan Penasehat</a>
+            <a href="stakeholders.html">Stakeholders</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown">
+          Santri Hebat <i class="fas fa-chevron-down"></i>
+          <div class="dropdown">
+            <a href="sekolah.html">Sekolah</a>
+            <a href="program.html">Program</a>
+            <a href="asrama.html">Asrama</a>
+            <a href="kurikulum.html">Kurikulum</a>
+            <a href="regulasi-harian.html">Regulasi Harian</a>
+          </div>
+        </div>
+        <a href="ppdb.html" class="nav-item">PPDB</a>
+        <a href="galeri.html" class="nav-item">Galeri</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="https://ppdb.hibatullah.sch.id/formulir" target="_blank" class="btn-daftar">DAFTAR SEKARANG</a>
+        <button class="btn-search"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="bt-bc-bar">
+    <div class="bt-bc">
+      <i class="fas fa-home"></i>
+      <a href="index.html">Beranda</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Berita Pesantren</span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="bt-hero">
+    <div class="bt-hero-inner">
+      <div class="bt-hero-badge"><i class="fas fa-newspaper"></i> Berita & Kegiatan</div>
+      <h1>BERITA <span>PESANTREN</span></h1>
+      <p>Kabar terbaru seputar kegiatan, prestasi, dan aktivitas di Pesantren Hibatullah IIBS</p>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <section class="bt-main">
+    <div class="bt-inner">
+
+      <!-- Search -->
+      <div class="bt-search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" id="btSearch" placeholder="Cari berita..." />
+      </div>
+
+      <!-- Grid -->
+      <div class="kegiatan-grid" id="btGrid" class="kegiatan-grid">
+        <div class="bt-loading">
+          <i class="fas fa-spinner fa-spin"></i>
+          Memuat berita terbaru...
+        </div>
+      </div>
+
+      <!-- Load More -->
+      <div class="bt-load-more">
+        <button class="bt-load-btn" id="btLoadMore" style="display:none">
+          <i class="fas fa-plus"></i> Muat Lebih Banyak
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MODAL ARTIKEL -->
+  <div class="bt-modal" id="btModal">
+    <div class="bt-modal-box">
+      <button class="bt-modal-close" id="btModalClose"><i class="fas fa-times"></i></button>
+      <img src="" alt="" id="btModalImg" class="bt-modal-img" />
+      <div class="bt-modal-body">
+        <div class="bt-modal-cat" id="btModalCat"></div>
+        <h2 class="bt-modal-title" id="btModalTitle"></h2>
+        <div class="bt-modal-meta">
+          <span><i class="fas fa-user"></i> <span id="btModalAuthor"></span></span>
+          <span><i class="far fa-calendar-alt"></i> <span id="btModalDate"></span></span>
+        </div>
+        <div class="bt-modal-content" id="btModalContent"></div>
+        <a href="#" target="_blank" id="btModalLink" class="bt-modal-link">
+          <i class="fas fa-external-link-alt"></i> Baca Artikel Lengkap di Website
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer id="site-footer" class="site-footer" aria-label="Footer situs"></footer>
+
+  <script src="berita.js"></script>
+  <script src="animations.js"></script>
+  <script src="script.js"></script>
+  <script>
+  (function () {
+    var allItems = [];
+    var filtered = [];
+    var shown = 0;
+    var PER_PAGE = 9;
+
+    var grid = document.getElementById('btGrid');
+    var loadBtn = document.getElementById('btLoadMore');
+    var searchInput = document.getElementById('btSearch');
+
+    function waitAndLoad() {
+      if (typeof fetchFromWP === 'function') {
+        fetchFromWP(function(items) {
+          allItems = items;
+          filtered = items;
+          renderCards(true);
+        });
+      } else {
+        setTimeout(waitAndLoad, 100);
+      }
+    }
+    waitAndLoad();
+
+    function renderCards(reset) {
+      if (reset) { shown = 0; grid.innerHTML = ''; }
+      var batch = filtered.slice(shown, shown + PER_PAGE);
+      if (batch.length === 0 && shown === 0) {
+        grid.innerHTML = '<div class="bt-empty"><i class="fas fa-search" style="font-size:32px;margin-bottom:12px;display:block;color:#ddd"></i>Tidak ada berita ditemukan.</div>';
+        if (loadBtn) loadBtn.style.display = 'none';
+        return;
+      }
+      batch.forEach(function(item) {
+        var card = document.createElement('div');
+        card.innerHTML = makeCard(item);
+        var el = card.firstChild;
+        (function(capturedItem) {
+          el.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (capturedItem.wp_id) {
+              window.location.href = 'artikel.html?id=' + capturedItem.wp_id;
+            } else {
+              window.location.href = capturedItem.link || '#';
+            }
+          });
+        })(item);
+        grid.appendChild(el);
+      });
+      shown += batch.length;
+      if (loadBtn) loadBtn.style.display = shown < filtered.length ? 'inline-flex' : 'none';
+    }
+
+    function makeCard(item) {
+      var img = item.thumbnail || '';
+      var cat = item.categories && item.categories[0] ? item.categories[0] : 'Blog';
+      var desc = stripHtml(item.description || item.content || '');
+      if (desc.length > 110) desc = desc.substring(0, 110) + '...';
+      var tgl = formatDate(item.pubDate);
+      var badgeMap = {'blog':'bc-blue','kehidupan santri':'bc-purple','pendidikan karakter':'bc-blue','kegiatan outdoor':'bc-green','kegiatan rutin':'bc-orange'};
+      var badge = badgeMap[cat.toLowerCase()] || 'bc-blue';
+      return '<div class="bt-card" style="cursor:pointer">' +
+        '<div class="bt-card-img">' +
+          (img ? '<img src="' + esc(img) + '" alt="' + esc(item.title) + '" />' : '<div style="height:200px;background:#e8eef8;display:flex;align-items:center;justify-content:center"><i class="fas fa-image" style="font-size:40px;color:#bcd"></i></div>') +
+          '<span class="bt-card-badge ' + badge + '">' + esc(cat.toUpperCase()) + '</span>' +
+        '</div>' +
+        '<div class="bt-card-body">' +
+          '<div class="bt-card-date"><i class="far fa-calendar-alt"></i> ' + tgl + '</div>' +
+          '<h3 class="bt-card-title">' + esc(item.title) + '</h3>' +
+          '<p class="bt-card-desc">' + esc(desc) + '</p>' +
+          '<div class="bt-card-footer">' +
+            '<div class="bt-card-author"><div class="bt-card-author-icon"><i class="fas fa-user"></i></div>' +
+            '<div><div class="bt-author-name">' + esc(item.author || 'Admin') + '</div><div class="bt-author-role">Penulis</div></div></div>' +
+            '<span class="bt-read-more">Baca ?</span>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    }
+
+    if (loadBtn) loadBtn.addEventListener('click', function() { renderCards(false); });
+
+    if (searchInput) {
+      var searchTimer;
+      searchInput.addEventListener('input', function() {
+        clearTimeout(searchTimer);
+        searchTimer = setTimeout(function() {
+          var q = searchInput.value.toLowerCase().trim();
+          filtered = q ? allItems.filter(function(item) {
+            return (item.title||'').toLowerCase().includes(q) ||
+                   (item.description||'').toLowerCase().includes(q);
+          }) : allItems;
+          renderCards(true);
+        }, 300);
+      });
+    }
+
+    function stripHtml(html) { return (html||'').replace(/<[^>]*>/g,'').replace(/\s+/g,' ').trim(); }
+    function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+    function formatDate(d) {
+      if (!d) return '';
+      try {
+        var dt = new Date(d);
+        var months = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+        return dt.getDate() + ' ' + months[dt.getMonth()] + ' ' + dt.getFullYear();
+      } catch(e) { return d; }
+    }
+  })();
+  </script>
+
+</body>
+</html>
+
+
+
+

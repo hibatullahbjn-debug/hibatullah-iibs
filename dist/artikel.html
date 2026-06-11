@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artikel - Hibatullah IIBS</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="footer.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+body{background:#f0f4fb}
+.art-bc-bar{background:#1a3a6b;padding:10px 0}
+.art-bc{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:8px;font-size:12.5px;color:rgba(255,255,255,0.7)}
+.art-bc a{color:rgba(255,255,255,0.85);font-weight:500}.art-bc a:hover{color:#fff}
+.art-bc i.fa-chevron-right{font-size:9px;color:rgba(255,255,255,0.35)}
+.art-bc span{color:rgba(255,255,255,0.55)}
+.art-main{max-width:1100px;margin:0 auto;padding:40px 24px 72px;display:grid;grid-template-columns:1fr 340px;gap:32px;align-items:start}
+/* ARTICLE */
+.art-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(26,58,107,0.1);border:1px solid #e8eef8}
+.art-hero-img{width:100%;height:380px;object-fit:cover;display:block}
+.art-body{padding:32px 36px 36px}
+.art-cat{font-size:11px;font-weight:700;color:#3a5bd9;letter-spacing:2px;margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.art-cat i{font-size:10px}
+.art-title{font-size:26px;font-weight:800;color:#1a1a2e;line-height:1.35;margin-bottom:16px}
+.art-meta{display:flex;align-items:center;gap:20px;padding:14px 0;border-top:1px solid #f0f4f8;border-bottom:1px solid #f0f4f8;margin-bottom:28px;flex-wrap:wrap}
+.art-meta-item{display:flex;align-items:center;gap:7px;font-size:12.5px;color:#888}
+.art-meta-item i{color:#3a5bd9;font-size:12px}
+.art-meta-item strong{color:#333;font-weight:600}
+.art-content{font-size:14.5px;color:#333;line-height:1.95}
+.art-content p{margin-bottom:18px}
+.art-content p:last-child{margin-bottom:0}
+.art-content blockquote{border-left:4px solid #3a5bd9;padding:14px 20px;background:#f0f4ff;border-radius:0 8px 8px 0;margin:20px 0;color:#444;font-style:italic}
+.art-content img{width:100%;border-radius:10px;margin:16px 0}
+.art-content a{color:#3a5bd9;text-decoration:underline}
+.art-content strong{color:#1a1a2e}
+.art-source{margin-top:28px;padding-top:20px;border-top:1px solid #f0f4f8}
+.art-source-btn{display:flex;align-items:center;justify-content:center;gap:10px;background:#1a3a6b;color:#fff;font-size:15px;font-weight:700;padding:16px 28px;border-radius:10px;transition:background .2s,transform .15s;text-decoration:none;width:100%;box-sizing:border-box}
+.art-source-btn:hover{background:#0f2548;transform:translateY(-2px)}
+.art-share{margin-top:24px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.art-share span{font-size:13px;font-weight:600;color:#555}
+.art-share a{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff;transition:opacity .2s}
+.art-share a:hover{opacity:.8}
+.art-share-fb{background:#1877f2}.art-share-wa{background:#25d366}.art-share-tw{background:#1da1f2}
+/* SIDEBAR */
+.art-sidebar{display:flex;flex-direction:column;gap:20px}
+.art-sidebar-card{background:#fff;border-radius:14px;padding:22px 20px;border:1px solid #e8eef8;box-shadow:0 2px 12px rgba(26,58,107,0.06)}
+.art-sidebar-title{font-size:14px;font-weight:800;color:#1a1a2e;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid #e8eef8;display:flex;align-items:center;gap:8px}
+.art-sidebar-title i{color:#3a5bd9}
+.art-related-item{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid #f5f5f5;cursor:pointer;transition:background .15s;border-radius:8px}
+.art-related-item:last-child{border-bottom:none;padding-bottom:0}
+.art-related-item:hover{background:#f8f9fc}
+.art-related-img{width:72px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0}
+.art-related-info{flex:1}
+.art-related-title{font-size:12.5px;font-weight:600;color:#1a1a2e;line-height:1.4;margin-bottom:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.art-related-date{font-size:11px;color:#aaa}
+/* VIEW / LIKE / COMMENT */
+.art-engage{display:flex;align-items:center;gap:16px;padding:16px 0;border-top:1px solid #f0f4f8;border-bottom:1px solid #f0f4f8;margin:24px 0}
+.art-engage-btn{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:#888;cursor:pointer;background:none;border:none;padding:8px 14px;border-radius:8px;transition:all .2s}
+.art-engage-btn:hover{background:#f0f4fb;color:#1a3a6b}
+.art-engage-btn.liked{color:#e74c3c}
+.art-engage-btn.liked i{color:#e74c3c}
+.art-engage-btn i{font-size:15px}
+.art-engage-views{display:flex;align-items:center;gap:7px;font-size:13px;color:#aaa;margin-left:auto}
+/* KOMENTAR */
+.art-comments{margin-top:32px;padding-top:28px;border-top:2px solid #f0f4f8}
+.art-comments-title{font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.art-comments-title i{color:#3a5bd9}
+.art-comment-form{background:#f8faff;border-radius:12px;padding:20px;margin-bottom:24px;border:1px solid #e8eef8}
+.art-comment-form input,.art-comment-form textarea{width:100%;padding:10px 14px;border:1.5px solid #e0e8f4;border-radius:8px;font-size:13px;font-family:inherit;color:#333;background:#fff;margin-bottom:10px;box-sizing:border-box;transition:border .2s}
+.art-comment-form input:focus,.art-comment-form textarea:focus{outline:none;border-color:#3a5bd9}
+.art-comment-form textarea{height:90px;resize:vertical}
+.art-comment-submit{background:#1a3a6b;color:#fff;border:none;padding:10px 24px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;transition:background .2s}
+.art-comment-submit:hover{background:#0f2548}
+.art-comment-list{display:flex;flex-direction:column;gap:14px}
+.art-comment-item{background:#fff;border:1px solid #eef2fb;border-radius:10px;padding:14px 16px}
+.art-comment-header{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.art-comment-avatar{width:34px;height:34px;border-radius:50%;background:#e8f0fe;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.art-comment-avatar i{color:#3a5bd9;font-size:14px}
+.art-comment-name{font-size:13px;font-weight:700;color:#1a1a2e}
+.art-comment-date{font-size:11px;color:#aaa;margin-left:auto}
+.art-comment-text{font-size:13px;color:#444;line-height:1.7}
+.art-no-comment{text-align:center;color:#bbb;font-size:13px;padding:20px 0}
+.art-loading i{font-size:32px;color:#3a5bd9;margin-bottom:16px;display:block}
+/* FOOTER */
+.ppdb-footer{background:#0d1a2e;color:#fff}
+.ppdb-footer-inner{max-width:1100px;margin:0 auto;padding:48px 24px 36px;display:grid;grid-template-columns:1.6fr 1fr 1.2fr 1.3fr;gap:40px}
+.pf-logo{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}
+.pf-logo div{display:flex;flex-direction:column;gap:3px}
+.pf-logo strong{font-size:14px;font-weight:800;color:#fff}
+.pf-logo span{font-size:10px;color:rgba(255,255,255,0.5)}
+.pf-tagline{font-size:13px;font-weight:700;color:#7eb8f7;margin-bottom:8px}
+.pf-desc{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.7;margin-bottom:16px}
+.pf-socials{display:flex;gap:8px}
+.pf-socials a{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff;transition:opacity .2s}
+.pf-socials a:hover{opacity:.8}
+.pfs-fb{background:#1877f2}.pfs-ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)}.pfs-yt{background:#ff0000}.pfs-tt{background:#010101}
+.pf-heading{font-size:12px;font-weight:700;color:#fff;letter-spacing:1px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.1)}
+.pf-list{list-style:none;display:flex;flex-direction:column;gap:9px}
+.pf-list li a{font-size:12.5px;color:rgba(255,255,255,0.6);display:flex;align-items:center;gap:8px;transition:color .2s}
+.pf-list li a:hover{color:#7eb8f7}
+.pf-list li a i{font-size:11px;color:#7eb8f7;width:14px}
+.pf-contact{list-style:none;display:flex;flex-direction:column;gap:12px}
+.pf-contact li{font-size:12px;color:rgba(255,255,255,0.6);display:flex;align-items:flex-start;gap:10px;line-height:1.6}
+.pf-contact li i{color:#27ae60;font-size:13px;margin-top:2px;flex-shrink:0}
+.ppdb-footer-bottom{border-top:1px solid rgba(255,255,255,0.08)}
+.ppdb-footer-bottom-inner{max-width:1100px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;font-size:11.5px;color:rgba(255,255,255,0.35)}
+@media(max-width:900px){.art-main{grid-template-columns:1fr}.art-sidebar{display:none}.ppdb-footer-inner{grid-template-columns:1fr 1fr;gap:28px}}
+@media(max-width:480px){.art-body{padding:20px 18px 24px}.art-hero-img{height:220px}.ppdb-footer-inner{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-contacts">
+        <a href="https://wa.me/6282262263434" class="topbar-link"><i class="fab fa-whatsapp"></i> 0822 6226 3434</a>
+        <a href="mailto:hibatullah.sch.id@gmail.com" class="topbar-link"><i class="far fa-envelope"></i> hibatullah.sch.id@gmail.com</a>
+      </div>
+      <div class="topbar-socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/hibatullah.iibs/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="logo">
+        <div class="logo-icon"><img src="Logo only.png" alt="Logo" style="width:60px;height:60px;object-fit:contain;" /></div>
+        <div class="logo-text">
+          <span class="logo-name">HIBATULLAH IIBS</span>
+          <span class="logo-sub">International Islamic Boarding School</span>
+          <span class="logo-loc">BOJONEGORO · JAWA TIMUR</span>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-item">Beranda</a>
+        <div class="nav-item has-dropdown">SMP Hibatullah <i class="fas fa-chevron-down"></i>
+          <div class="dropdown">
+            <a href="visi-misi-sdih.html">Visi Misi</a>
+            <a href="kurikulum-sdih.html">Kurikulum</a>
+            <a href="program-unggulan-sdih.html">Program Unggulan</a>
+            <a href="karakter-siswa-sdih.html">Karakter Siswa</a>
+            <a href="standar-kompetensi-lulusan.html">Standar Kompetensi Lulusan</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown">Hibatullah IIBS <i class="fas fa-chevron-down"></i>
+          <div class="dropdown">
+            <a href="sejarah.html">Sejarah Sekolah</a>
+            <a href="penasehat.html">Dewan Penasehat</a>
+            <a href="stakeholders.html">Stakeholders</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown">Santri Hebat <i class="fas fa-chevron-down"></i>
+          <div class="dropdown">
+            <a href="sekolah.html">Sekolah</a>
+            <a href="program.html">Program</a>
+            <a href="asrama.html">Asrama</a>
+            <a href="kurikulum.html">Kurikulum</a>
+            <a href="regulasi-harian.html">Regulasi Harian</a>
+          </div>
+        </div>
+        <a href="ppdb.html" class="nav-item">PPDB</a>
+        <a href="galeri.html" class="nav-item">Galeri</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="https://ppdb.hibatullah.sch.id/formulir" target="_blank" class="btn-daftar">DAFTAR SEKARANG</a>
+        <button class="btn-search"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+  </header>
+  <!-- BREADCRUMB -->
+  <div class="art-bc-bar">
+    <div class="art-bc">
+      <i class="fas fa-home"></i>
+      <a href="index.html">Beranda</a>
+      <i class="fas fa-chevron-right"></i>
+      <a href="berita.html">Berita</a>
+      <i class="fas fa-chevron-right"></i>
+      <span id="artBcTitle">Artikel</span>
+    </div>
+  </div>
+  <!-- LOADING -->
+  <div class="art-loading" id="artLoading">
+    <i class="fas fa-spinner fa-spin"></i>
+    Memuat artikel...
+  </div>
+  <!-- MAIN -->
+  <div class="art-main" id="artMain" style="display:none">
+    <!-- Article -->
+    <div>
+      <div class="art-card">
+        <img src="" alt="" id="artImg" class="art-hero-img" />
+        <div class="art-body">
+          <div class="art-cat"><i class="fas fa-tag"></i><span id="artCat"></span></div>
+          <h1 class="art-title" id="artTitle"></h1>
+          <div class="art-meta">
+            <div class="art-meta-item"><i class="fas fa-user"></i><strong id="artAuthor"></strong></div>
+            <div class="art-meta-item"><i class="far fa-calendar-alt"></i><span id="artDate"></span></div>
+            <div class="art-meta-item"><i class="fas fa-tag"></i><span id="artCat2"></span></div>
+          </div>
+          <div class="art-content" id="artContent"></div>
+
+          <!-- ENGAGE: Views, Like -->
+          <div class="art-engage">
+            <button class="art-engage-btn" id="artLikeBtn" onclick="toggleLike()">
+              <i class="far fa-heart"></i> <span id="artLikeCount">0</span> Suka
+            </button>
+            <div class="art-engage-views">
+              <i class="far fa-eye"></i> <span id="artViewCount">0</span> dilihat
+            </div>
+          </div>
+
+          <!-- SHARE -->
+          <div class="art-share">
+            <span>Bagikan:</span>
+            <a href="#" id="shareWa" class="art-share-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" id="shareFb" class="art-share-fb" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" id="shareTw" class="art-share-tw" target="_blank"><i class="fab fa-twitter"></i></a>
+          </div>
+
+          <!-- KOMENTAR -->
+          <div class="art-comments">
+            <div class="art-comments-title"><i class="fas fa-comments"></i> Komentar (<span id="artCommentCount">0</span>)</div>
+            <div class="art-comment-form">
+              <input type="text" id="commentName" placeholder="Nama kamu..." maxlength="50" />
+              <textarea id="commentText" placeholder="Tulis komentar..."></textarea>
+              <button class="art-comment-submit" onclick="submitComment()">Kirim Komentar</button>
+            </div>
+            <div class="art-comment-list" id="artCommentList">
+              <div class="art-no-comment">Belum ada komentar. Jadilah yang pertama!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Sidebar -->
+    <div class="art-sidebar">
+      <div class="art-sidebar-card">
+        <div class="art-sidebar-title"><i class="fas fa-newspaper"></i> Berita Lainnya</div>
+        <div id="artRelated"></div>
+      </div>
+    </div>
+  </div>
+  <!-- FOOTER -->
+  <footer id="site-footer" class="site-footer" aria-label="Footer situs"></footer>
+  <script src="berita.js"></script>
+  <script src="animations.js"></script>
+  <script src="script.js"></script>
+  <script>
+  (function(){
+    // Get article index from URL ?id=0
+    var params = new URLSearchParams(window.location.search);
+    var idx = parseInt(params.get('id') || '0', 10);
+
+    function months(){ return ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember']; }
+    function fmtDate(d){ try{ var dt=new Date(d); return dt.getDate()+' '+months()[dt.getMonth()]+' '+dt.getFullYear(); }catch(e){return d;} }
+
+    function loadArticle(items, allItems, articleIdx) {
+      if (!allItems) allItems = items;
+      var idx2 = (articleIdx !== undefined) ? articleIdx : idx;
+      if (idx2 < 0 || idx2 >= items.length) idx2 = 0;
+      var item = items[idx2];
+      var img = item.thumbnail || 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=80';
+      var cat = item.categories && item.categories[0] ? item.categories[0] : 'Blog';
+
+      document.title = item.title + ' - Hibatullah IIBS';
+      document.getElementById('artBcTitle').textContent = item.title.length > 50 ? item.title.substring(0,50)+'...' : item.title;
+      document.getElementById('artImg').src = img;
+      document.getElementById('artImg').onerror = function(){ this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=80'; };
+      document.getElementById('artCat').textContent = cat.toUpperCase();
+      document.getElementById('artCat2').textContent = cat;
+      document.getElementById('artTitle').textContent = item.title;
+      document.getElementById('artAuthor').textContent = item.author || 'Admin';
+      document.getElementById('artDate').textContent = fmtDate(item.pubDate);
+      document.getElementById('artContent').innerHTML = item.content || '<p>'+item.description+'</p>';
+
+      // Share buttons
+      var url = encodeURIComponent(window.location.href);
+      var title = encodeURIComponent(item.title);
+      document.getElementById('shareWa').href = 'https://wa.me/?text='+title+'%20'+url;
+      document.getElementById('shareFb').href = 'https://www.facebook.com/sharer/sharer.php?u='+url;
+      document.getElementById('shareTw').href = 'https://twitter.com/intent/tweet?text='+title+'&url='+url;
+
+      // View & Like & Comment
+      var postKey = 'art_' + (item.wp_id || item.title.substring(0,20));
+      initEngage(postKey);
+
+      // Related articles
+      var relHtml = '';
+      allItems.forEach(function(rel, i) {
+        if (rel.wp_id && item.wp_id && rel.wp_id === item.wp_id) return;
+        var relImg = rel.thumbnail || 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=200&q=80';
+        var relLink = 'artikel.html?id=' + (rel.wp_id || i);
+        relHtml += '<div class="art-related-item" onclick="window.location.href=\'' + relLink + '\'">' +
+          '<img src="' + relImg + '" alt="' + rel.title + '" class="art-related-img" onerror="this.src=\'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=200&q=80\'" />' +
+          '<div class="art-related-info">' +
+            '<div class="art-related-title">' + rel.title + '</div>' +
+            '<div class="art-related-date">' + fmtDate(rel.pubDate) + '</div>' +
+          '</div>' +
+        '</div>';
+      });
+      document.getElementById('artRelated').innerHTML = relHtml;
+
+      document.getElementById('artLoading').style.display = 'none';
+      document.getElementById('artMain').style.display = 'grid';
+      window.scrollTo(0,0);
+    }
+
+    // Load artikel berdasarkan WordPress post ID
+    function tryLoad() {
+      var postId = params.get('id');
+      if (!postId) { postId = '0'; }
+
+      // Cek apakah id adalah WordPress post ID (angka besar) atau index lama (kecil)
+      var isWpId = parseInt(postId) > 100;
+
+      if (isWpId) {
+        // Fetch langsung 1 post dari WordPress API
+        fetch('https://hibatullah.sch.id/wp-json/wp/v2/posts/' + postId + '?_embed=1')
+          .then(function(r) { return r.json(); })
+          .then(function(post) {
+            if (!post || post.code) throw new Error('not found');
+            var thumb = '';
+            try { thumb = post._embedded['wp:featuredmedia'][0].source_url; } catch(e) { thumb = ''; }
+            if (!thumb) {
+              var mg = (post.content.rendered || '').match(/<img[^>]+src=["']([^"']+)["']/i);
+              if (mg) thumb = mg[1];
+            }
+            var cats = [];
+            try { cats = post._embedded['wp:term'][0].map(function(t){ return t.name; }); } catch(e) { cats = ['Blog']; }
+            var author = '';
+            try { author = post._embedded.author[0].name; } catch(e) { author = 'Admin'; }
+
+            // Fetch semua post untuk sidebar related
+            fetch('https://hibatullah.sch.id/wp-json/wp/v2/posts?per_page=100&_embed=1&orderby=date&order=desc')
+              .then(function(r2) { return r2.json(); })
+              .then(function(allPosts) {
+                var allItems = allPosts.map(function(p) {
+                  var t = ''; 
+                  try { t = p._embedded['wp:featuredmedia'][0].source_url; } catch(e){}
+                  if (!t) { var mg2 = (p.content && p.content.rendered||'').match(/<img[^>]+src=["']([^"']+)["']/i); if(mg2) t = mg2[1]; }
+                  return { title: p.title.rendered, pubDate: p.date, thumbnail: t, wp_id: p.id };
+                });
+                var item = {
+                  title: post.title.rendered.replace(/&#(\d+);/g, function(m,c){ return String.fromCharCode(c); }),
+                  pubDate: post.date,
+                  author: author,
+                  categories: cats,
+                  content: post.content.rendered,
+                  description: '',
+                  link: post.link,
+                  thumbnail: thumb,
+                  wp_id: post.id
+                };
+                loadArticle([item], allItems, 0);
+              })
+              .catch(function() { loadArticle([{
+                title: post.title.rendered,
+                pubDate: post.date, author: author, categories: cats,
+                content: post.content.rendered, description: '', link: post.link, thumbnail: thumb, wp_id: post.id
+              }], [], 0); });
+          })
+          .catch(function() {
+            if (typeof fetchFromWP === 'function') {
+              fetchFromWP(function(items) { loadArticle(items, items, 0); });
+            }
+          });
+      } else {
+        // Fallback: pakai index lama
+        if (typeof fetchFromWP === 'function') {
+          fetchFromWP(function(items) { loadArticle(items, items, parseInt(postId)||0); });
+        } else {
+          setTimeout(tryLoad, 100);
+        }
+      }
+    }
+    tryLoad();
+
+    // =============================================
+    // ENGAGE: View, Like, Comment (localStorage)
+    // =============================================
+    var currentPostKey = '';
+
+    function initEngage(postKey) {
+      currentPostKey = postKey;
+
+      // Views — tambah 1 tiap buka
+      var views = parseInt(localStorage.getItem(postKey + '_views') || '0') + 1;
+      localStorage.setItem(postKey + '_views', views);
+      document.getElementById('artViewCount').textContent = views;
+
+      // Likes
+      var likes = parseInt(localStorage.getItem(postKey + '_likes') || '0');
+      var liked = localStorage.getItem(postKey + '_liked') === '1';
+      document.getElementById('artLikeCount').textContent = likes;
+      updateLikeBtn(liked);
+
+      // Komentar
+      renderComments(postKey);
+    }
+
+    window.toggleLike = function() {
+      var postKey = currentPostKey;
+      var likes = parseInt(localStorage.getItem(postKey + '_likes') || '0');
+      var liked = localStorage.getItem(postKey + '_liked') === '1';
+      if (liked) {
+        likes = Math.max(0, likes - 1);
+        localStorage.setItem(postKey + '_liked', '0');
+      } else {
+        likes += 1;
+        localStorage.setItem(postKey + '_liked', '1');
+      }
+      localStorage.setItem(postKey + '_likes', likes);
+      document.getElementById('artLikeCount').textContent = likes;
+      updateLikeBtn(!liked);
+    };
+
+    function updateLikeBtn(liked) {
+      var btn = document.getElementById('artLikeBtn');
+      if (liked) {
+        btn.classList.add('liked');
+        btn.innerHTML = '<i class="fas fa-heart"></i> <span id="artLikeCount">' + document.getElementById('artLikeCount').textContent + '</span> Suka';
+      } else {
+        btn.classList.remove('liked');
+        btn.innerHTML = '<i class="far fa-heart"></i> <span id="artLikeCount">' + document.getElementById('artLikeCount').textContent + '</span> Suka';
+      }
+    }
+
+    window.submitComment = function() {
+      var postKey = currentPostKey;
+      var name = document.getElementById('commentName').value.trim();
+      var text = document.getElementById('commentText').value.trim();
+      if (!name) { alert('Nama tidak boleh kosong.'); return; }
+      if (!text) { alert('Komentar tidak boleh kosong.'); return; }
+
+      var comments = JSON.parse(localStorage.getItem(postKey + '_comments') || '[]');
+      comments.push({ name: name, text: text, date: new Date().toISOString() });
+      localStorage.setItem(postKey + '_comments', JSON.stringify(comments));
+
+      document.getElementById('commentName').value = '';
+      document.getElementById('commentText').value = '';
+      renderComments(postKey);
+    };
+
+    function renderComments(postKey) {
+      var comments = JSON.parse(localStorage.getItem(postKey + '_comments') || '[]');
+      var list = document.getElementById('artCommentList');
+      var countEl = document.getElementById('artCommentCount');
+      countEl.textContent = comments.length;
+
+      if (!comments.length) {
+        list.innerHTML = '<div class="art-no-comment">Belum ada komentar. Jadilah yang pertama!</div>';
+        return;
+      }
+
+      var months = ['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
+      list.innerHTML = comments.slice().reverse().map(function(c) {
+        var dt = new Date(c.date);
+        var tgl = dt.getDate() + ' ' + months[dt.getMonth()] + ' ' + dt.getFullYear();
+        return '<div class="art-comment-item">' +
+          '<div class="art-comment-header">' +
+            '<div class="art-comment-avatar"><i class="fas fa-user"></i></div>' +
+            '<span class="art-comment-name">' + escHtml(c.name) + '</span>' +
+            '<span class="art-comment-date">' + tgl + '</span>' +
+          '</div>' +
+          '<div class="art-comment-text">' + escHtml(c.text) + '</div>' +
+        '</div>';
+      }).join('');
+    }
+
+    function escHtml(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  })();
+  </script>
+</body>
+</html>
+
+

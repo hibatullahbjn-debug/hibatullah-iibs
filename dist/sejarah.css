@@ -1,0 +1,594 @@
+/* ===========================
+   BREADCRUMB
+=========================== */
+.breadcrumb-bar {
+  background: #f0f4f8;
+  border-bottom: 1px solid #e0e8f0;
+  padding: 10px 0;
+}
+
+.breadcrumb-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: #666;
+}
+
+.breadcrumb-inner a {
+  color: #1a3a6b;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.breadcrumb-inner a:hover {
+  color: #27ae60;
+}
+
+.breadcrumb-inner i {
+  font-size: 9px;
+  color: #aaa;
+}
+
+.breadcrumb-inner span {
+  color: #888;
+}
+
+/* ===========================
+   PENDIRI SECTION
+=========================== */
+.pendiri-section {
+  position: relative;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.pendiri-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.pendiri-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.pendiri-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,0.97) 0%,
+    rgba(255,255,255,0.92) 40%,
+    rgba(255,255,255,0.6) 65%,
+    rgba(255,255,255,0.1) 100%
+  );
+}
+
+.pendiri-inner {
+  position: relative;
+  z-index: 10;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 24px;
+  display: flex;
+  align-items: flex-end;
+  gap: 40px;
+}
+
+.pendiri-photo-wrap {
+  flex-shrink: 0;
+  width: 220px;
+}
+
+.pendiri-photo {
+  width: 220px;
+  height: auto;
+  object-fit: contain;
+  object-position: top;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+
+.pendiri-info {
+  padding-bottom: 12px;
+}
+
+.pendiri-badge {
+  display: inline-block;
+  background: #e8f4ee;
+  color: #27ae60;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 20px;
+  letter-spacing: 0.8px;
+  margin-bottom: 14px;
+  border: 1px solid #c3e6cb;
+}
+
+.pendiri-name {
+  font-size: 26px;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.pendiri-title {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.pendiri-quote {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 480px;
+}
+
+.pq-mark {
+  font-size: 56px;
+  color: #1a3a6b;
+  line-height: 0.7;
+  font-family: Georgia, serif;
+  font-weight: 900;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.pendiri-quote p {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a2e;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* ===========================
+   SEJARAH SECTION
+=========================== */
+.sejarah-section {
+  padding: 64px 0 56px;
+  background: #fff;
+}
+
+.sejarah-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.sejarah-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.sejarah-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #27ae60;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.sejarah-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1a1a2e;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.sejarah-subtitle {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 14px;
+}
+
+.sejarah-underline {
+  width: 48px;
+  height: 3px;
+  background: #27ae60;
+  border-radius: 2px;
+  margin: 0 auto;
+}
+
+/* Content Layout */
+.sejarah-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+/* Narasi */
+.sejarah-narasi p {
+  font-size: 13.5px;
+  color: #444;
+  line-height: 1.85;
+  margin-bottom: 18px;
+}
+
+.sejarah-narasi p:last-child {
+  margin-bottom: 0;
+}
+
+/* Timeline */
+.sejarah-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+.sejarah-timeline::before {
+  content: '';
+  position: absolute;
+  left: 22px;
+  top: 24px;
+  bottom: 24px;
+  width: 2px;
+  background: #e0e8f0;
+  z-index: 0;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding-bottom: 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.tl-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.tl-blue   { background: #e8f0fe; color: #1a3a6b; }
+.tl-green  { background: #e8f8ee; color: #27ae60; }
+.tl-orange { background: #fff3e0; color: #e8a020; }
+.tl-purple { background: #f3e8ff; color: #8e44ad; }
+
+.tl-body {
+  padding-top: 4px;
+}
+
+.tl-year {
+  font-size: 12px;
+  font-weight: 700;
+  color: #27ae60;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.tl-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 5px;
+}
+
+.tl-desc {
+  font-size: 12.5px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ===========================
+   FILOSOFI SECTION
+=========================== */
+.filosofi-section {
+  padding: 64px 0 56px;
+  background: #f8f9fc;
+}
+
+.filosofi-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.filosofi-header {
+  text-align: center;
+  margin-bottom: 44px;
+}
+
+.filosofi-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #27ae60;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.filosofi-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1a1a2e;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.filosofi-subtitle {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 14px;
+}
+
+.filosofi-underline {
+  width: 48px;
+  height: 3px;
+  background: #27ae60;
+  border-radius: 2px;
+  margin: 0 auto;
+}
+
+.filosofi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.filosofi-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px 20px 24px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border: 1px solid #eee;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.filosofi-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+}
+
+.fil-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin: 0 auto 14px;
+}
+
+.fil-blue   { background: #e8f0fe; color: #1a3a6b; }
+.fil-green  { background: #e8f8ee; color: #27ae60; }
+.fil-orange { background: #fff3e0; color: #e8a020; }
+.fil-purple { background: #f3e8ff; color: #8e44ad; }
+
+.fil-arabic {
+  font-size: 18px;
+  color: #1a3a6b;
+  font-weight: 700;
+  margin-bottom: 10px;
+  direction: rtl;
+  font-family: 'Traditional Arabic', 'Scheherazade New', serif;
+}
+
+.fil-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.fil-desc {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.65;
+}
+
+/* ===========================
+   TUJUAN SECTION
+=========================== */
+.tujuan-section {
+  padding: 64px 0 56px;
+  background: #fff;
+}
+
+.tujuan-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.tujuan-header {
+  text-align: center;
+  margin-bottom: 44px;
+}
+
+.tujuan-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #27ae60;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.tujuan-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1a1a2e;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.tujuan-subtitle {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 14px;
+}
+
+.tujuan-underline {
+  width: 48px;
+  height: 3px;
+  background: #27ae60;
+  border-radius: 2px;
+  margin: 0 auto;
+}
+
+.tujuan-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.tujuan-card {
+  background: #f8f9fc;
+  border-radius: 12px;
+  padding: 28px 16px 24px;
+  text-align: center;
+  border: 1px solid #eee;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tujuan-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  background: #fff;
+}
+
+.tj-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #e8f0fe;
+  color: #1a3a6b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin: 0 auto 14px;
+}
+
+.tj-desc {
+  font-size: 12px;
+  color: #555;
+  line-height: 1.65;
+}
+
+/* ===========================
+   CLOSING BANNER
+=========================== */
+.closing-banner {
+  background: #0d2244;
+  padding: 48px 0;
+}
+
+.closing-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.closing-quote-mark {
+  font-size: 80px;
+  color: #27ae60;
+  line-height: 0.65;
+  font-family: Georgia, serif;
+  font-weight: 900;
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+.closing-quote-text {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 1024px) {
+  .filosofi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tujuan-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .sejarah-content {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .pendiri-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .pendiri-photo-wrap {
+    width: 160px;
+  }
+
+  .pendiri-photo {
+    width: 160px;
+    height: 200px;
+  }
+
+  .pendiri-name {
+    font-size: 20px;
+  }
+
+  .filosofi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tujuan-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .closing-quote-text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .filosofi-grid,
+  .tujuan-grid {
+    grid-template-columns: 1fr;
+  }
+}

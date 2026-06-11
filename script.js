@@ -163,7 +163,6 @@
   const pages = [
     { title: 'Beranda', url: 'index.html', desc: 'Halaman utama Hibatullah IIBS' },
     { title: 'Program', url: 'program.html', desc: 'Program unggulan dan kegiatan santri' },
-    { title: 'Asrama', url: 'asrama.html', desc: 'Fasilitas asrama dan kehidupan santri' },
     { title: 'Kurikulum', url: 'kurikulum.html', desc: 'Kurikulum berbasis Islam dan internasional' },
     { title: 'Regulasi Harian', url: 'regulasi-harian.html', desc: 'Jadwal harian dan tata tertib' },
     { title: 'PPDB', url: 'ppdb.html', desc: 'Pendaftaran Peserta Didik Baru' },

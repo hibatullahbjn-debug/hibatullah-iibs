@@ -52,7 +52,6 @@
           '<ul class="sf-links">' +
             '<li><a href="index.html">Beranda</a></li>' +
             '<li><a href="program.html">Program</a></li>' +
-            '<li><a href="asrama.html">Asrama</a></li>' +
             '<li><a href="kurikulum.html">Kurikulum</a></li>' +
             '<li><a href="ppdb.html">PPDB</a></li>' +
             '<li><a href="galeri.html">Galeri</a></li>' +
