@@ -214,7 +214,7 @@
   // =============================================
   document.addEventListener('DOMContentLoaded', function() {
     // Homepage - grid kegiatan (4 artikel)
-    initBerita('kegiatanGrid', 4);
+    initBerita('kegiatanGrid', 3);
     // Homepage - grid berita (4 artikel)
     initBerita('beritaGridHome', 4);
 
