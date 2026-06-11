@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
@@ -330,80 +330,26 @@ body{background:#f0f4fb}
       window.scrollTo(0,0);
     }
 
-    // Load artikel berdasarkan WordPress post ID
+    // Load artikel
     function tryLoad() {
       var postId = params.get('id');
       if (!postId) { postId = '0'; }
 
-      // Cek apakah id adalah WordPress post ID (angka besar) atau index lama (kecil)
-      var isWpId = parseInt(postId) > 100;
-
-      if (isWpId) {
-        // Fetch langsung 1 post dari WordPress API
-        fetch('https://linen-eagle-143399.hostingersite.com/wp-json/wp/v2/posts/' + postId + '?_embed=1')
-          .then(function(r) { return r.json(); })
-          .then(function(post) {
-            if (!post || post.code) throw new Error('not found');
-            var thumb = '';
-            try { thumb = post._embedded['wp:featuredmedia'][0].source_url; } catch(e) { thumb = ''; }
-            if (!thumb) {
-              var mg = (post.content.rendered || '').match(/<img[^>]+src=["']([^"']+)["']/i);
-              if (mg) thumb = mg[1];
+      if (typeof fetchFromWP === 'function') {
+        fetchFromWP(function(items) {
+          var foundIdx = -1;
+          for(var i=0; i<items.length; i++) {
+            if(items[i].wp_id && items[i].wp_id.toString() === postId.toString()) {
+              foundIdx = i; break;
             }
-            var cats = [];
-            try { cats = post._embedded['wp:term'][0].map(function(t){ return t.name; }); } catch(e) { cats = ['Blog']; }
-            var author = '';
-            try { author = post._embedded.author[0].name; } catch(e) { author = 'Admin'; }
-
-            // Fetch semua post untuk sidebar related
-            fetch('https://linen-eagle-143399.hostingersite.com/wp-json/wp/v2/posts?per_page=100&_embed=1&orderby=date&order=desc')
-              .then(function(r2) { return r2.json(); })
-              .then(function(allPosts) {
-                var allItems = allPosts.map(function(p) {
-                  var t = ''; 
-                  try { t = p._embedded['wp:featuredmedia'][0].source_url; } catch(e){}
-                  if (!t) { var mg2 = (p.content && p.content.rendered||'').match(/<img[^>]+src=["']([^"']+)["']/i); if(mg2) t = mg2[1]; }
-                  return { title: p.title.rendered, pubDate: p.date, thumbnail: t, wp_id: p.id };
-                });
-                var item = {
-                  title: post.title.rendered.replace(/&#(\d+);/g, function(m,c){ return String.fromCharCode(c); }),
-                  pubDate: post.date,
-                  author: author,
-                  categories: cats,
-                  content: post.content.rendered,
-                  description: post.excerpt && post.excerpt.rendered ? post.excerpt.rendered.replace(/<[^>]+>/g, '').trim() : post.content.rendered.replace(/<[^>]+>/g, '').substring(0, 150).trim() + '...',
-                  link: post.link,
-                  thumbnail: thumb,
-                  wp_id: post.id
-                };
-                loadArticle([item], allItems, 0);
-              })
-              .catch(function() { loadArticle([{
-                title: post.title.rendered,
-                pubDate: post.date, author: author, categories: cats,
-                content: post.content.rendered, description: '', link: post.link, thumbnail: thumb, wp_id: post.id
-              }], [], 0); });
-          })
-          .catch(function() {
-            if (typeof fetchFromWP === 'function') {
-              fetchFromWP(function(items) {
-                var foundIdx = 0;
-                for(var i=0; i<items.length; i++) {
-                  if(items[i].wp_id && items[i].wp_id.toString() === postId.toString()) {
-                    foundIdx = i; break;
-                  }
-                }
-                loadArticle(items, items, foundIdx);
-              });
-            }
-          });
+          }
+          if (foundIdx === -1) {
+            foundIdx = parseInt(postId) || 0;
+          }
+          loadArticle(items, items, foundIdx);
+        });
       } else {
-        // Fallback: pakai index lama
-        if (typeof fetchFromWP === 'function') {
-          fetchFromWP(function(items) { loadArticle(items, items, parseInt(postId)||0); });
-        } else {
-          setTimeout(tryLoad, 100);
-        }
+        setTimeout(tryLoad, 100);
       }
     }
     tryLoad();
