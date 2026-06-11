@@ -280,9 +280,7 @@ body{background:#f0f4fb}
       fbBtn.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodedUrl;
 
       [waBtn, fbBtn].forEach(function(btn) {
-        btn.onclick = function() {
-          trackShare(postKey);
-        };
+        btn.onclick = function() {};
       });
 
       if (igBtn) {
@@ -290,7 +288,6 @@ body{background:#f0f4fb}
           e.preventDefault();
           navigator.clipboard.writeText(url).then(function() {
             alert('Tautan disalin! Silakan paste/bagikan tautan ini di Instagram Anda.');
-            trackShare(postKey);
           });
         };
       }
@@ -319,6 +316,21 @@ body{background:#f0f4fb}
           (d.head || d.body).appendChild(s);
         })();
       }
+
+      // Related articles
+      var relHtml = '';
+      allItems.forEach(function(rel, i) {
+        if (rel.wp_id && item.wp_id && rel.wp_id === item.wp_id) return;
+        var relImg = rel.thumbnail || 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=200&q=80';
+        var relLink = 'artikel.html?id=' + (rel.wp_id || i);
+        relHtml += '<div class="art-related-item" onclick="window.location.href=\'' + relLink + '\'">' +
+          '<img src="' + relImg + '" alt="' + rel.title + '" class="art-related-img" onerror="this.src=\'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=200&q=80\'" />' +
+          '<div class="art-related-info">' +
+            '<div class="art-related-title">' + rel.title + '</div>' +
+            '<div class="art-related-date">' + fmtDate(rel.pubDate) + '</div>' +
+          '</div>' +
+        '</div>';
+      });
       document.getElementById('artRelated').innerHTML = relHtml;
 
       document.getElementById('artLoading').style.display = 'none';
