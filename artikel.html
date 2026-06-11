@@ -132,7 +132,7 @@ body{background:#f0f4fb}
         <div class="logo-text">
           <span class="logo-name">HIBATULLAH IIBS</span>
           <span class="logo-sub">International Islamic Boarding School</span>
-          <span class="logo-loc">BOJONEGORO · JAWA TIMUR</span>
+          <span class="logo-loc">BOJONEGORO Â· JAWA TIMUR</span>
         </div>
       </div>
       <nav class="nav-links">
@@ -208,8 +208,13 @@ body{background:#f0f4fb}
             <button class="art-engage-btn" id="artLikeBtn" onclick="toggleLike()">
               <i class="far fa-heart"></i> <span id="artLikeCount">0</span> Suka
             </button>
-            <div class="art-engage-views">
-              <i class="far fa-eye"></i> <span id="artViewCount">0</span> dilihat
+            <div class="art-engage-stats">
+              <div class="art-engage-views">
+                <i class="far fa-eye"></i> <span id="artViewCount">0</span> dilihat
+              </div>
+              <div class="art-engage-views" style="margin-left: 16px;">
+                <i class="fas fa-share-alt"></i> <span id="artShareCount">0</span> dibagikan
+              </div>
             </div>
           </div>
 
@@ -278,11 +283,26 @@ body{background:#f0f4fb}
       document.getElementById('artContent').innerHTML = item.content || '<p>'+item.description+'</p>';
 
       // Share buttons
-      var url = encodeURIComponent(window.location.href);
-      var title = encodeURIComponent(item.title);
-      document.getElementById('shareWa').href = 'https://wa.me/?text='+title+'%20'+url;
-      document.getElementById('shareFb').href = 'https://www.facebook.com/sharer/sharer.php?u='+url;
-      document.getElementById('shareTw').href = 'https://twitter.com/intent/tweet?text='+title+'&url='+url;
+      var excerpt = (item.description || item.content.replace(/<[^>]+>/g, '').substring(0, 150).trim() + '...');
+      // Buang spasi berlebih
+      excerpt = excerpt.replace(/\s+/g, ' ').replace(/&#8211;/g, '-');
+      var url = window.location.href;
+      var waText = encodeURIComponent(item.title + '\n\n' + excerpt + '\n\n' + url);
+      var encodedUrl = encodeURIComponent(url);
+      
+      var waBtn = document.getElementById('shareWa');
+      var fbBtn = document.getElementById('shareFb');
+      var twBtn = document.getElementById('shareTw');
+
+      waBtn.href = 'https://wa.me/?text=' + waText;
+      fbBtn.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodedUrl;
+      twBtn.href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(item.title) + '&url=' + encodedUrl;
+
+      [waBtn, fbBtn, twBtn].forEach(function(btn) {
+        btn.onclick = function() {
+          trackShare(postKey);
+        };
+      });
 
       // View & Like & Comment
       var postKey = 'art_' + (item.wp_id || item.title.substring(0,20));
@@ -350,7 +370,7 @@ body{background:#f0f4fb}
                   author: author,
                   categories: cats,
                   content: post.content.rendered,
-                  description: '',
+                  description: post.excerpt && post.excerpt.rendered ? post.excerpt.rendered.replace(/<[^>]+>/g, '').trim() : post.content.rendered.replace(/<[^>]+>/g, '').substring(0, 150).trim() + '...',
                   link: post.link,
                   thumbnail: thumb,
                   wp_id: post.id
@@ -387,7 +407,7 @@ body{background:#f0f4fb}
     function initEngage(postKey) {
       currentPostKey = postKey;
 
-      // Views — tambah 1 tiap buka
+      // Views â€” tambah 1 tiap buka
       var views = parseInt(localStorage.getItem(postKey + '_views') || '0') + 1;
       localStorage.setItem(postKey + '_views', views);
       document.getElementById('artViewCount').textContent = views;
@@ -398,9 +418,20 @@ body{background:#f0f4fb}
       document.getElementById('artLikeCount').textContent = likes;
       updateLikeBtn(liked);
 
+      // Shares
+      var shares = parseInt(localStorage.getItem(postKey + '_shares') || '0');
+      document.getElementById('artShareCount').textContent = shares;
+
       // Komentar
       renderComments(postKey);
     }
+
+    window.trackShare = function(postKey) {
+      if (!postKey) postKey = currentPostKey;
+      var shares = parseInt(localStorage.getItem(postKey + '_shares') || '0') + 1;
+      localStorage.setItem(postKey + '_shares', shares);
+      document.getElementById('artShareCount').textContent = shares;
+    };
 
     window.toggleLike = function() {
       var postKey = currentPostKey;
@@ -477,5 +508,6 @@ body{background:#f0f4fb}
   </script>
 </body>
 </html>
+
 
 
