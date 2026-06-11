@@ -215,8 +215,8 @@
   document.addEventListener('DOMContentLoaded', function() {
     // Homepage - grid kegiatan (4 artikel)
     initBerita('kegiatanGrid', 3);
-    // Homepage - grid berita (4 artikel)
-    initBerita('beritaGridHome', 4);
+    // Homepage - grid berita (3 artikel)
+    initBerita('beritaGridHome', 3);
 
     // berita.html - full grid dengan semua artikel
     var btGrid = document.getElementById('btGrid');
