@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
@@ -340,7 +340,7 @@ body{background:#f0f4fb}
 
       if (isWpId) {
         // Fetch langsung 1 post dari WordPress API
-        fetch('https://hibatullah.sch.id/wp-json/wp/v2/posts/' + postId + '?_embed=1')
+        fetch('https://linen-eagle-143399.hostingersite.com/wp-json/wp/v2/posts/' + postId + '?_embed=1')
           .then(function(r) { return r.json(); })
           .then(function(post) {
             if (!post || post.code) throw new Error('not found');
@@ -356,7 +356,7 @@ body{background:#f0f4fb}
             try { author = post._embedded.author[0].name; } catch(e) { author = 'Admin'; }
 
             // Fetch semua post untuk sidebar related
-            fetch('https://hibatullah.sch.id/wp-json/wp/v2/posts?per_page=100&_embed=1&orderby=date&order=desc')
+            fetch('https://linen-eagle-143399.hostingersite.com/wp-json/wp/v2/posts?per_page=100&_embed=1&orderby=date&order=desc')
               .then(function(r2) { return r2.json(); })
               .then(function(allPosts) {
                 var allItems = allPosts.map(function(p) {
@@ -386,7 +386,15 @@ body{background:#f0f4fb}
           })
           .catch(function() {
             if (typeof fetchFromWP === 'function') {
-              fetchFromWP(function(items) { loadArticle(items, items, 0); });
+              fetchFromWP(function(items) {
+                var foundIdx = 0;
+                for(var i=0; i<items.length; i++) {
+                  if(items[i].wp_id && items[i].wp_id.toString() === postId.toString()) {
+                    foundIdx = i; break;
+                  }
+                }
+                loadArticle(items, items, foundIdx);
+              });
             }
           });
       } else {
