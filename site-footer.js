@@ -41,10 +41,9 @@
           '<p class="sf-tagline">Siap Menjadi Generasi Qur\'ani &amp; Entrepreneur?</p>' +
           '<p class="sf-desc">Mendidik generasi Qur\'ani yang berakhlak mulia, siap menjadi pemimpin masa depan yang gemilang.</p>' +
           '<div class="sf-socials">' +
-            '<a href="#" class="sf-fb" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>' +
+            '<a href="https://www.tiktok.com/@hibatullah.iibs" target="_blank" rel="noopener" class="sf-tt" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>' +
             '<a href="https://www.instagram.com/hibatullah.iibs/" target="_blank" rel="noopener" class="sf-ig" aria-label="Instagram"><i class="fab fa-instagram"></i></a>' +
-            '<a href="#" class="sf-yt" aria-label="YouTube"><i class="fab fa-youtube"></i></a>' +
-            '<a href="https://www.tiktok.com/@hibatullahiibs" target="_blank" rel="noopener" class="sf-tt" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>' +
+            '<a href="https://www.youtube.com/@hibatullahiibs" target="_blank" rel="noopener" class="sf-yt" aria-label="YouTube"><i class="fab fa-youtube"></i></a>' +
           '</div>' +
         '</div>' +
         '<div class="sf-col">' +
