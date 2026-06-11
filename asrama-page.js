@@ -113,13 +113,7 @@
             '<p class="as-hero-lead">' + esc(d.hero_deskripsi) + '</p>' +
             '<div class="as-hero-pills" id="asPills"></div>' +
           '</div>' +
-          '<div class="as-hero-visual">' +
-            '<img src="' + esc(d.hero_gambar) + '" alt="Asrama Hibatullah IIBS" />' +
-            '<div class="as-hero-visual-cap">' +
-              '<strong>' + esc(d.hero_label_judul) + '</strong>' +
-              '<span>' + esc(d.hero_label_sub) + '</span>' +
-            '</div>' +
-          '</div>' +
+
         '</div>' +
       '</section>' +
       '<div class="as-subnav-wrap">' +
