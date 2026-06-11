@@ -133,8 +133,8 @@
     s.async = false;
     document.body.appendChild(s);
   }
-  load('mobile-nav.js');
-  load('site-footer.js');
+  load('mobile-nav.js?v=2');
+  load('site-footer.js?v=2');
 })();
 // ===========================
 // SEARCH MODAL FUNCTIONALITY
