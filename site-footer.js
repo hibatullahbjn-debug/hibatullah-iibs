@@ -61,10 +61,12 @@
         '<div class="sf-col">' +
           '<h4 class="sf-heading">PROGRAM UNGGULAN</h4>' +
           '<ul class="sf-prog">' +
-            '<li><a href="#"><span class="sf-prog-icon" style="background:rgba(232,160,32,0.2);color:#f0c040"><i class="fas fa-quran"></i></span> Tahfidzul Qur\'an</a></li>' +
+            '<li><a href="program-unggulan-sdih.html"><span class="sf-prog-icon" style="background:rgba(232,160,32,0.2);color:#f0c040"><i class="fas fa-quran"></i></span> Tahsin & Tahfidz Al Qur\'an</a></li>' +
+            '<li><a href="program-unggulan-sdih.html"><span class="sf-prog-icon" style="background:rgba(58,91,217,0.2);color:#7eb8f7"><i class="fas fa-globe"></i></span> Arabic & English Language</a></li>' +
+            '<li><a href="program-unggulan-sdih.html"><span class="sf-prog-icon" style="background:rgba(142,68,173,0.2);color:#c39bd3"><i class="fas fa-crown"></i></span> Leadership</a></li>' +
+            '<li><a href="program-unggulan-sdih.html"><span class="sf-prog-icon" style="background:rgba(231,76,60,0.2);color:#e74c3c"><i class="fas fa-microphone-alt"></i></span> Public Speaking</a></li>' +
             '<li><a href="entrepreneurship.html"><span class="sf-prog-icon" style="background:rgba(37,211,102,0.15);color:#25d366"><i class="fas fa-rocket"></i></span> Entrepreneurship</a></li>' +
-            '<li><a href="kurikulum.html"><span class="sf-prog-icon" style="background:rgba(58,91,217,0.2);color:#7eb8f7"><i class="fas fa-book"></i></span> Kurikulum</a></li>' +
-            '<li><a href="karakter-siswa-sdih.html"><span class="sf-prog-icon" style="background:rgba(142,68,173,0.2);color:#c39bd3"><i class="fas fa-crown"></i></span> Leadership</a></li>' +
+            '<li><a href="program-unggulan-sdih.html"><span class="sf-prog-icon" style="background:rgba(52,152,219,0.2);color:#3498db"><i class="fas fa-tools"></i></span> Life Skill</a></li>' +
           '</ul>' +
         '</div>' +
         '<div class="sf-col">' +
