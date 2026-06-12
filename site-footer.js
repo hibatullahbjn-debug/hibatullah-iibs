@@ -46,18 +46,7 @@
             '<a href="https://www.youtube.com/@hibatullahiibs" target="_blank" rel="noopener" class="sf-yt" aria-label="YouTube"><i class="fab fa-youtube"></i></a>' +
           '</div>' +
         '</div>' +
-        '<div class="sf-col">' +
-          '<h4 class="sf-heading">QUICK LINKS</h4>' +
-          '<ul class="sf-links">' +
-            '<li><a href="index.html">Beranda</a></li>' +
-            '<li><a href="program.html">Program</a></li>' +
-            '<li><a href="asrama.html">Asrama</a></li>' +
-            '<li><a href="kurikulum.html">Kurikulum</a></li>' +
-            '<li><a href="ppdb.html">PPDB</a></li>' +
-            '<li><a href="galeri.html">Galeri</a></li>' +
-            '<li><a href="berita-pesantren.html">Berita</a></li>' +
-          '</ul>' +
-        '</div>' +
+
         '<div class="sf-col">' +
           '<h4 class="sf-heading">PROGRAM UNGGULAN</h4>' +
           '<ul class="sf-prog">' +
