@@ -6,7 +6,7 @@
     wa: '6282262263434',
     wa_tampil: '0822 6226 3434',
     telepon: '0822 6226 3434',
-    email: 'hibatullah.sch.id@gmail.com',
+    email: 'hibatullah.sch.id',
     alamat: 'Jl. Wonosari, Ds. Sambeng, Kec. Kasiman, Kab. Bojonegoro, Jawa Timur',
     jam_operasional: '24 Jam · Setiap Hari',
     maps_url: 'https://www.google.com/maps?q=-7.1340806,111.6243778',
@@ -64,7 +64,7 @@
             '<li><span class="sf-contact-icon"><i class="fas fa-map-marker-alt"></i></span><span data-sf-alamat>' + alamatHtml + '</span></li>' +
             '<li><span class="sf-contact-icon"><i class="fas fa-phone"></i></span><span data-sf-telp>' + esc(k.telepon || DEFAULT.telepon) + '</span></li>' +
             '<li><span class="sf-contact-icon"><i class="fab fa-whatsapp"></i></span><a href="' + waLink + '" target="_blank" rel="noopener" data-sf-wa>' + esc(k.wa_tampil) + '</a></li>' +
-            '<li><span class="sf-contact-icon"><i class="fas fa-envelope"></i></span><a href="mailto:' + esc(k.email) + '" data-sf-email>' + esc(k.email) + '</a></li>' +
+            '<li><span class="sf-contact-icon"><i class="fas fa-globe"></i></span><a href="https://hibatullah.sch.id" target="_blank" rel="noopener" data-sf-email>' + esc(k.email) + '</a></li>' +
           '</ul>' +
         '</div>' +
       '</div>' +
