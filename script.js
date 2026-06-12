@@ -134,7 +134,7 @@
     document.body.appendChild(s);
   }
   load('mobile-nav.js?v=2');
-  load('site-footer.js?v=2');
+  load('site-footer.js?v=3');
 })();
 // ===========================
 // SEARCH MODAL FUNCTIONALITY
