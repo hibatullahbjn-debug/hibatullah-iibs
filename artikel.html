@@ -245,19 +245,8 @@ body{background:#f0f4fb}
           <div class="art-comments">
             <div class="art-comments-title"><i class="fas fa-comments"></i> Komentar (<span id="artCommentCount">0</span>)</div>
             
-            <div id="artCommentLogin" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:24px; text-align:center; margin-bottom:24px;">
-              <p style="font-size:14px; color:#475569; margin-bottom:16px;">Silakan login dengan akun Google Anda untuk memberikan komentar.</p>
-              <button onclick="loginGoogle()" style="background:#ea4335; color:#fff; border:none; border-radius:8px; padding:10px 20px; font-weight:600; cursor:pointer; display:inline-flex; align-items:center; gap:8px;">
-                <i class="fab fa-google"></i> Login dengan Google
-              </button>
-            </div>
-
-            <div class="art-comment-form" id="artCommentForm" style="display:none;">
-              <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
-                <img id="currentUserAvatar" src="" style="width:36px; height:36px; border-radius:50%; object-fit:cover;" />
-                <span id="currentUserName" style="font-weight:600; font-size:14px; color:#1e293b;"></span>
-                <button onclick="logoutGoogle()" style="margin-left:auto; font-size:13px; background:none; border:none; color:#ef4444; cursor:pointer; font-weight:500;">Logout</button>
-              </div>
+            <div class="art-comment-form">
+              <input type="text" id="commentName" placeholder="Nama kamu..." maxlength="50" style="width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid #e2e8f0; border-radius: 8px; font-family: 'Poppins', sans-serif;" />
               <textarea id="commentText" placeholder="Tulis komentar..."></textarea>
               <button class="art-comment-submit" onclick="submitComment()">Kirim Komentar</button>
             </div>
@@ -401,41 +390,19 @@ body{background:#f0f4fb}
     // ENGAGE: View, Like, Comment (Firebase)
     // =============================================
     var currentPostKey = '';
-    var currentUser = null;
-    var db = null;
+        var db = null;
     var unsubComments = null;
 
     function initFirebaseEngage() {
       if (typeof firebase !== 'undefined' && firebase.apps.length) {
         db = firebase.firestore();
-        firebase.auth().onAuthStateChanged(function(user) {
-          currentUser = user;
-          var loginDiv = document.getElementById('artCommentLogin');
-          var formDiv = document.getElementById('artCommentForm');
-          if (user) {
-            loginDiv.style.display = 'none';
-            formDiv.style.display = 'block';
-            document.getElementById('currentUserAvatar').src = user.photoURL || 'https://via.placeholder.com/36';
-            document.getElementById('currentUserName').textContent = user.displayName || 'Pengguna';
-          } else {
-            loginDiv.style.display = 'block';
-            formDiv.style.display = 'none';
-          }
-        });
+        
       }
     }
 
-    window.loginGoogle = function() {
-      if (typeof firebase === 'undefined') return alert('Firebase belum siap.');
-      var provider = new firebase.auth.GoogleAuthProvider();
-      firebase.auth().signInWithPopup(provider).catch(function(error) {
-        alert('Gagal login: ' + error.message);
-      });
-    };
+    
 
-    window.logoutGoogle = function() {
-      if (typeof firebase !== 'undefined') firebase.auth().signOut();
-    };
+    
 
     function initEngage(postKey) {
       currentPostKey = postKey;
@@ -530,20 +497,23 @@ body{background:#f0f4fb}
     }
 
     window.submitComment = function() {
-      if (!currentUser) return alert('Silakan login terlebih dahulu.');
       var postKey = currentPostKey;
+      var name = document.getElementById('commentName').value.trim();
       var text = document.getElementById('commentText').value.trim();
+      
+      if (!name) { alert('Nama tidak boleh kosong.'); return; }
       if (!text) { alert('Komentar tidak boleh kosong.'); return; }
 
       if (!db) return alert('Koneksi database bermasalah.');
 
       var docRef = db.collection('berita_stats').doc(postKey).collection('comments').doc();
       docRef.set({
-        name: currentUser.displayName || 'Pengguna',
-        photoURL: currentUser.photoURL || '',
+        name: name,
+        photoURL: '',
         text: text,
         date: firebase.firestore.FieldValue.serverTimestamp()
       }).then(function() {
+        document.getElementById('commentName').value = '';
         document.getElementById('commentText').value = '';
       }).catch(function(err) {
         alert('Gagal mengirim komentar: ' + err.message);
