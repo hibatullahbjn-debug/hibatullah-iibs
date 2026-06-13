@@ -2390,3 +2390,18 @@ html, body { overflow-x: hidden !important; }
   .hsm-slider-wrapper { padding: 0; }
   .hsm-prev, .hsm-next { display: none; } /* Hide buttons on mobile, use swipe */
 }
+
+/* PROMO MODAL */
+.promo-modal { position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); display: none; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
+.promo-modal.show { display: flex; opacity: 1; }
+.promo-modal-content { background-color: #fff; border-radius: 16px; width: 90%; max-width: 450px; position: relative; overflow: hidden; display: flex; flex-direction: column; animation: modalZoom 0.3s ease; }
+@keyframes modalZoom { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.promo-close { position: absolute; top: 15px; right: 15px; width: 32px; height: 32px; background: rgba(0,0,0,0.5); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; cursor: pointer; z-index: 10; transition: background 0.3s; }
+.promo-close:hover { background: rgba(0,0,0,0.8); }
+.promo-img { width: 100%; height: auto; display: block; }
+.promo-buttons { padding: 20px; display: flex; flex-direction: column; gap: 10px; background: #0a1128; }
+.promo-btn { width: 100%; padding: 12px; border-radius: 8px; text-align: center; font-weight: 700; font-size: 16px; cursor: pointer; text-decoration: none; border: none; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.promo-primary { background: #f59e0b; color: #fff; }
+.promo-primary:hover { background: #d97706; }
+.promo-secondary { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.2); }
+.promo-secondary:hover { background: rgba(255,255,255,0.1); }

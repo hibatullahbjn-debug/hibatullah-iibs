@@ -218,3 +218,35 @@
     }
   });
 })();
+
+
+// PROMO MODAL LOGIC
+(function() {
+  const promoModal = document.getElementById('promoModal');
+  const promoClose = document.getElementById('promoClose');
+  const promoLaterBtn = document.getElementById('promoLaterBtn');
+
+  if (promoModal) {
+    if (!sessionStorage.getItem('promoSeen')) {
+      setTimeout(() => {
+        promoModal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      }, 1500);
+    }
+
+    function closeModal() {
+      promoModal.classList.remove('show');
+      document.body.style.overflow = '';
+      sessionStorage.setItem('promoSeen', 'true');
+    }
+
+    if (promoClose) promoClose.addEventListener('click', closeModal);
+    if (promoLaterBtn) promoLaterBtn.addEventListener('click', closeModal);
+
+    promoModal.addEventListener('click', (e) => {
+      if (e.target === promoModal) {
+        closeModal();
+      }
+    });
+  }
+})();
