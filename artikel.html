@@ -220,9 +220,22 @@ body{background:#f0f4fb}
 
           <!-- ENGAGE: Views, Like -->
           <div class="art-engage">
-            <button class="art-engage-btn" id="artLikeBtn" onclick="toggleLike()">
-              <i class="far fa-heart"></i> <span id="artLikeCount">0</span> Suka
-            </button>
+            <div class="art-reaction-container">
+              <button class="art-engage-btn" id="artLikeBtn" onclick="toggleLike()">
+                <i class="far fa-thumbs-up" id="artLikeIcon"></i> 
+                <span id="artLikeText">Suka</span> 
+                (<span id="artLikeCount">0</span>)
+              </button>
+              <div class="art-reaction-popover">
+                <button class="reaction-emoji" onclick="setReaction('like', event)" title="Suka">👍</button>
+                <button class="reaction-emoji" onclick="setReaction('love', event)" title="Super">❤️</button>
+                <button class="reaction-emoji" onclick="setReaction('care', event)" title="Peduli">🥰</button>
+                <button class="reaction-emoji" onclick="setReaction('haha', event)" title="Haha">😂</button>
+                <button class="reaction-emoji" onclick="setReaction('wow', event)" title="Wow">😲</button>
+                <button class="reaction-emoji" onclick="setReaction('sad', event)" title="Sedih">😢</button>
+                <button class="reaction-emoji" onclick="setReaction('angry', event)" title="Marah">😡</button>
+              </div>
+            </div>
             <div class="art-engage-stats">
               <div class="art-engage-views">
                 <i class="far fa-eye"></i> <span id="artViewCount">0</span> dilihat
@@ -410,9 +423,9 @@ body{background:#f0f4fb}
 
       // Set initial values from localStorage to prevent empty flickers
       var likes = parseInt(localStorage.getItem(postKey + '_likes') || '0');
-      var liked = localStorage.getItem(postKey + '_liked') === '1';
+      var currentReaction = localStorage.getItem(postKey + '_reaction');
       document.getElementById('artLikeCount').textContent = likes;
-      updateLikeBtn(liked);
+      updateLikeBtn(currentReaction);
 
       if (!db) return; // if firebase not setup yet
 
@@ -466,24 +479,80 @@ body{background:#f0f4fb}
       }).catch(function(){});
     };
 
+    
+    const reactionDict = {
+      'like': { icon: '👍', color: '#1a3a6b', text: 'Suka' },
+      'love': { icon: '❤️', color: '#e0245e', text: 'Super' },
+      'care': { icon: '🥰', color: '#f0c040', text: 'Peduli' },
+      'haha': { icon: '😂', color: '#f0c040', text: 'Haha' },
+      'wow':  { icon: '😲', color: '#f0c040', text: 'Wow' },
+      'sad':  { icon: '😢', color: '#f0c040', text: 'Sedih' },
+      'angry':{ icon: '😡', color: '#e0245e', text: 'Marah' }
+    };
+
     window.toggleLike = function() {
+      // If clicking the main button, just toggle 'like' or remove
       var postKey = currentPostKey;
-      var liked = localStorage.getItem(postKey + '_liked') === '1';
-      var newLiked = !liked;
+      var currentReaction = localStorage.getItem(postKey + '_reaction');
       
-      localStorage.setItem(postKey + '_liked', newLiked ? '1' : '0');
-      updateLikeBtn(newLiked);
+      if (currentReaction) {
+        // Remove reaction
+        setReaction(null);
+      } else {
+        // Default to like
+        setReaction('like');
+      }
+    };
+
+    window.setReaction = function(type, e) {
+      if (e) e.stopPropagation();
+      var postKey = currentPostKey;
+      var oldReaction = localStorage.getItem(postKey + '_reaction');
+      
+      if (oldReaction === type) return; // No change
+
+      localStorage.setItem(postKey + '_reaction', type || '');
+      updateLikeBtn(type);
 
       if (!db) return;
       var docRef = db.collection('berita_stats').doc(postKey);
-      docRef.update({
-        likes: firebase.firestore.FieldValue.increment(newLiked ? 1 : -1)
-      }).catch(function(err){
-         // Revert on error
-         localStorage.setItem(postKey + '_liked', liked ? '1' : '0');
-         updateLikeBtn(liked);
+      
+      var updates = {};
+      if (oldReaction) {
+        updates['reactions.' + oldReaction] = firebase.firestore.FieldValue.increment(-1);
+      }
+      if (type) {
+        updates['reactions.' + type] = firebase.firestore.FieldValue.increment(1);
+      }
+      
+      // Update overall likes count as sum (or we just rely on reactions sum)
+      if (type && !oldReaction) updates.likes = firebase.firestore.FieldValue.increment(1);
+      if (!type && oldReaction) updates.likes = firebase.firestore.FieldValue.increment(-1);
+
+      docRef.update(updates).catch(function(err){
+         console.log(err);
+         // if update fails, we might want to revert UI, but let's keep it simple
       });
     };
+
+    function updateLikeBtn(type) {
+      var btn = document.getElementById('artLikeBtn');
+      var icon = document.getElementById('artLikeIcon');
+      var text = document.getElementById('artLikeText');
+      
+      if (type && reactionDict[type]) {
+        btn.classList.add('liked');
+        btn.style.color = reactionDict[type].color;
+        icon.outerHTML = '<span id="artLikeIcon" style="font-size: 18px; margin-right: 6px;">' + reactionDict[type].icon + '</span>';
+        text.textContent = reactionDict[type].text;
+      } else {
+        btn.classList.remove('liked');
+        btn.style.color = '';
+        var currentIcon = document.getElementById('artLikeIcon');
+        currentIcon.outerHTML = '<i class="far fa-thumbs-up" id="artLikeIcon"></i>';
+        text.textContent = 'Suka';
+      }
+    }
 
     function updateLikeBtn(liked) {
       var btn = document.getElementById('artLikeBtn');
