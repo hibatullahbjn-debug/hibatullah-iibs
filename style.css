@@ -33,6 +33,7 @@ img {
    TOP BAR
 =========================== */
 .topbar {
+  display: none !important;
   background: #fff;
   border-bottom: 1px solid #eee;
   padding: 7px 0;
