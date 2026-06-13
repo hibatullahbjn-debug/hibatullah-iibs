@@ -2281,7 +2281,6 @@ html, body { overflow-x: hidden !important; }
 }
 .hsm-slide {
   flex: 0 0 325px; /* fixed width */
-  height: 577px; /* 9:16 aspect ratio */
   scroll-snap-align: center;
   position: relative;
   background: #000;

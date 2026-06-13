@@ -5,7 +5,7 @@ const DIST = path.join(__dirname, '..', 'dist');
 const ROOT = path.join(__dirname, '..');
 
 // Ekstensi file yang akan disalin
-const EXTENSIONS = ['.html', '.css', '.js', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.ico', '.webp', '.woff', '.woff2', '.ttf', '.eot'];
+const EXTENSIONS = ['.html', '.css', '.js', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.ico', '.webp', '.woff', '.woff2', '.ttf', '.eot', '.mp4'];
 
 // Folder & file yang diabaikan
 const IGNORE = ['node_modules', '.git', '.vscode', 'dist', 'scripts', 'package.json', 'package-lock.json', '.gitignore'];
