@@ -2111,25 +2111,23 @@ html, body { overflow-x: hidden !important; }
   background: #f59e0b;
   box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
 }
-.hvm-card:nth-child(2) .hvm-card-header h3 {
-  color: #f59e0b;
-}
 .hvm-card-header h3 {
   font-size: 24px;
   font-weight: 700;
   margin: 0;
 }
-.hvm-card p {
+.hvm-single-card p {
   color: #4b5563;
   line-height: 1.8;
   font-size: 16px;
+  margin: 0;
 }
-.hvm-card ul {
+.hvm-single-card ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-.hvm-card ul li {
+.hvm-single-card ul li {
   color: #4b5563;
   line-height: 1.8;
   font-size: 15px;
@@ -2137,7 +2135,7 @@ html, body { overflow-x: hidden !important; }
   padding-left: 24px;
   position: relative;
 }
-.hvm-card ul li::before {
+.hvm-single-card ul li::before {
   content: '•';
   color: #f59e0b;
   position: absolute;
