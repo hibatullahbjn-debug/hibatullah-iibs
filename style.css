@@ -2409,3 +2409,8 @@ html, body { overflow-x: hidden !important; }
   .promo-buttons { padding: 12px; gap: 8px; }
   .promo-btn { font-size: 13px; padding: 10px 8px; }
 }
+
+
+/* SCROLL REVEAL ANIMATION */
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal.active { opacity: 1; transform: translateY(0); }
