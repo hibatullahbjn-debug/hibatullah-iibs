@@ -80,7 +80,19 @@
   .sdih-hero-desc{font-size:13px !important;text-align:center !important}
   .sdih-hero-pills{justify-content:center !important}
   .sdih-hero-badge{margin:0 auto 16px !important}
-}</style>
+}
+.sdih-vm-container { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 48px; }
+.sdih-visi-card { margin-bottom: 0 !important; }
+.sdih-misi-card-single { background: #fff; border-radius: 16px; padding: 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); border-top: 4px solid #f59e0b; text-align: left; }
+.sdih-misi-header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+.sdih-misi-icon { width: 48px; height: 48px; border-radius: 12px; background: #f59e0b; display: flex; align-items: center; justify-content: center; font-size: 22px; color: #fff; }
+.sdih-misi-card-single h3 { font-size: 22px; font-weight: 800; color: #f59e0b; margin: 0; }
+.sdih-misi-list { list-style: none; padding: 0; margin: 0; }
+.sdih-misi-list li { font-size: 14px; color: #555; line-height: 1.8; margin-bottom: 16px; position: relative; padding-left: 24px; }
+.sdih-misi-list li::before { content: ''; position: absolute; left: 0; top: 10px; width: 6px; height: 6px; background: #f59e0b; border-radius: 50%; }
+@media(max-width: 768px) { .sdih-vm-container { grid-template-columns: 1fr; } }
+
+</style>
 </head>
 <body>
 
