@@ -548,13 +548,14 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #27ae60;
-  color: #fff;
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.4);
   font-size: 11px;
   font-weight: 700;
   padding: 6px 16px;
   border-radius: 20px;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   margin-bottom: 20px;
 }
 
@@ -579,7 +580,7 @@ img {
 }
 
 .hero-highlight {
-  color: #27ae60;
+  color: #f59e0b;
 }
 
 .hero-desc {
@@ -597,12 +598,12 @@ img {
 }
 
 .btn-primary {
-  background: #27ae60;
-  color: #fff;
+  background: #f59e0b;
+  color: #111;
   font-size: 16px;
   font-weight: 700;
   padding: 16px 32px;
-  border-radius: 6px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -611,18 +612,18 @@ img {
 }
 
 .btn-primary:hover {
-  background: #1e8449;
+  background: #d97706;
   transform: translateY(-2px);
 }
 
 .btn-outline {
   background: transparent;
   color: #fff;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
-  padding: 12px 24px;
-  border-radius: 6px;
-  border: 2px solid rgba(255,255,255,0.6);
+  padding: 15px 30px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.4);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -634,14 +635,28 @@ img {
   background: rgba(255,255,255,0.1);
 }
 
-/* Slider Controls — disembunyikan */
+/* Slider Controls */
 .slider-prev,
 .slider-next {
-  display: none;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
-.slider-prev { left: 20px; }
-.slider-next { right: 20px; }
+.slider-prev { left: 30px; }
+.slider-next { right: 30px; }
 
 .slider-prev:hover,
 .slider-next:hover {
@@ -660,17 +675,17 @@ img {
 }
 
 .dot-item {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
   background: rgba(255,255,255,0.4);
   cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
+  transition: width 0.3s, background 0.3s;
 }
 
 .dot-item.active {
-  background: #fff;
-  transform: scale(1.2);
+  background: #f59e0b;
+  width: 24px;
 }
 
 /* ===========================
