@@ -143,6 +143,7 @@ img {
 .logo-text {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   line-height: 1.2;
 }
 
@@ -1708,7 +1709,8 @@ html, body { overflow-x: hidden !important; }
   }
 
   .btn-search {
-    display: none !important;
+    display: flex !important;
+    padding: 0 8px !important;
   }
 
   .hamburger {
@@ -1737,6 +1739,7 @@ html, body { overflow-x: hidden !important; }
     order: 1 !important;
     min-width: 0 !important;
     overflow: hidden !important;
+    align-items: center !important;
   }
 
   .logo-name {
