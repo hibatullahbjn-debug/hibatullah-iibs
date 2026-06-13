@@ -2468,9 +2468,11 @@ html, body { overflow-x: hidden !important; }
   color: #f59e0b;
 }
 .hvm-part-visi p {
-  color: #4b5563;
-  line-height: 1.8;
-  font-size: 16px;
+  color: #334155;
+  line-height: 1.85;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 500;
   margin: 0;
 }
 .hvm-part-misi ul {
@@ -2479,11 +2481,12 @@ html, body { overflow-x: hidden !important; }
   margin: 0;
 }
 .hvm-part-misi ul li {
-  color: #4b5563;
-  line-height: 1.8;
-  font-size: 15px;
-  margin-bottom: 16px;
-  padding-left: 24px;
+  color: #334155;
+  line-height: 1.85;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  padding-left: 28px;
   position: relative;
 }
 .hvm-part-misi ul li::before {
@@ -2492,6 +2495,6 @@ html, body { overflow-x: hidden !important; }
   position: absolute;
   left: 0;
   top: 0;
-  font-size: 24px;
-  line-height: 1.2;
+  font-size: 26px;
+  line-height: 1.35;
 }
