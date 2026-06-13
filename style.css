@@ -2399,12 +2399,12 @@ html, body { overflow-x: hidden !important; }
 .promo-close { position: absolute; top: 15px; right: 15px; width: 32px; height: 32px; background: rgba(0,0,0,0.5); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; cursor: pointer; z-index: 10; transition: background 0.3s; }
 .promo-close:hover { background: rgba(0,0,0,0.8); }
 .promo-img { width: 100%; height: auto; display: block; }
-.promo-buttons { padding: 20px; display: flex; flex-direction: row; gap: 15px; background: #0a1128; justify-content: center; }
+.promo-buttons { padding: 20px; display: flex; flex-direction: row; gap: 15px; background: #1a3a6b; justify-content: center; }
 .promo-btn { flex: 1; padding: 14px 12px; border-radius: 8px; text-align: center; font-weight: 700; font-size: 16px; cursor: pointer; text-decoration: none; border: none; display: flex; align-items: center; justify-content: center; gap: 8px; }
-.promo-primary { background: #f59e0b; color: #fff; }
-.promo-primary:hover { background: #d97706; }
-.promo-secondary { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.2); }
-.promo-secondary:hover { background: rgba(255,255,255,0.1); }
+.promo-primary { background: #e8a020; color: #fff; }
+.promo-primary:hover { background: #c8881a; }
+.promo-secondary { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.4); }
+.promo-secondary:hover { background: rgba(255,255,255,0.2); }
 @media (max-width: 480px) {
   .promo-buttons { flex-direction: column; gap: 10px; padding: 15px; }
 }
