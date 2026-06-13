@@ -554,16 +554,7 @@ body{background:#f0f4fb}
       }
     }
 
-    function updateLikeBtn(liked) {
-      var btn = document.getElementById('artLikeBtn');
-      if (liked) {
-        btn.classList.add('liked');
-        btn.innerHTML = '<i class="fas fa-heart"></i> <span id="artLikeCount">' + document.getElementById('artLikeCount').textContent + '</span> Suka';
-      } else {
-        btn.classList.remove('liked');
-        btn.innerHTML = '<i class="far fa-heart"></i> <span id="artLikeCount">' + document.getElementById('artLikeCount').textContent + '</span> Suka';
-      }
-    }
+
 
     window.submitComment = function() {
       var postKey = currentPostKey;
