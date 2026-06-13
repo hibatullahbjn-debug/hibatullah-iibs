@@ -38,7 +38,7 @@
               '<span>BOJONEGORO · JAWA TIMUR</span>' +
             '</div>' +
           '</div>' +
-          '<p class="sf-tagline">Siap Menjadi Generasi Qur\'ani &amp; Berkarya?</p>' +
+          '<p class="sf-tagline">Siap Menjadi Generasi Qur\'ani &amp; Berkarya</p>' +
           '<p class="sf-desc">Membina santri yang tangguh berpegang pada nilai Islam, sekaligus kreatif dan mandiri dalam menghasilkan karya nyata yang bermanfaat bagi umat.</p>' +
           '<div class="sf-socials">' +
             '<a href="https://www.tiktok.com/@hibatullah.iibs" target="_blank" rel="noopener" class="sf-tt" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>' +
