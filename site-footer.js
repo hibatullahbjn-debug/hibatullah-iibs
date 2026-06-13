@@ -38,8 +38,8 @@
               '<span>BOJONEGORO · JAWA TIMUR</span>' +
             '</div>' +
           '</div>' +
-          '<p class="sf-tagline">Siap Menjadi Generasi Qur\'ani &amp; Entrepreneur?</p>' +
-          '<p class="sf-desc">Mendidik generasi Qur\'ani yang berakhlak mulia, siap menjadi pemimpin masa depan yang gemilang.</p>' +
+          '<p class="sf-tagline">Siap Menjadi Generasi Qur\'ani &amp; Berkarya?</p>' +
+          '<p class="sf-desc">Membina santri yang tangguh berpegang pada nilai Islam, sekaligus kreatif dan mandiri dalam menghasilkan karya nyata yang bermanfaat bagi umat.</p>' +
           '<div class="sf-socials">' +
             '<a href="https://www.tiktok.com/@hibatullah.iibs" target="_blank" rel="noopener" class="sf-tt" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>' +
             '<a href="https://www.instagram.com/hibatullah.iibs/" target="_blank" rel="noopener" class="sf-ig" aria-label="Instagram"><i class="fab fa-instagram"></i></a>' +
@@ -70,7 +70,7 @@
       '</div>' +
       '<div class="sf-cta-strip">' +
         '<div class="sf-cta-box">' +
-          '<div><strong>Daftar Santri Baru — PPDB 2025/2026</strong><span>Bergabung dengan Pesantren Hibatullah IIBS</span></div>' +
+          '<div><strong>Daftar Santri Baru — PPDB 2026/2027</strong><span>Bergabung dengan Pesantren Hibatullah IIBS</span></div>' +
           '<div class="sf-cta-btns">' +
             '<a href="https://ppdb.hibatullah.sch.id/formulir" target="_blank" class="sf-cta-btn"><i class="fas fa-pen-to-square"></i> Daftar Sekarang</a>' +
             '<a href="' + waLink + '" class="sf-cta-btn sf-cta-btn--outline"><i class="fab fa-whatsapp"></i> Konsultasi</a>' +

@@ -82,8 +82,10 @@
           // Ambil kategori
           var cats = [];
           try {
-            cats = post._embedded['wp:term'][0].map(function(t){ return t.name; });
-          } catch(e) { cats = ['Blog']; }
+            cats = post._embedded['wp:term'][0].map(function(t){ 
+              return (t.name.toLowerCase() === 'uncategorized') ? 'News' : t.name; 
+            });
+          } catch(e) { cats = ['News']; }
           // Ambil author
           var author = '';
           try {
