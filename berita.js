@@ -149,6 +149,7 @@
   function makeCard(item, idx) {
     var img = item.thumbnail || extractImg(item.content) || 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80';
     var cat = item.categories && item.categories[0] ? item.categories[0] : 'Blog';
+    if (cat.toLowerCase().trim() === 'uncategorized') cat = 'News';
     var desc = stripHtml(item.description || item.content || '');
     if (desc.length > 110) desc = desc.substring(0, 110) + '...';
     var tgl = formatDate(item.pubDate);
