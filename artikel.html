@@ -280,7 +280,7 @@ body{background:#f0f4fb}
       document.getElementById('artCat').textContent = cat.toUpperCase();
       document.getElementById('artCat2').textContent = cat;
       document.getElementById('artTitle').textContent = item.title;
-      document.getElementById('artAuthor').textContent = item.author || 'Admin';
+      document.getElementById('artAuthor').textContent = (item.author && item.author.indexOf('@') === -1) ? item.author : 'Admin';
       document.getElementById('artDate').textContent = fmtDate(item.pubDate);
       document.getElementById('artContent').innerHTML = item.content || '<p>'+item.description+'</p>';
 

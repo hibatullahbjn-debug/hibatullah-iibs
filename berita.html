@@ -310,7 +310,7 @@ body{background:#f0f4fb}
           '<p class="bt-card-desc">' + esc(desc) + '</p>' +
           '<div class="bt-card-footer">' +
             '<div class="bt-card-author"><div class="bt-card-author-icon"><i class="fas fa-user"></i></div>' +
-            '<div><div class="bt-author-name">' + esc(item.author || 'Admin') + '</div><div class="bt-author-role">Penulis</div></div></div>' +
+            '<div><div class="bt-author-name">' + esc((item.author && item.author.indexOf('@') === -1) ? item.author : 'Admin') + '</div><div class="bt-author-role">Penulis</div></div></div>' +
             '<span class="bt-read-more">Baca ?</span>' +
           '</div>' +
         '</div>' +
