@@ -2597,9 +2597,8 @@ html, body { overflow-x: hidden !important; }
     .prog-sec-line { width: 48px; height: 3px; background: #3a5bd9; border-radius: 2px; margin: 12px auto 0; }
 
     /* MAIN CARD LAYOUT */
-    .prog-card-layout {
-      display: grid;
-      grid-template-columns: 420px 1fr;
+    .prog-card-layout { display: block;
+      
       gap: 28px;
       align-items: stretch;
       background: #fff;
@@ -2709,7 +2708,7 @@ html, body { overflow-x: hidden !important; }
 
     
 @media (max-width: 900px) {
-  .prog-card-layout { grid-template-columns: 1fr; }
+  
   .prog-img-card { min-height: 280px; }
 }
 @media (max-width: 480px) {
