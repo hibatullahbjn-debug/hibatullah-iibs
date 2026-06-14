@@ -68,15 +68,6 @@
           '</ul>' +
         '</div>' +
       '</div>' +
-      '<div class="sf-cta-strip">' +
-        '<div class="sf-cta-box">' +
-          '<div><strong>Daftar Santri Baru — PPDB 2026/2027</strong><span>Bergabung dengan Pesantren Hibatullah IIBS</span></div>' +
-          '<div class="sf-cta-btns">' +
-            '<a href="https://ppdb.hibatullah.sch.id/formulir" target="_blank" class="sf-cta-btn"><i class="fas fa-pen-to-square"></i> Daftar Sekarang</a>' +
-            '<a href="' + waLink + '" class="sf-cta-btn sf-cta-btn--outline"><i class="fab fa-whatsapp"></i> Konsultasi</a>' +
-          '</div>' +
-        '</div>' +
-      '</div>' +
       '<div class="sf-bottom">' +
         '<div class="sf-bottom-inner">' +
           '<span>© 2025 Hibatullah IIBS. All Rights Reserved.</span>' +
