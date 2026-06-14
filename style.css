@@ -2597,7 +2597,10 @@ html, body { overflow-x: hidden !important; }
     .prog-sec-line { width: 48px; height: 3px; background: #3a5bd9; border-radius: 2px; margin: 12px auto 0; }
 
     /* MAIN CARD LAYOUT */
-    .prog-card-layout { display: block;
+    .prog-card-layout { 
+      display: block;
+      max-width: 800px;
+      margin: 0 auto;
       
       gap: 28px;
       align-items: stretch;
@@ -2656,10 +2659,10 @@ html, body { overflow-x: hidden !important; }
 
     /* Right content */
     .prog-content-card {
-      padding: 36px 36px 36px 32px;
+      padding: 32px;
       display: flex;
       flex-direction: column;
-      gap: 32px;
+      gap: 24px;
     }
 
     /* Program group */
