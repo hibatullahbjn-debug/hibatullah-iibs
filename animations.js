@@ -126,8 +126,11 @@
     /* Navbar scroll shrink */
     .navbar.scrolled {
       padding: 0;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.15);
-      transition: box-shadow 0.3s, background 0.3s;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.1);
+      background: rgba(255, 255, 255, 0.85) !important;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: all 0.3s ease;
     }
 
     /* Smooth page entrance */

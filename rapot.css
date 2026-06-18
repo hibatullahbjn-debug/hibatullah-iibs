@@ -1,0 +1,295 @@
+/* Rapot Styles */
+.rapot-section {
+  padding: 60px 20px;
+  background-color: #f4f7f6;
+  min-height: 80vh;
+}
+.rapot-container {
+  max-width: 95%;
+  margin: 0 auto;
+}
+.rapot-search-card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  text-align: center;
+  margin-bottom: 40px;
+}
+.rapot-search-card h2 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+.rapot-search-card p {
+  color: #7f8c8d;
+  margin-bottom: 25px;
+  text-align: center;
+}
+.rapot-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+  gap: 15px;
+}
+.rapot-form input {
+  flex: 1;
+  padding: 15px 20px;
+  border: 2px solid #e0e6ed;
+  border-radius: 50px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+.rapot-form input:focus {
+  border-color: #3a5bd9;
+  box-shadow: 0 0 0 4px rgba(58,91,217,0.1);
+}
+.btn-search-rapot {
+  padding: 15px 30px;
+  background: #3a5bd9;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+.btn-search-rapot:hover {
+  background: #2a46b3;
+  transform: translateY(-2px);
+}
+
+.student-info-card {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #3a5bd9, #27ae60);
+  padding: 30px;
+  border-radius: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(58,91,217,0.2);
+}
+.student-avatar {
+  width: 80px;
+  height: 80px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  margin-right: 25px;
+}
+.student-details h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.student-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 15px;
+}
+.student-meta span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.semester-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 0px;
+}
+.semester-tab {
+  padding: 15px 25px;
+  background: #fff;
+  border: 1px solid #e0e6ed;
+  border-bottom: none;
+  border-radius: 12px 12px 0 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #7f8c8d;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  outline: none;
+}
+.semester-tab.active {
+  background: #3a5bd9;
+  color: #fff;
+  border-color: #3a5bd9;
+}
+
+.semester-content {
+  display: none;
+  background: #fff;
+  padding: 30px;
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  animation: fadeIn 0.4s ease-in-out forwards;
+}
+.semester-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.table-responsive {
+  overflow-x: auto;
+  margin-bottom: 30px;
+}
+.rapot-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  border: 1px solid #eef2f6;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+.rapot-table th, .rapot-table td {
+  padding: 18px 20px;
+  border-bottom: 1px solid #eef2f6;
+  border-right: 1px solid #eef2f6;
+  text-align: center;
+  transition: background 0.3s;
+}
+.rapot-table th:last-child, .rapot-table td:last-child {
+  border-right: none;
+}
+.rapot-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.rapot-table tbody tr:nth-child(even) td {
+  background-color: #f8fbff;
+}
+.rapot-table tbody tr:hover td {
+  background: #eff4fc !important;
+}
+.rapot-table th {
+  background: linear-gradient(135deg, #3a5bd9, #5471eb);
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-bottom: none;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+.rapot-table td:nth-child(2) {
+  text-align: left;
+}
+.rapot-table .group-header td {
+  background: #f1f4f8;
+  text-align: left;
+  font-weight: 700;
+  color: #2c3e50;
+}
+.badge-predikat {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
+}
+.badge-a { background: #e8f5e9; color: #2e7d32; }
+.badge-b { background: #e3f2fd; color: #1565c0; }
+.badge-c { background: #fff3e0; color: #ef6c00; }
+.badge-d { background: #ffebee; color: #c62828; }
+
+.rapot-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.attendance-card, .notes-card {
+  background: #ffffff;
+  padding: 30px 20px;
+  border-radius: 16px;
+  border: 1px solid #eef2f6;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+.attendance-card:hover {
+  transform: translateY(-5px);
+}
+.attendance-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+}
+.attendance-card:nth-child(1)::before { background: #3a5bd9; }
+.attendance-card:nth-child(2)::before { background: #27ae60; }
+.attendance-card:nth-child(3)::before { background: #f59e0b; }
+.attendance-card h4, .notes-card h4 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.attendance-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.attendance-card ul li {
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed #ccc;
+  padding-bottom: 5px;
+}
+.notes-card p {
+  font-style: italic;
+  color: #555;
+  line-height: 1.6;
+}
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #7f8c8d;
+}
+.empty-state i {
+  font-size: 60px;
+  color: #e0e6ed;
+  margin-bottom: 20px;
+}
+.empty-state h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .rapot-form {
+    flex-direction: column;
+  }
+  .rapot-footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .student-info-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .student-avatar {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .student-meta {
+    justify-content: center;
+  }
+  .rapot-table th, .rapot-table td {
+    padding: 12px 10px;
+    font-size: 14px;
+  }
+}

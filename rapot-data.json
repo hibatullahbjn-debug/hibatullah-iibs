@@ -1,0 +1,347 @@
+[
+  {
+    "nis": "NIS",
+    "nisn": "NISN",
+    "nama": "NAMA",
+    "nilai": {
+      "Pendidikan Agama Islam": "PAI",
+      "Pendidikan Kewarganegaraan": "PKN",
+      "Bahasa Indonesia": "B. IND",
+      "Matematika": "MTK",
+      "Ilmu Pengetahuan Alam": "IPA",
+      "Ilmu Pengetahuan Sosial": "IPS",
+      "Bahasa Inggris": "B. ING",
+      "Prakarya": "Prakarya",
+      "Pendidikan Jasmani & Olahraga": "PJOK",
+      "Bahasa Jawa": "B. Jawa",
+      "Informatika": "Informatika"
+    },
+    "ringkasan": {
+      "jumlah": "Jumlah",
+      "rataRata": "Rata-Rata",
+      "peringkat": "Rank"
+    }
+  },
+  {
+    "nis": "1",
+    "nisn": "132865088",
+    "nama": "Abdi Naufal Ramadhani",
+    "nilai": {
+      "Pendidikan Agama Islam": 80,
+      "Pendidikan Kewarganegaraan": 83,
+      "Bahasa Indonesia": 82,
+      "Matematika": 83,
+      "Ilmu Pengetahuan Alam": 75,
+      "Ilmu Pengetahuan Sosial": 89,
+      "Bahasa Inggris": 83,
+      "Prakarya": 85,
+      "Pendidikan Jasmani & Olahraga": 86,
+      "Bahasa Jawa": 85,
+      "Informatika": 80
+    },
+    "ringkasan": {
+      "jumlah": 911,
+      "rataRata": 82.81818181818181,
+      "peringkat": 9
+    }
+  },
+  {
+    "nis": "2",
+    "nisn": "123206238",
+    "nama": "Ahmad Muzakky",
+    "nilai": {
+      "Pendidikan Agama Islam": 78,
+      "Pendidikan Kewarganegaraan": 75,
+      "Bahasa Indonesia": 82,
+      "Matematika": 76,
+      "Ilmu Pengetahuan Alam": 75,
+      "Ilmu Pengetahuan Sosial": 86,
+      "Bahasa Inggris": 80,
+      "Prakarya": 85,
+      "Pendidikan Jasmani & Olahraga": 77,
+      "Bahasa Jawa": 91,
+      "Informatika": 77
+    },
+    "ringkasan": {
+      "jumlah": 882,
+      "rataRata": 80.18181818181819,
+      "peringkat": 12
+    }
+  },
+  {
+    "nis": "3",
+    "nisn": "132127818",
+    "nama": "Aldebaran Naufal Mubarok",
+    "nilai": {
+      "Pendidikan Agama Islam": 92,
+      "Pendidikan Kewarganegaraan": 94,
+      "Bahasa Indonesia": 87,
+      "Matematika": 76,
+      "Ilmu Pengetahuan Alam": 87,
+      "Ilmu Pengetahuan Sosial": 86,
+      "Bahasa Inggris": 84,
+      "Prakarya": 83,
+      "Pendidikan Jasmani & Olahraga": 83,
+      "Bahasa Jawa": 77,
+      "Informatika": 83
+    },
+    "ringkasan": {
+      "jumlah": 932,
+      "rataRata": 84.72727272727273,
+      "peringkat": 6
+    }
+  },
+  {
+    "nis": "4",
+    "nisn": "3129790165",
+    "nama": "Assyifa Bilqis Syahuma Putri",
+    "nilai": {
+      "Pendidikan Agama Islam": 99,
+      "Pendidikan Kewarganegaraan": 94,
+      "Bahasa Indonesia": 89,
+      "Matematika": 78,
+      "Ilmu Pengetahuan Alam": 80,
+      "Ilmu Pengetahuan Sosial": 92,
+      "Bahasa Inggris": 86,
+      "Prakarya": 83,
+      "Pendidikan Jasmani & Olahraga": 85,
+      "Bahasa Jawa": 98,
+      "Informatika": 85
+    },
+    "ringkasan": {
+      "jumlah": 969,
+      "rataRata": 88.0909090909091,
+      "peringkat": 3
+    }
+  },
+  {
+    "nis": "5",
+    "nisn": "123859197",
+    "nama": "Denisha Alifia Wardoyo",
+    "nilai": {
+      "Pendidikan Agama Islam": 92,
+      "Pendidikan Kewarganegaraan": 82,
+      "Bahasa Indonesia": 83,
+      "Matematika": 78,
+      "Ilmu Pengetahuan Alam": 80,
+      "Ilmu Pengetahuan Sosial": 93,
+      "Bahasa Inggris": 86,
+      "Prakarya": 85,
+      "Pendidikan Jasmani & Olahraga": 81,
+      "Bahasa Jawa": 75,
+      "Informatika": 85
+    },
+    "ringkasan": {
+      "jumlah": 920,
+      "rataRata": 83.63636363636364,
+      "peringkat": 8
+    }
+  },
+  {
+    "nis": "6",
+    "nisn": "134934808",
+    "nama": "Iqtada Bi Muhammad Al-Fajr I.F.",
+    "nilai": {
+      "Pendidikan Agama Islam": 95,
+      "Pendidikan Kewarganegaraan": 76,
+      "Bahasa Indonesia": 77,
+      "Matematika": 76,
+      "Ilmu Pengetahuan Alam": 75,
+      "Ilmu Pengetahuan Sosial": 78,
+      "Bahasa Inggris": 83,
+      "Prakarya": 85,
+      "Pendidikan Jasmani & Olahraga": 81,
+      "Bahasa Jawa": 92,
+      "Informatika": 80
+    },
+    "ringkasan": {
+      "jumlah": 898,
+      "rataRata": 81.63636363636364,
+      "peringkat": 10
+    }
+  },
+  {
+    "nis": "7",
+    "nisn": "3128344419",
+    "nama": "Kiran Laya Ashofa",
+    "nilai": {
+      "Pendidikan Agama Islam": 99,
+      "Pendidikan Kewarganegaraan": 96,
+      "Bahasa Indonesia": 94,
+      "Matematika": 78,
+      "Ilmu Pengetahuan Alam": 88,
+      "Ilmu Pengetahuan Sosial": 92,
+      "Bahasa Inggris": 99,
+      "Prakarya": 85,
+      "Pendidikan Jasmani & Olahraga": 77,
+      "Bahasa Jawa": 76,
+      "Informatika": 98
+    },
+    "ringkasan": {
+      "jumlah": 982,
+      "rataRata": 89.27272727272727,
+      "peringkat": 2
+    }
+  },
+  {
+    "nis": "8",
+    "nisn": "133429607",
+    "nama": "M. Arba'a Alfiel Fawwaz",
+    "nilai": {
+      "Pendidikan Agama Islam": 86,
+      "Pendidikan Kewarganegaraan": 84,
+      "Bahasa Indonesia": 78,
+      "Matematika": 79,
+      "Ilmu Pengetahuan Alam": 80,
+      "Ilmu Pengetahuan Sosial": 88,
+      "Bahasa Inggris": 80,
+      "Prakarya": 91,
+      "Pendidikan Jasmani & Olahraga": 89,
+      "Bahasa Jawa": 93,
+      "Informatika": 75
+    },
+    "ringkasan": {
+      "jumlah": 923,
+      "rataRata": 83.9090909090909,
+      "peringkat": 7
+    }
+  },
+  {
+    "nis": "9",
+    "nisn": "3139564562",
+    "nama": "Mohammad Harist Al Kayyis",
+    "nilai": {
+      "Pendidikan Agama Islam": 99,
+      "Pendidikan Kewarganegaraan": 92,
+      "Bahasa Indonesia": 89,
+      "Matematika": 76,
+      "Ilmu Pengetahuan Alam": 75,
+      "Ilmu Pengetahuan Sosial": 88,
+      "Bahasa Inggris": 98,
+      "Prakarya": 85,
+      "Pendidikan Jasmani & Olahraga": 78,
+      "Bahasa Jawa": 85,
+      "Informatika": 80
+    },
+    "ringkasan": {
+      "jumlah": 945,
+      "rataRata": 85.9090909090909,
+      "peringkat": 4
+    }
+  },
+  {
+    "nis": "10",
+    "nisn": "129062670",
+    "nama": "Muhammad Akmal Fa’iz",
+    "nilai": {
+      "Pendidikan Agama Islam": 82,
+      "Pendidikan Kewarganegaraan": 75,
+      "Bahasa Indonesia": 75,
+      "Matematika": 77,
+      "Ilmu Pengetahuan Alam": 75,
+      "Ilmu Pengetahuan Sosial": 77,
+      "Bahasa Inggris": 80,
+      "Prakarya": 85,
+      "Pendidikan Jasmani & Olahraga": 76,
+      "Bahasa Jawa": 75,
+      "Informatika": 76
+    },
+    "ringkasan": {
+      "jumlah": 853,
+      "rataRata": 77.54545454545455,
+      "peringkat": 14
+    }
+  },
+  {
+    "nis": "11",
+    "nisn": "3122421936",
+    "nama": "Raditya Prabaswara Ananta",
+    "nilai": {
+      "Pendidikan Agama Islam": 88,
+      "Pendidikan Kewarganegaraan": 80,
+      "Bahasa Indonesia": 83,
+      "Matematika": 76,
+      "Ilmu Pengetahuan Alam": 82,
+      "Ilmu Pengetahuan Sosial": 82,
+      "Bahasa Inggris": 80,
+      "Prakarya": 85,
+      "Pendidikan Jasmani & Olahraga": 84,
+      "Bahasa Jawa": 76,
+      "Informatika": 77
+    },
+    "ringkasan": {
+      "jumlah": 893,
+      "rataRata": 81.18181818181819,
+      "peringkat": 11
+    }
+  },
+  {
+    "nis": "12",
+    "nisn": "122477839",
+    "nama": "Revalino Alfiansyah Wiguna Putra",
+    "nilai": {
+      "Pendidikan Agama Islam": 94,
+      "Pendidikan Kewarganegaraan": 84,
+      "Bahasa Indonesia": 91,
+      "Matematika": 77,
+      "Ilmu Pengetahuan Alam": 75,
+      "Ilmu Pengetahuan Sosial": 84,
+      "Bahasa Inggris": 85,
+      "Prakarya": 91,
+      "Pendidikan Jasmani & Olahraga": 85,
+      "Bahasa Jawa": 90,
+      "Informatika": 80
+    },
+    "ringkasan": {
+      "jumlah": 936,
+      "rataRata": 85.0909090909091,
+      "peringkat": 5
+    }
+  },
+  {
+    "nis": "13",
+    "nisn": "125546155",
+    "nama": "Shafira Nada Yumeiko",
+    "nilai": {
+      "Pendidikan Agama Islam": 99,
+      "Pendidikan Kewarganegaraan": 98,
+      "Bahasa Indonesia": 94,
+      "Matematika": 81,
+      "Ilmu Pengetahuan Alam": 85,
+      "Ilmu Pengetahuan Sosial": 98,
+      "Bahasa Inggris": 98,
+      "Prakarya": 91,
+      "Pendidikan Jasmani & Olahraga": 85,
+      "Bahasa Jawa": 98,
+      "Informatika": 95
+    },
+    "ringkasan": {
+      "jumlah": 1022,
+      "rataRata": 92.9090909090909,
+      "peringkat": 1
+    }
+  },
+  {
+    "nis": "14",
+    "nisn": "3138381017",
+    "nama": "Fairel Erlambang Gilang Estiawan",
+    "nilai": {
+      "Pendidikan Agama Islam": 75,
+      "Pendidikan Kewarganegaraan": 75,
+      "Bahasa Indonesia": 75,
+      "Matematika": 75,
+      "Ilmu Pengetahuan Alam": 75,
+      "Ilmu Pengetahuan Sosial": 77,
+      "Bahasa Inggris": 76,
+      "Prakarya": 85,
+      "Pendidikan Jasmani & Olahraga": 84,
+      "Bahasa Jawa": 80,
+      "Informatika": 80
+    },
+    "ringkasan": {
+      "jumlah": 857,
+      "rataRata": 77.9090909090909,
+      "peringkat": 13
+    }
+  }
+]
