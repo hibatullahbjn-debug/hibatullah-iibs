@@ -2882,6 +2882,8 @@ html, body { overflow-x: hidden !important; }
 
 .table-responsive {
   overflow-x: auto;
+  overflow-y: auto;
+  max-height: 500px;
   border-radius: 12px;
   border: 1px solid #f1f5f9;
 }
@@ -2901,6 +2903,10 @@ html, body { overflow-x: hidden !important; }
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 }
 .db-table tbody tr {
   transition: background 0.2s;

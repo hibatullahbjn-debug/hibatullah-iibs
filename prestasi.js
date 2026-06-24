@@ -24,9 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     dataArray.forEach((data, index) => {
       const tr = document.createElement('tr');
-      
-      // Initials
-      const initials = data.nama.substring(0, 1).toUpperCase();
+      tr.className = 'animated-list-item';
+      tr.style.animationDelay = `${index * 0.05}s`;
       
       // Badges
       let juaraBadgeClass = 'p-badge-juara';
@@ -38,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
         <td data-label="No" style="color:#94a3b8; font-weight:600;">${index + 1}</td>
         <td data-label="Nama Santri">
           <div class="dbt-nama-col">
-            <div class="dbt-avatar">${initials}</div>
             <span class="dbt-nama" style="text-align:left;">${data.nama}</span>
           </div>
         </td>

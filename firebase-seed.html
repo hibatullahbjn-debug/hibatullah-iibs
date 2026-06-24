@@ -18,8 +18,11 @@
     #log { font-size: 13px; color: #333; background: #f8fafd; padding: 16px; border-radius: 8px; min-height: 80px; white-space: pre-wrap; }
     ul { font-size: 13px; color: #555; margin: 16px 0; padding-left: 20px; }
   </style>
+  <link rel="stylesheet" href="navbar.css">
 </head>
 <body>
+  <!-- CARD NAV ROOT -->
+  <div id="card-nav-root"></div>
   <div class="seed-box">
     <h1>Import Data ke Firebase</h1>
     <p>Halaman admin sekali pakai. Mengisi database dengan data awal website (berita, galeri, kontak). Pastikan <code>firebase-config.js</code> sudah diisi.</p>
@@ -87,6 +90,7 @@
       }
     });
   </script>
+  <script src="navbar.js"></script>
 </body>
 </html>
 
