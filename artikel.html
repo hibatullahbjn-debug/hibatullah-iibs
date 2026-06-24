@@ -340,6 +340,9 @@ body{background:#f0f4fb}
       var currentUrl = new URL(window.location.href);
       var shareUrl = currentUrl.origin + currentUrl.pathname.replace('artikel.html', 'share.php') + currentUrl.search;
       
+      // Bypass cache WhatsApp dengan menambah parameter timestamp
+      shareUrl += (shareUrl.indexOf('?') > -1 ? '&' : '?') + '_c=' + new Date().getTime();
+      
       // Teks WhatsApp persis seperti CNN Indonesia (Judul + URL)
       var waRawText = item.title + "\n" + shareUrl;
       var waText = encodeURIComponent(waRawText);
