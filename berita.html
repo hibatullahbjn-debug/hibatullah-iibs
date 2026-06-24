@@ -28,6 +28,9 @@ body{background:#f0f4fb}
 .bt-search-bar i{color:#3a5bd9;font-size:16px}
 .bt-search-bar input{border:none;outline:none;font-size:14px;font-family:'Poppins',sans-serif;color:#333;flex:1;background:transparent}
 .bt-search-bar input::placeholder{color:#aaa}
+.bt-filter-btn{padding:8px 18px;border:1px solid #d0dcf0;background:#fff;color:#555;font-size:13px;font-family:'Poppins',sans-serif;font-weight:600;border-radius:20px;cursor:pointer;transition:all .2s}
+.bt-filter-btn:hover{background:#f0f4fb;color:#1a3a6b}
+.bt-filter-btn.active{background:#3a5bd9;color:#fff;border-color:#3a5bd9;box-shadow:0 4px 12px rgba(58,91,217,0.2)}
 
 .bt-card{background:#fff;border-radius:14px;overflow:hidden;border:1px solid #e8eef8;box-shadow:0 2px 12px rgba(26,58,107,0.06);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;cursor:pointer;text-decoration:none;color:inherit}
 .bt-card:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(26,58,107,0.12)}
@@ -133,6 +136,16 @@ body{background:#f0f4fb}
       <div class="bt-search-bar">
         <i class="fas fa-search"></i>
         <input type="text" id="btSearch" placeholder="Cari berita..." />
+      </div>
+
+      <!-- Filter Kategori -->
+      <div class="bt-filter" id="btFilter" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;">
+        <button class="bt-filter-btn active" data-cat="">Semua Berita</button>
+        <button class="bt-filter-btn" data-cat="Pendidikan">Pendidikan</button>
+        <button class="bt-filter-btn" data-cat="Prestasi">Prestasi</button>
+        <button class="bt-filter-btn" data-cat="Kegiatan">Kegiatan</button>
+        <button class="bt-filter-btn" data-cat="Pengumuman">Pengumuman</button>
+        <button class="bt-filter-btn" data-cat="Artikel">Artikel</button>
       </div>
 
       <!-- Grid -->
