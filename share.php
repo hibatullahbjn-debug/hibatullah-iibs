@@ -13,8 +13,15 @@ if ($id > 0) {
     // 2. Tarik data langsung dari WordPress API Anda
     $api_url = "https://linen-eagle-143399.hostingersite.com/wp-json/wp/v2/posts/" . $id . "?_embed=1";
     
-    // Gunakan file_get_contents
-    $json_data = @file_get_contents($api_url);
+    // Gunakan cURL karena Hostinger sering memblokir file_get_contents untuk URL eksternal
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $api_url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 5); // WhatsApp timeout sangat cepat, jangan lama-lama
+    $json_data = curl_exec($ch);
+    curl_close($ch);
+    
     if ($json_data) {
         $post = json_decode($json_data, true);
         
