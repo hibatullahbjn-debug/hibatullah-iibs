@@ -50,8 +50,53 @@
   margin-left: 0; margin-right: auto;
 }
 
-.ppdb-hero-btns { display: flex; gap: 14px; flex-wrap: wrap; justify-content: flex-start; }
+.ppdb-hero-btns { display: flex; gap: 14px; flex-wrap: wrap; justify-content: flex-start; margin-bottom: 30px; }
 
+/* Countdown */
+.ppdb-countdown-wrap {
+  margin-top: 10px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+  padding: 16px 20px;
+  backdrop-filter: blur(8px);
+  display: inline-block;
+}
+.ppdb-countdown-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.ppdb-countdown-boxes {
+  display: flex;
+  gap: 12px;
+}
+.pc-box {
+  background: rgba(0,0,0,0.3);
+  border-radius: 8px;
+  min-width: 60px;
+  padding: 8px 10px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.pc-box span {
+  display: block;
+  font-size: 24px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.pc-box small {
+  display: block;
+  font-size: 10px;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  font-weight: 600;
+}
 .ph-btn-primary {
   display: inline-flex; align-items: center; gap: 8px;
   background: #fff; color: #1a3a6b;
