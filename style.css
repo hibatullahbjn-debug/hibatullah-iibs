@@ -2984,7 +2984,7 @@ html, body { overflow-x: hidden !important; }
   .hero-slide.active {
     display: block !important;
     position: relative !important;
-    min-height: 650px !important;
+    min-height: 550px !important;
   }
   
   .hero-bg-wrap {
@@ -3005,65 +3005,72 @@ html, body { overflow-x: hidden !important; }
     background-position: center !important;
   }
 
-  /* Dark overlay covering the whole background so text in front is readable */
+  /* Dark overlay covering the whole background */
   .hero-bg-color {
     display: block !important;
     position: absolute !important;
     inset: 0 !important;
     background: linear-gradient(to right, 
-      rgba(13,34,68,0.9) 0%, 
-      rgba(13,34,68,0.75) 50%, 
-      rgba(13,34,68,0.4) 100%) !important;
+      rgba(13,34,68,0.95) 0%, 
+      rgba(13,34,68,0.7) 60%, 
+      rgba(13,34,68,0.3) 100%) !important;
     z-index: 1 !important;
   }
 
-  /* Text in front of the background */
+  /* Text in front of the background, sized proportionally smaller */
   .hero-content {
     position: absolute !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
     left: 0 !important;
     width: 100% !important;
-    padding: 40px 60px 40px 80px !important;
+    padding: 30px 40px 30px 60px !important;
     z-index: 10 !important;
     background: none !important;
     bottom: auto !important;
   }
 
   .hero-title {
-    font-size: 38px !important;
+    font-size: 32px !important;
     line-height: 1.25 !important;
-    margin-bottom: 16px !important;
-    max-width: 800px !important;
+    margin-bottom: 14px !important;
+    max-width: 600px !important;
   }
 
   .hero-desc {
-    font-size: 16px !important;
-    line-height: 1.6 !important;
-    margin-bottom: 24px !important;
-    max-width: 700px !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 20px !important;
+    max-width: 500px !important;
   }
 
   .hero-badge {
-    margin-bottom: 16px !important;
+    font-size: 11px !important;
+    padding: 4px 10px !important;
+    margin-bottom: 12px !important;
   }
 
   .hero-btns {
     flex-direction: row !important;
-    gap: 12px !important;
+    gap: 10px !important;
+  }
+
+  .btn-primary, .btn-outline {
+    font-size: 13px !important;
+    padding: 10px 16px !important;
   }
   
   /* Fix slider arrows */
   .hero-slider-btn {
-    width: 44px !important;
-    height: 44px !important;
+    width: 38px !important;
+    height: 38px !important;
     z-index: 20 !important;
   }
   .hero-slider-btn.prev {
-    left: 15px !important;
+    left: 10px !important;
   }
   .hero-slider-btn.next {
-    right: 15px !important;
+    right: 10px !important;
   }
 }
 
@@ -3113,9 +3120,9 @@ html, body { overflow-x: hidden !important; }
   }
 
   .hero-title {
-    font-size: 32px !important;
+    font-size: 28px !important;
   }
   .hero-desc {
-    font-size: 15px !important;
+    font-size: 14px !important;
   }
 }
