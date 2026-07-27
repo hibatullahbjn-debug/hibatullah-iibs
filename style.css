@@ -3012,6 +3012,14 @@ html, body { overflow-x: hidden !important; }
     background-repeat: no-repeat !important;
     z-index: 0 !important;
   }
+  
+  /* specifically center slide 1 */
+  #slide-1 .hero-bg-wrap {
+    background-position: center top !important;
+  }
+  #slide-1 .hero-students {
+    background-position: center bottom !important;
+  }
 
   .hero-bg-color {
     display: block !important;
