@@ -2980,7 +2980,7 @@ html, body { overflow-x: hidden !important; }
 /* ===========================
    TABLET / IPAD FIX (768px - 1024px)
 =========================== */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1200px) {
   .hero-slide.active {
     display: block !important;
     position: relative !important;
