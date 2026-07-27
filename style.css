@@ -2982,12 +2982,11 @@ html, body { overflow-x: hidden !important; }
 =========================== */
 @media (min-width: 769px) and (max-width: 1200px) {
   .hero-slide.active {
-    display: flex !important;
-    align-items: center !important;
-    min-height: 550px !important;
+    display: block !important;
+    position: relative !important;
+    min-height: 650px !important;
   }
   
-  /* Reset bg-wrap to default */
   .hero-bg-wrap {
     position: absolute !important;
     inset: 0 !important;
@@ -2995,48 +2994,54 @@ html, body { overflow-x: hidden !important; }
     height: 100% !important;
   }
 
-  /* Make gradient semi-transparent so the school background image is visible! */
+  /* Make students image the FULL background */
+  .hero-students {
+    width: 100% !important;
+    height: 100% !important;
+    right: 0 !important;
+    top: 0 !important;
+    position: absolute !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  /* Dark overlay covering the whole background so text in front is readable */
   .hero-bg-color {
     display: block !important;
     position: absolute !important;
     inset: 0 !important;
-    background: linear-gradient(90deg, 
-      rgba(13,34,68,0.85) 0%, 
-      rgba(13,34,68,0.7) 45%, 
-      rgba(13,34,68,0) 100%) !important;
+    background: linear-gradient(to right, 
+      rgba(13,34,68,0.9) 0%, 
+      rgba(13,34,68,0.75) 50%, 
+      rgba(13,34,68,0.4) 100%) !important;
     z-index: 1 !important;
   }
 
-  /* Students image on the right */
-  .hero-students {
-    width: 50% !important;
-    right: -5% !important;
-    top: 0 !important;
-    position: absolute !important;
-  }
-
-  /* Text on the left */
+  /* Text in front of the background */
   .hero-content {
-    position: relative !important;
-    width: 60% !important;
-    padding: 60px 20px 60px 80px !important;
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    left: 0 !important;
+    width: 100% !important;
+    padding: 40px 60px 40px 80px !important;
     z-index: 10 !important;
     background: none !important;
-    transform: none !important;
-    top: auto !important;
     bottom: auto !important;
   }
 
   .hero-title {
-    font-size: 34px !important;
+    font-size: 38px !important;
     line-height: 1.25 !important;
     margin-bottom: 16px !important;
+    max-width: 800px !important;
   }
 
   .hero-desc {
-    font-size: 14px !important;
+    font-size: 16px !important;
     line-height: 1.6 !important;
     margin-bottom: 24px !important;
+    max-width: 700px !important;
   }
 
   .hero-badge {
@@ -3080,6 +3085,8 @@ html, body { overflow-x: hidden !important; }
   .hero-students {
     width: 100% !important;
     right: 0 !important;
+    background-size: cover !important;
+    background-position: center top !important;
   }
 
   .hero-bg-color {
@@ -3088,8 +3095,8 @@ html, body { overflow-x: hidden !important; }
     inset: 0 !important;
     background: linear-gradient(to top, 
       rgba(13,34,68,1) 0%, 
-      rgba(13,34,68,0.8) 50%, 
-      rgba(13,34,68,0.2) 100%) !important;
+      rgba(13,34,68,0.85) 60%, 
+      rgba(13,34,68,0.3) 100%) !important;
     z-index: 1 !important;
   }
 
