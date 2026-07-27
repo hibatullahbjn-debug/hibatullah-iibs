@@ -2998,7 +2998,7 @@ html, body { overflow-x: hidden !important; }
     width: 100% !important;
     height: 100% !important;
     background-size: cover !important; 
-    background-position: center 10% !important;
+    background-position: 85% 10% !important;
   }
 
   .hero-students {
@@ -3008,7 +3008,7 @@ html, body { overflow-x: hidden !important; }
     top: 5% !important;
     position: absolute !important;
     background-size: contain !important;
-    background-position: center bottom !important;
+    background-position: 85% bottom !important;
     background-repeat: no-repeat !important;
     z-index: 0 !important;
   }
